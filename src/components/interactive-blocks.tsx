@@ -42,7 +42,7 @@ export function VideoPlaceholder() {
           aria-label="Vidéo de présentation des Jardins d’Eleusis"
           className="aspect-video h-auto w-full object-contain"
         />
-        <Button onClick={toggle} variant="secondary" size="icon" className="absolute bottom-4 right-4 shadow-lg" aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
+        <Button onClick={toggle} variant="secondary" size="icon" className={playing ? "absolute bottom-4 right-4 shadow-lg" : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg"} aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
       </div>
     </div>
   </div>;

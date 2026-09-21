@@ -1,0 +1,11 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, BedDouble, Building2, CalendarDays, Check, Download, SunMedium } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { MediaPlaceholder } from "@/components/site-layout";
+import { documents, solutions, units } from "@/lib/site-content";
+
+export function SolutionsGrid() { const icons = [<Building2 />, <CalendarDays />, <SunMedium />]; return <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">{solutions.map((item, i) => <article className="bg-card p-7" key={item.title}><span className="feature-icon">{icons[i]}</span><h3 className="mt-5 text-xl">{item.title}</h3><p className="mt-3 text-muted-foreground">{item.text}</p><Link className="text-link mt-5" to="/solutions-accueil">En savoir plus <ArrowRight /></Link></article>)}</div>; }
+
+export function UnitsGrid() { return <div className="grid gap-6 lg:grid-cols-3">{units.map(unit => <article className="unit-card" key={unit.name}><MediaPlaceholder label={unit.name} compact/><div className="p-6"><p className="eyebrow">Ouverture en {unit.year}</p><h3 className="mt-2 text-2xl">{unit.name}</h3><ul className="mt-4 space-y-2 text-muted-foreground"><li><Check />{unit.places}</li><li><BedDouble />{unit.rooms}</li><li><Check />{unit.bathroom}</li>{unit.detail && <li><Check />{unit.detail}</li>}</ul></div></article>)}</div>; }
+
+export function Downloads() { return <div id="documents" className="grid gap-3">{documents.map(doc => <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-md border border-border bg-card p-5" key={doc}><div className="min-w-0"><h3 className="text-lg">{doc}</h3><p className="text-sm text-muted-foreground">Document à ajouter</p></div><Button variant="outline" disabled aria-label={`${doc} indisponible pour le moment`}><Download /> <span className="hidden sm:inline">À venir</span></Button></div>)}</div>; }

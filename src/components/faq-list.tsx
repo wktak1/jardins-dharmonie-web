@@ -1,0 +1,3 @@
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { faqs } from "@/lib/site-content";
+export function FaqList({ limit }: { limit?: number }) { return <Accordion type="single" collapsible className="border-t border-border">{faqs.slice(0, limit).map((question, index) => <AccordionItem value={`faq-${index}`} key={question}><AccordionTrigger className="py-5 text-left text-lg font-semibold">{question}</AccordionTrigger><AccordionContent className="pb-5 text-base text-muted-foreground">Réponse à compléter avec l’établissement.</AccordionContent></AccordionItem>)}</Accordion>; }

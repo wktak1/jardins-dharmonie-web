@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { galleryCategories } from "@/lib/site-content";
 import presentationVideo from "@/assets/jardins-eleusis-presentation-web-720p.mp4.asset.json";
+import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web-720p.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-video-poster.jpg.asset.json";
 
 export function VideoPlaceholder() {
@@ -29,7 +30,6 @@ export function VideoPlaceholder() {
       <div className="relative mx-auto w-full max-w-[32rem] overflow-hidden rounded-xl bg-foreground/15 shadow-2xl max-md:max-w-[22rem]">
         <video
           ref={videoRef}
-          src={presentationVideo.url}
           poster={presentationPoster.url}
           autoPlay
           muted
@@ -41,7 +41,10 @@ export function VideoPlaceholder() {
           onPause={() => setPlaying(false)}
           aria-label="Vidéo de présentation des Jardins d’Eleusis"
           className="aspect-video h-auto w-full object-contain"
-        />
+        >
+          <source src={presentationVideoWebm.url} type="video/webm" />
+          <source src={presentationVideo.url} type="video/mp4" />
+        </video>
         <Button onClick={toggle} variant="secondary" size="icon" className={playing ? "absolute bottom-4 right-4 shadow-lg" : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg"} aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
       </div>
     </div>

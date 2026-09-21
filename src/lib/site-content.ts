@@ -28,8 +28,8 @@ export const solutions = [
 ] as const;
 
 export const units = [
-  { name: "Les Niaoulis", year: "2013", places: "40 places", rooms: "Chambres individuelles et doubles", bathroom: "Salle de bain partagée" },
-  { name: "Les Fougères", year: "2019", places: "26 places", rooms: "Chambres individuelles", bathroom: "Salle de bain privative" },
+  { name: "Les Niaoulis", year: "2013", places: "40 places", rooms: "Chambres individuelles et doubles", bathroom: "Salle de bain partagée", detail: "" },
+  { name: "Les Fougères", year: "2019", places: "26 places", rooms: "Chambres individuelles", bathroom: "Salle de bain privative", detail: "" },
   { name: "Les Terrasses", year: "2019", places: "14 places", rooms: "Chambres individuelles", bathroom: "Salle de bain privative", detail: "Unité UHR" },
 ] as const;
 

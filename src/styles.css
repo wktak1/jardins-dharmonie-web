@@ -178,7 +178,3 @@
 .media-placeholder span { font-size: .82rem; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-  }
-}

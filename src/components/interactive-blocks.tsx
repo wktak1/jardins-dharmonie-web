@@ -24,9 +24,9 @@ export function VideoPlaceholder() {
     }
   };
   return <div className="relative overflow-hidden bg-primary">
-    <div className="container-shell relative grid min-h-[34rem] items-center gap-10 py-12 md:min-h-[40rem] md:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] md:py-14 lg:gap-16">
+    <div className="container-shell relative grid min-h-[34rem] items-center gap-8 py-8 md:min-h-[40rem] md:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] md:gap-10 md:py-14 lg:gap-16">
       <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><Link to="/etablissement">Découvrir l’établissement</Link></Button><Button asChild variant="outline" size="lg"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button></div></div>
-      <div className="relative mx-auto w-full max-w-[32rem] overflow-hidden rounded-xl bg-foreground/15 shadow-2xl">
+      <div className="relative mx-auto w-full max-w-[32rem] overflow-hidden rounded-xl bg-foreground/15 shadow-2xl max-md:max-w-[22rem]">
         <video
           ref={videoRef}
           src={presentationVideo.url}

@@ -24,31 +24,71 @@ export function VideoPlaceholder() {
       setPlaying(false);
     }
   };
-  return <div className="relative overflow-hidden bg-primary">
-    <div className="container-shell relative grid min-h-[34rem] items-center gap-8 py-8 md:min-h-[42rem] md:grid-cols-[minmax(0,1fr)_minmax(26rem,0.92fr)] md:gap-8 md:py-14 lg:min-h-[44rem] lg:grid-cols-[minmax(0,1fr)_minmax(32rem,0.95fr)] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_minmax(36rem,0.98fr)]">
-      <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><Link to="/etablissement">Découvrir l’établissement</Link></Button><Button asChild variant="outline" size="lg"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button></div></div>
-      <div className="relative mx-auto w-full max-w-[22rem] overflow-hidden rounded-xl bg-foreground/15 shadow-2xl md:max-w-none">
-        <video
-          ref={videoRef}
-          poster={presentationPoster.url}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          controls={false}
-          onPlaying={() => setPlaying(true)}
-          onPause={() => setPlaying(false)}
-          aria-label="Vidéo de présentation des Jardins d’Eleusis"
-          className="aspect-video h-auto w-full object-contain"
+  return (
+    <section className="relative isolate flex min-h-[78vh] items-center overflow-hidden bg-primary md:min-h-[85vh]">
+      <video
+        ref={videoRef}
+        poster={presentationPoster.url}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        controls={false}
+        onPlaying={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        aria-label="Vidéo de présentation des Jardins d’Eleusis"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+      >
+        <source src={presentationVideoWebm.url} type="video/webm" />
+        <source src={presentationVideo.url} type="video/mp4" />
+      </video>
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-primary/70 mix-blend-multiply"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-foreground/35"
+      />
+      <div className="container-shell relative w-full py-20 md:py-28">
+        <div className="max-w-3xl text-primary-foreground">
+          <p className="mb-5 text-sm font-bold uppercase tracking-[.18em] opacity-90">
+            EHPAD à Dumbéa
+          </p>
+          <h1 className="text-primary-foreground text-4xl leading-tight md:text-6xl lg:text-7xl">
+            Les Jardins d’Eleusis,
+            <br />
+            un lieu de vie à Dumbéa
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg opacity-95 md:text-xl">
+            Découvrez notre établissement, ses espaces de vie et les différentes
+            solutions d’accueil proposées aux personnes âgées et à leurs
+            familles.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Button asChild variant="secondary" size="lg">
+              <Link to="/etablissement">Découvrir l’établissement</Link>
+            </Button>
+            <Button asChild variant="outline" size="lg">
+              <Link to="/tarifs-admission" hash="documents">
+                Dossier d’admission
+              </Link>
+            </Button>
+          </div>
+        </div>
+        <Button
+          onClick={toggle}
+          variant="secondary"
+          size="icon"
+          className="absolute bottom-6 right-6 shadow-lg"
+          aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}
         >
-          <source src={presentationVideoWebm.url} type="video/webm" />
-          <source src={presentationVideo.url} type="video/mp4" />
-        </video>
-        <Button onClick={toggle} variant="secondary" size="icon" className={playing ? "absolute bottom-4 right-4 shadow-lg" : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg"} aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
+          {playing ? <Pause /> : <Play />}
+        </Button>
       </div>
-    </div>
-  </div>;
+    </section>
+  );
 }
 
 const galleryItems = ["Extérieurs", "Espaces communs", "Chambres", "Activités", "Repas", "Événements"];

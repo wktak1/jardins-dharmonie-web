@@ -3,18 +3,48 @@ import { ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { galleryCategories } from "@/lib/site-content";
+import presentationVideo from "@/assets/jardins-eleusis-presentation-web-720p.mp4.asset.json";
+import presentationPoster from "@/assets/jardins-eleusis-video-poster.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const toggle = async () => { const video = videoRef.current; if (!video || !video.currentSrc) return; if (video.paused) { await video.play(); setPlaying(true); } else { video.pause(); setPlaying(false); } };
-  return <div className="relative min-h-[34rem] overflow-hidden bg-primary md:min-h-[40rem]">
-    <video ref={videoRef} autoPlay muted loop playsInline preload="none" aria-label="Vidéo de présentation des Jardins d’Eleusis — contenu à ajouter" className="absolute inset-0 h-full w-full object-cover" />
-    <div className="absolute inset-0 bg-primary/85" />
-    <div className="container-shell relative flex min-h-[34rem] items-end py-14 md:min-h-[40rem] md:py-20">
-      <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><Link to="/etablissement">Découvrir l’établissement</Link></Button><Button asChild variant="outline" size="lg"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button></div><p className="mt-6 text-sm opacity-75">Vidéo de présentation et image de couverture à ajouter.</p></div>
+  const toggle = async () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      try {
+        await video.play();
+      } catch {
+        setPlaying(false);
+      }
+    } else {
+      video.pause();
+      setPlaying(false);
+    }
+  };
+  return <div className="relative overflow-hidden bg-primary">
+    <div className="container-shell relative grid min-h-[34rem] items-center gap-10 py-12 md:min-h-[40rem] md:grid-cols-[minmax(0,1fr)_minmax(22rem,0.82fr)] md:py-14 lg:gap-16">
+      <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><Link to="/etablissement">Découvrir l’établissement</Link></Button><Button asChild variant="outline" size="lg"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button></div></div>
+      <div className="relative mx-auto w-full max-w-[32rem] overflow-hidden rounded-xl bg-foreground/15 shadow-2xl">
+        <video
+          ref={videoRef}
+          src={presentationVideo.url}
+          poster={presentationPoster.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          controls={false}
+          onPlaying={() => setPlaying(true)}
+          onPause={() => setPlaying(false)}
+          aria-label="Vidéo de présentation des Jardins d’Eleusis"
+          className="aspect-video h-auto w-full object-contain"
+        />
+        <Button onClick={toggle} variant="secondary" size="icon" className="absolute bottom-4 right-4 shadow-lg" aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
+      </div>
     </div>
-    <Button onClick={toggle} variant="secondary" size="icon" className="absolute bottom-5 right-5" aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
   </div>;
 }
 

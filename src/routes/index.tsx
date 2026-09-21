@@ -1,24 +1,20 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ContactStrip, MapBlock, MediaPlaceholder, SectionHeading } from "@/components/site-layout";
+import { SolutionsGrid, UnitsGrid } from "@/components/content-blocks";
+import { GalleryBrowser, VideoPlaceholder } from "@/components/interactive-blocks";
+import { dailyLife } from "@/lib/site-content";
+import { routeHead } from "@/components/route-meta";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+export const Route = createFileRoute("/")({ head: () => ({...routeHead("EHPAD à Dumbéa", "Découvrez Les Jardins d’Eleusis, établissement pour personnes âgées à Dumbéa en Nouvelle-Calédonie.", "/"), scripts: [{ type: "application/ld+json", children: JSON.stringify({"@context":"https://schema.org","@type":"NursingHome",name:"EHPAD Les Jardins d’Eleusis",telephone:"29 85 00",email:"accueil@eleusis.nc",address:{"@type":"PostalAddress",streetAddress:"364 bis route de Koé",addressLocality:"Dumbéa",addressCountry:"NC"}})}]}), staticData: { sitemap: true }, component: Home });
+function Home() { return <>
+  <VideoPlaceholder />
+  <section className="section-pad"><div className="container-shell grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-center"><div><p className="eyebrow">Bienvenue</p><h2 className="mt-3">Un établissement pour personnes âgées à Dumbéa</h2><p className="mt-5 text-muted-foreground">Les Jardins d’Eleusis est un établissement d’hébergement pour personnes âgées dépendantes situé à Dumbéa, en Nouvelle-Calédonie. Ce site permet aux familles de découvrir les lieux et les solutions d’accueil avant une visite.</p></div><div className="rounded-lg border-l-4 border-secondary bg-muted p-7"><h3 className="text-xl">Les valeurs des Jardins d’Eleusis</h3><p className="mt-3 text-muted-foreground">Contenu à compléter après validation.</p></div></div></section>
+  <section className="section-pad bg-muted"><div className="container-shell"><SectionHeading eyebrow="Choisir un accueil" title="Les solutions d’accueil" text="Trois possibilités à découvrir selon la situation de votre proche."/><SolutionsGrid /></div></section>
+  <section className="section-pad"><div className="container-shell"><SectionHeading eyebrow="Les bâtiments" title="Trois unités d’hébergement" text="Des informations factuelles pour mieux comprendre l’organisation de l’établissement."/><UnitsGrid/><Button asChild className="mt-8"><Link to="/solutions-accueil">Découvrir nos unités <ArrowRight /></Link></Button></div></section>
+  <section className="section-pad bg-accent"><div className="container-shell"><SectionHeading eyebrow="Au fil des jours" title="La vie aux Jardins d’Eleusis" text="Quelques repères sur le quotidien, à compléter avec les prochains textes et visuels de l’établissement."/><div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">{dailyLife.slice(0,6).map(item => <div className="bg-background p-6" key={item.title}><h3 className="text-xl">{item.title}</h3><p className="mt-2 text-muted-foreground">{item.text}</p></div>)}</div></div></section>
+  <section className="section-pad"><div className="container-shell"><SectionHeading eyebrow="En images" title="Un aperçu de l’établissement" text="Les photographies seront sélectionnées et ajoutées après validation."/><GalleryBrowser preview/><Button asChild variant="outline" className="mt-8"><Link to="/galerie">Voir toute la galerie <ArrowRight /></Link></Button></div></section>
+  <section className="section-pad bg-primary text-primary-foreground"><div className="container-shell grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center"><div><p className="text-sm font-bold uppercase tracking-[.1em] opacity-80">Admission</p><h2 className="mt-3 text-primary-foreground">Préparer votre démarche en toute clarté</h2><p className="mt-4 max-w-2xl opacity-85">Consultez les informations utiles, les tarifs dès leur validation et les documents mis à disposition par l’établissement.</p></div><div className="flex flex-wrap gap-3"><Button asChild variant="secondary"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button><Button asChild variant="outline"><Link to="/tarifs-admission">Consulter les tarifs</Link></Button><Button asChild variant="outline"><Link to="/contact">Contacter l’établissement</Link></Button></div></div></section>
+  <section className="section-pad"><div className="container-shell"><MapBlock /></div></section><ContactStrip />
+</>; }

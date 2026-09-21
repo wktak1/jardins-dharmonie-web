@@ -3,9 +3,9 @@ import { ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { galleryCategories } from "@/lib/site-content";
-import presentationVideo from "@/assets/jardins-eleusis-presentation-web-720p.mp4.asset.json";
-import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web-720p.webm.asset.json";
-import presentationPoster from "@/assets/jardins-eleusis-video-poster.jpg.asset.json";
+import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.asset.json";
+import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
+import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);

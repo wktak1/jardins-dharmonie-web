@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 import { galleryCategories } from "@/lib/site-content";
 
 export function VideoPlaceholder() {
@@ -11,7 +12,7 @@ export function VideoPlaceholder() {
     <video ref={videoRef} autoPlay muted loop playsInline preload="none" aria-label="Vidéo de présentation des Jardins d’Eleusis — contenu à ajouter" className="absolute inset-0 h-full w-full object-cover" />
     <div className="absolute inset-0 bg-primary/85" />
     <div className="container-shell relative flex min-h-[34rem] items-end py-14 md:min-h-[40rem] md:py-20">
-      <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><a href="/etablissement">Découvrir l’établissement</a></Button><Button asChild variant="outline" size="lg"><a href="/tarifs-admission#documents">Dossier d’admission</a></Button></div><p className="mt-6 text-sm opacity-75">Vidéo de présentation et image de couverture à ajouter.</p></div>
+      <div className="max-w-3xl text-primary-foreground"><p className="mb-4 text-sm font-bold uppercase tracking-[.1em]">EHPAD à Dumbéa</p><h1 className="text-primary-foreground">Les Jardins d’Eleusis, un lieu de vie à Dumbéa</h1><p className="mt-6 max-w-2xl text-lg opacity-90">Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil proposées aux personnes âgées et à leurs familles.</p><div className="mt-8 flex flex-wrap gap-3"><Button asChild variant="secondary" size="lg"><Link to="/etablissement">Découvrir l’établissement</Link></Button><Button asChild variant="outline" size="lg"><Link to="/tarifs-admission" hash="documents">Dossier d’admission</Link></Button></div><p className="mt-6 text-sm opacity-75">Vidéo de présentation et image de couverture à ajouter.</p></div>
     </div>
     <Button onClick={toggle} variant="secondary" size="icon" className="absolute bottom-5 right-5" aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}>{playing ? <Pause /> : <Play />}</Button>
   </div>;

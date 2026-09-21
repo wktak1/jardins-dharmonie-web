@@ -10,33 +10,168 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as EtablissementRouteImport } from './routes/etablissement'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalerieRouteImport } from './routes/galerie'
+import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as PlanDuSiteRouteImport } from './routes/plan-du-site'
+import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
+import { Route as SolutionsAccueilRouteImport } from './routes/solutions-accueil'
+import { Route as TarifsAdmissionRouteImport } from './routes/tarifs-admission'
+import { Route as VieQuotidienRouteImport } from './routes/vie-quotidien'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtablissementRoute = EtablissementRouteImport.update({
+  id: '/etablissement',
+  path: '/etablissement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerieRoute = GalerieRouteImport.update({
+  id: '/galerie',
+  path: '/galerie',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
+  id: '/mentions-legales',
+  path: '/mentions-legales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanDuSiteRoute = PlanDuSiteRouteImport.update({
+  id: '/plan-du-site',
+  path: '/plan-du-site',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PolitiqueConfidentialiteRoute =
+  PolitiqueConfidentialiteRouteImport.update({
+    id: '/politique-confidentialite',
+    path: '/politique-confidentialite',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SolutionsAccueilRoute = SolutionsAccueilRouteImport.update({
+  id: '/solutions-accueil',
+  path: '/solutions-accueil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TarifsAdmissionRoute = TarifsAdmissionRouteImport.update({
+  id: '/tarifs-admission',
+  path: '/tarifs-admission',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VieQuotidienRoute = VieQuotidienRouteImport.update({
+  id: '/vie-quotidien',
+  path: '/vie-quotidien',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/etablissement': typeof EtablissementRoute
+  '/faq': typeof FaqRoute
+  '/galerie': typeof GalerieRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-du-site': typeof PlanDuSiteRoute
+  '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/solutions-accueil': typeof SolutionsAccueilRoute
+  '/tarifs-admission': typeof TarifsAdmissionRoute
+  '/vie-quotidien': typeof VieQuotidienRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/etablissement': typeof EtablissementRoute
+  '/faq': typeof FaqRoute
+  '/galerie': typeof GalerieRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-du-site': typeof PlanDuSiteRoute
+  '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/solutions-accueil': typeof SolutionsAccueilRoute
+  '/tarifs-admission': typeof TarifsAdmissionRoute
+  '/vie-quotidien': typeof VieQuotidienRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRoute
+  '/etablissement': typeof EtablissementRoute
+  '/faq': typeof FaqRoute
+  '/galerie': typeof GalerieRoute
+  '/mentions-legales': typeof MentionsLegalesRoute
+  '/plan-du-site': typeof PlanDuSiteRoute
+  '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/solutions-accueil': typeof SolutionsAccueilRoute
+  '/tarifs-admission': typeof TarifsAdmissionRoute
+  '/vie-quotidien': typeof VieQuotidienRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/contact'
+    | '/etablissement'
+    | '/faq'
+    | '/galerie'
+    | '/mentions-legales'
+    | '/plan-du-site'
+    | '/politique-confidentialite'
+    | '/solutions-accueil'
+    | '/tarifs-admission'
+    | '/vie-quotidien'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/contact'
+    | '/etablissement'
+    | '/faq'
+    | '/galerie'
+    | '/mentions-legales'
+    | '/plan-du-site'
+    | '/politique-confidentialite'
+    | '/solutions-accueil'
+    | '/tarifs-admission'
+    | '/vie-quotidien'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/etablissement'
+    | '/faq'
+    | '/galerie'
+    | '/mentions-legales'
+    | '/plan-du-site'
+    | '/politique-confidentialite'
+    | '/solutions-accueil'
+    | '/tarifs-admission'
+    | '/vie-quotidien'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRoute: typeof ContactRoute
+  EtablissementRoute: typeof EtablissementRoute
+  FaqRoute: typeof FaqRoute
+  GalerieRoute: typeof GalerieRoute
+  MentionsLegalesRoute: typeof MentionsLegalesRoute
+  PlanDuSiteRoute: typeof PlanDuSiteRoute
+  PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
+  SolutionsAccueilRoute: typeof SolutionsAccueilRoute
+  TarifsAdmissionRoute: typeof TarifsAdmissionRoute
+  VieQuotidienRoute: typeof VieQuotidienRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +183,91 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etablissement': {
+      id: '/etablissement'
+      path: '/etablissement'
+      fullPath: '/etablissement'
+      preLoaderRoute: typeof EtablissementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerie': {
+      id: '/galerie'
+      path: '/galerie'
+      fullPath: '/galerie'
+      preLoaderRoute: typeof GalerieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mentions-legales': {
+      id: '/mentions-legales'
+      path: '/mentions-legales'
+      fullPath: '/mentions-legales'
+      preLoaderRoute: typeof MentionsLegalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan-du-site': {
+      id: '/plan-du-site'
+      path: '/plan-du-site'
+      fullPath: '/plan-du-site'
+      preLoaderRoute: typeof PlanDuSiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/politique-confidentialite': {
+      id: '/politique-confidentialite'
+      path: '/politique-confidentialite'
+      fullPath: '/politique-confidentialite'
+      preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions-accueil': {
+      id: '/solutions-accueil'
+      path: '/solutions-accueil'
+      fullPath: '/solutions-accueil'
+      preLoaderRoute: typeof SolutionsAccueilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tarifs-admission': {
+      id: '/tarifs-admission'
+      path: '/tarifs-admission'
+      fullPath: '/tarifs-admission'
+      preLoaderRoute: typeof TarifsAdmissionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vie-quotidien': {
+      id: '/vie-quotidien'
+      path: '/vie-quotidien'
+      fullPath: '/vie-quotidien'
+      preLoaderRoute: typeof VieQuotidienRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRoute: ContactRoute,
+  EtablissementRoute: EtablissementRoute,
+  FaqRoute: FaqRoute,
+  GalerieRoute: GalerieRoute,
+  MentionsLegalesRoute: MentionsLegalesRoute,
+  PlanDuSiteRoute: PlanDuSiteRoute,
+  PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
+  SolutionsAccueilRoute: SolutionsAccueilRoute,
+  TarifsAdmissionRoute: TarifsAdmissionRoute,
+  VieQuotidienRoute: VieQuotidienRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

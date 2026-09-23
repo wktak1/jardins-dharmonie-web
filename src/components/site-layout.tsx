@@ -3,6 +3,7 @@ import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagr
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
+import headerLogoAsset from "@/assets/jardins-eleusis-logo-header.png.asset.json";
 import { navigation, site } from "@/lib/site-content";
 
 export function SiteHeader() {

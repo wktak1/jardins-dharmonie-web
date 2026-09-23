@@ -18,7 +18,7 @@ export function SiteHeader() {
     </div>
     <div className="container-shell grid min-h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
       <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Les Jardins d’Eleusis — accueil">
-        <img src={logoAsset.url} alt="" className="h-12 w-20 shrink-0 rounded-sm object-cover object-left" />
+        <img src={logoHeaderAsset.url} alt="" className="h-12 w-auto shrink-0 rounded-sm object-contain" />
         <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">Les Jardins<br className="sm:hidden" /> d’Eleusis</span>
       </Link>
       <div className="flex items-center gap-2">

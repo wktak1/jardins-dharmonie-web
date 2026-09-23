@@ -1,7 +1,72 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { MapBlock, PageIntro } from "@/components/site-layout";
-import { site } from "@/lib/site-content";
+import { MapBlock, PageIntro, socialIcon } from "@/components/site-layout";
+import { site, socialLinks } from "@/lib/site-content";
 import { routeHead } from "@/components/route-meta";
-export const Route=createFileRoute("/contact")({head:()=>routeHead("Contact","Coordonnées, adresse et itinéraire de l’EHPAD Les Jardins d’Eleusis à Dumbéa.","/contact"),staticData:{sitemap:true},component:Page});
-function Page(){return <><PageIntro eyebrow="Contact" title="Échanger avec l’établissement"><p>Pour toute demande d’information ou pour préparer une visite, contactez directement Les Jardins d’Eleusis par téléphone ou par e-mail.</p></PageIntro><section className="section-pad"><div className="container-shell"><div className="grid gap-6 md:grid-cols-3"><a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7"><Phone className="text-primary"/><h2 className="mt-5 text-xl">Téléphone</h2><p className="mt-2 text-link">{site.phone}</p></a><a href={site.emailHref} className="rounded-lg border border-border bg-card p-7"><Mail className="text-primary"/><h2 className="mt-5 text-xl">E-mail</h2><p className="mt-2 break-all text-link">{site.email}</p></a><div className="rounded-lg border border-border bg-card p-7"><MapPin className="text-primary"/><h2 className="mt-5 text-xl">Adresse et horaires</h2><p className="mt-2 text-muted-foreground">{site.address}</p><p className="mt-3 font-semibold">Horaires : À compléter</p></div></div><div className="mt-10"><MapBlock/></div><div className="mt-10 border-l-4 border-secondary bg-muted p-6"><h2 className="text-xl">Réseaux sociaux</h2><p className="mt-2 text-muted-foreground">Facebook, Instagram, TikTok et LinkedIn : liens à compléter.</p></div></div></section></>}
+export const Route = createFileRoute("/contact")({
+  head: () =>
+    routeHead(
+      "Contact",
+      "Coordonnées, adresse et itinéraire de l’EHPAD Les Jardins d’Eleusis à Dumbéa.",
+      "/contact",
+    ),
+  staticData: { sitemap: true },
+  component: Page,
+});
+function Page() {
+  return (
+    <>
+      <PageIntro eyebrow="Contact" title="Échanger avec l’établissement">
+        <p>
+          Pour toute demande d’information ou pour préparer une visite, contactez directement Les
+          Jardins d’Eleusis par téléphone ou par e-mail.
+        </p>
+      </PageIntro>
+      <section className="section-pad">
+        <div className="container-shell">
+          <div className="grid gap-6 md:grid-cols-3">
+            <a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7">
+              <Phone className="text-primary" />
+              <h2 className="mt-5 text-xl">Téléphone</h2>
+              <p className="mt-2 text-link">{site.phone}</p>
+            </a>
+            <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
+              <Mail className="text-primary" />
+              <h2 className="mt-5 text-xl">E-mail</h2>
+              <p className="mt-2 break-all text-link">{site.email}</p>
+            </a>
+            <div className="rounded-lg border border-border bg-card p-7">
+              <MapPin className="text-primary" />
+              <h2 className="mt-5 text-xl">Adresse et horaires</h2>
+              <p className="mt-2 text-muted-foreground">{site.address}</p>
+              <p className="mt-3 font-semibold">Horaires : À compléter</p>
+            </div>
+          </div>
+          <div className="mt-10">
+            <MapBlock />
+          </div>
+          <div className="mt-10 border-l-4 border-secondary bg-muted p-6">
+            <h2 className="text-xl">Réseaux sociaux</h2>
+            <ul className="mt-3 flex flex-wrap gap-3">
+              {socialLinks.map((l) => (
+                <li key={l.name}>
+                  <a
+                    href={l.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Suivre Les Jardins d’Eleusis sur ${l.name}`}
+                    className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 text-link transition duration-300 ease-out hover:bg-background hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100 [&_svg]:h-5 [&_svg]:w-5"
+                  >
+                    {socialIcon(l.name)}
+                    {l.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-muted-foreground">LinkedIn : lien à compléter.</p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

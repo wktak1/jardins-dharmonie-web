@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
 import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
-import { navigation, site } from "@/lib/site-content";
+import { navigation, site, socialLinks } from "@/lib/site-content";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -46,11 +46,14 @@ export function SiteFooter() {
       <div><img src={logoAsset.url} alt="Logo des Jardins d’Eleusis" className="h-20 w-40 rounded-sm object-cover" /><p className="mt-4 text-sm opacity-85">Établissement d’hébergement pour personnes âgées dépendantes à Dumbéa.</p></div>
       <div><h2 className="footer-title">Coordonnées</h2><address className="not-italic space-y-3 text-sm opacity-90"><p>{site.address}</p><a className="footer-link" href={site.phoneHref}>{site.phone}</a><a className="footer-link" href={site.emailHref}>{site.email}</a></address></div>
       <div><h2 className="footer-title">Accès rapide</h2><div className="grid gap-2 text-sm"><Link className="footer-link" to="/tarifs-admission" hash="documents">Dossier d’admission</Link><Link className="footer-link" to="/mentions-legales">Mentions légales</Link><Link className="footer-link" to="/politique-confidentialite">Politique de confidentialité</Link><Link className="footer-link" to="/plan-du-site">Plan du site</Link></div></div>
-      <div><h2 className="footer-title">Réseaux sociaux</h2><div className="flex gap-2"><Social icon={<Facebook />} label="Facebook — lien à compléter"/><Social icon={<Instagram />} label="Instagram — lien à compléter"/><Social icon={<span className="text-sm font-bold">TT</span>} label="TikTok — lien à compléter"/><Social icon={<Linkedin />} label="LinkedIn — lien à compléter"/></div><p className="mt-3 text-xs opacity-75">Liens à compléter</p></div>
+      <div><h2 className="footer-title">Réseaux sociaux</h2><div className="flex gap-2">{socialLinks.map(l => <SocialLink key={l.name} name={l.name} url={l.url} />)}<Social icon={<Linkedin />} label="LinkedIn — lien à compléter"/></div><p className="mt-3 text-xs opacity-75">LinkedIn : lien à compléter</p></div>
     </div>
     <div className="border-t border-primary-foreground/20"><div className="container-shell py-5 text-sm opacity-80">© Les Jardins d’Eleusis — Contenu institutionnel en cours de validation.</div></div>
   </footer>;
 }
+export function TikTokIcon({ className = "" }: { className?: string }) { return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={`h-6 w-6 ${className}`}><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>; }
+export function socialIcon(name: string) { return name === "Facebook" ? <Facebook aria-hidden="true" /> : name === "Instagram" ? <Instagram aria-hidden="true" /> : <TikTokIcon />; }
+function SocialLink({ name, url }: { name: string; url: string }) { return <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Suivre Les Jardins d’Eleusis sur ${name}`} title={name} className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30 transition duration-300 ease-out hover:scale-105 hover:border-primary-foreground/70 hover:bg-primary-foreground/10 motion-reduce:transition-none motion-reduce:hover:scale-100">{socialIcon(name)}</a>; }
 function Social({ icon, label }: { icon: React.ReactNode; label: string }) { return <span className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30" aria-label={label} title={label}>{icon}</span>; }
 
 export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: string; children: React.ReactNode }) { return <section className="page-intro"><div className="container-narrow">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1><div className="mt-5 max-w-3xl text-lg text-muted-foreground">{children}</div></div></section>; }

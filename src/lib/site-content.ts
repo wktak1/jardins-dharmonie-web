@@ -62,3 +62,9 @@ export const faqs = [
 ] as const;
 
 export const documents = ["Dossier d’admission", "Livret d’accueil", "Flyer de l’accueil de jour", "Autres documents utiles"] as const;
+
+export const socialLinks = [
+  { name: "Facebook", url: "https://www.facebook.com/p/EHPAD-Les-Jardins-dEleusis-100078689444383/" },
+  { name: "Instagram", url: "https://www.instagram.com/ehpad_lesjardinsdeleusis/" },
+  { name: "TikTok", url: "https://www.tiktok.com/@ehpadlesjardinsdeleusis" },
+] as const;

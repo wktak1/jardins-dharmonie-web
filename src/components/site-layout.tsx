@@ -1,5 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  Menu,
+  Phone,
+  Mail,
+  MapPin,
+  Download,
+  X,
+  ExternalLink,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
@@ -8,57 +19,314 @@ import { navigation, site } from "@/lib/site-content";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  useEffect(() => { if (open) document.body.style.overflow = "hidden"; else document.body.style.overflow = ""; return () => { document.body.style.overflow = ""; }; }, [open]);
-  return <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur">
-    <div className="border-b border-border bg-secondary/60">
-      <div className="container-shell flex min-h-9 items-center justify-end gap-5 text-sm">
-        <a className="contact-link" href={site.phoneHref}><Phone aria-hidden="true" /> {site.phone}</a>
-        <a className="contact-link hidden sm:inline-flex" href={site.emailHref}><Mail aria-hidden="true" /> {site.email}</a>
+  useEffect(() => {
+    if (open) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+  return (
+    <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur">
+      <div className="border-b border-border bg-secondary/60">
+        <div className="container-shell flex min-h-9 items-center justify-end gap-5 text-sm">
+          <a className="contact-link" href={site.phoneHref}>
+            <Phone aria-hidden="true" /> {site.phone}
+          </a>
+          <a className="contact-link hidden sm:inline-flex" href={site.emailHref}>
+            <Mail aria-hidden="true" /> {site.email}
+          </a>
+        </div>
       </div>
-    </div>
-    <div className="container-shell grid min-h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-      <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Les Jardins d’Eleusis — accueil">
-        <img src={headerLogoAsset.url} alt="" className="h-12 w-auto shrink-0 object-contain object-left" />
-        <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">Les Jardins<br className="sm:hidden" /> d’Eleusis</span>
-      </Link>
-      <div className="flex items-center gap-2">
-        <Button asChild variant="secondary" className="hidden xl:inline-flex"><Link to="/tarifs-admission" hash="documents"><Download />Dossier d’admission</Link></Button>
-        <Button asChild className="hidden sm:inline-flex"><Link to="/contact">Nous contacter</Link></Button>
-        <Button variant="outline" size="icon" className="lg:hidden" onClick={() => setOpen(true)} aria-label="Ouvrir le menu"><Menu /></Button>
+      <div className="container-shell grid min-h-20 grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
+        <Link
+          to="/"
+          className="flex min-w-0 items-center gap-3"
+          aria-label="Les Jardins d’Eleusis — accueil"
+        >
+          <img
+            src={headerLogoAsset.url}
+            alt=""
+            className="h-12 w-auto shrink-0 object-contain object-left"
+          />
+          <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">
+            Les Jardins
+            <br className="sm:hidden" /> d’Eleusis
+          </span>
+        </Link>
+        <div className="flex items-center gap-2">
+          <Button asChild variant="secondary" className="hidden xl:inline-flex">
+            <Link to="/tarifs-admission" hash="documents">
+              <Download />
+              Dossier d’admission
+            </Link>
+          </Button>
+          <Button asChild className="hidden sm:inline-flex">
+            <Link to="/contact">Nous contacter</Link>
+          </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="lg:hidden"
+            onClick={() => setOpen(true)}
+            aria-label="Ouvrir le menu"
+          >
+            <Menu />
+          </Button>
+        </div>
       </div>
-    </div>
-    <nav className="hidden border-t border-border lg:block" aria-label="Navigation principale">
-      <div className="container-shell flex items-center justify-between gap-2 py-2">
-        {navigation.map(item => <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>{item.label}</Link>)}
-      </div>
-    </nav>
-    {open && <div className="fixed inset-0 z-50 min-h-screen bg-background p-5 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
-      <div className="flex items-center justify-between border-b border-border pb-4"><span className="font-display text-xl text-primary">Les Jardins d’Eleusis</span><Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fermer le menu"><X /></Button></div>
-      <nav className="mt-5 grid gap-1" aria-label="Navigation mobile">{navigation.map(item => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-lg font-medium hover:bg-secondary">{item.label}</Link>)}</nav>
-      <div className="mt-6 grid gap-3"><Button asChild><Link to="/contact" onClick={() => setOpen(false)}>Nous contacter</Link></Button><Button asChild variant="secondary"><Link to="/tarifs-admission" hash="documents" onClick={() => setOpen(false)}><Download />Dossier d’admission</Link></Button></div>
-    </div>}
-  </header>;
+      <nav className="hidden border-t border-border lg:block" aria-label="Navigation principale">
+        <div className="container-shell flex items-center justify-between gap-2 py-2">
+          {navigation.map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              activeOptions={{ exact: item.to === "/" }}
+              className="nav-link"
+              activeProps={{ className: "nav-link nav-link-active" }}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </nav>
+      {open && (
+        <div
+          className="fixed inset-0 z-50 min-h-screen bg-background p-5 lg:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu principal"
+        >
+          <div className="flex items-center justify-between border-b border-border pb-4">
+            <span className="font-display text-xl text-primary">Les Jardins d’Eleusis</span>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setOpen(false)}
+              aria-label="Fermer le menu"
+            >
+              <X />
+            </Button>
+          </div>
+          <nav className="mt-5 grid gap-1" aria-label="Navigation mobile">
+            {navigation.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-3 text-lg font-medium hover:bg-secondary"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="mt-6 grid gap-3">
+            <Button asChild>
+              <Link to="/contact" onClick={() => setOpen(false)}>
+                Nous contacter
+              </Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/tarifs-admission" hash="documents" onClick={() => setOpen(false)}>
+                <Download />
+                Dossier d’admission
+              </Link>
+            </Button>
+          </div>
+        </div>
+      )}
+    </header>
+  );
 }
 
 export function SiteFooter() {
-  return <footer className="bg-primary text-primary-foreground">
-    <div className="container-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
-      <div><img src={logoAsset.url} alt="Logo des Jardins d’Eleusis" className="h-20 w-40 rounded-sm object-cover" /><p className="mt-4 text-sm opacity-85">Établissement d’hébergement pour personnes âgées dépendantes à Dumbéa.</p></div>
-      <div><h2 className="footer-title">Coordonnées</h2><address className="not-italic space-y-3 text-sm opacity-90"><p>{site.address}</p><a className="footer-link" href={site.phoneHref}>{site.phone}</a><a className="footer-link" href={site.emailHref}>{site.email}</a></address></div>
-      <div><h2 className="footer-title">Accès rapide</h2><div className="grid gap-2 text-sm"><Link className="footer-link" to="/tarifs-admission" hash="documents">Dossier d’admission</Link><Link className="footer-link" to="/mentions-legales">Mentions légales</Link><Link className="footer-link" to="/politique-confidentialite">Politique de confidentialité</Link><Link className="footer-link" to="/plan-du-site">Plan du site</Link></div></div>
-      <div><h2 className="footer-title">Réseaux sociaux</h2><div className="flex gap-2"><Social icon={<Facebook />} label="Facebook — lien à compléter"/><Social icon={<Instagram />} label="Instagram — lien à compléter"/><Social icon={<span className="text-sm font-bold">TT</span>} label="TikTok — lien à compléter"/><Social icon={<Linkedin />} label="LinkedIn — lien à compléter"/></div><p className="mt-3 text-xs opacity-75">Liens à compléter</p></div>
-    </div>
-    <div className="border-t border-primary-foreground/20"><div className="container-shell py-5 text-sm opacity-80">© Les Jardins d’Eleusis — Contenu institutionnel en cours de validation.</div></div>
-  </footer>;
+  return (
+    <footer className="bg-primary text-primary-foreground">
+      <div className="container-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
+        <div>
+          <img
+            src={logoAsset.url}
+            alt="Logo des Jardins d’Eleusis"
+            className="h-20 w-40 rounded-sm object-cover"
+          />
+          <p className="mt-4 text-sm opacity-85">
+            Établissement d’hébergement pour personnes âgées dépendantes à Dumbéa.
+          </p>
+        </div>
+        <div>
+          <h2 className="footer-title">Coordonnées</h2>
+          <address className="not-italic space-y-3 text-sm opacity-90">
+            <p>{site.address}</p>
+            <a className="footer-link" href={site.phoneHref}>
+              {site.phone}
+            </a>
+            <a className="footer-link" href={site.emailHref}>
+              {site.email}
+            </a>
+          </address>
+        </div>
+        <div>
+          <h2 className="footer-title">Accès rapide</h2>
+          <div className="grid gap-2 text-sm">
+            <Link className="footer-link" to="/tarifs-admission" hash="documents">
+              Dossier d’admission
+            </Link>
+            <Link className="footer-link" to="/mentions-legales">
+              Mentions légales
+            </Link>
+            <Link className="footer-link" to="/politique-confidentialite">
+              Politique de confidentialité
+            </Link>
+            <Link className="footer-link" to="/plan-du-site">
+              Plan du site
+            </Link>
+          </div>
+        </div>
+        <div>
+          <h2 className="footer-title">Réseaux sociaux</h2>
+          <div className="flex gap-2">
+            <Social icon={<Facebook />} label="Facebook — lien à compléter" />
+            <Social icon={<Instagram />} label="Instagram — lien à compléter" />
+            <Social
+              icon={<span className="text-sm font-bold">TT</span>}
+              label="TikTok — lien à compléter"
+            />
+            <Social icon={<Linkedin />} label="LinkedIn — lien à compléter" />
+          </div>
+          <p className="mt-3 text-xs opacity-75">Liens à compléter</p>
+        </div>
+      </div>
+      <div className="border-t border-primary-foreground/20">
+        <div className="container-shell py-5 text-sm opacity-80">
+          © Les Jardins d’Eleusis — Contenu institutionnel en cours de validation.
+        </div>
+      </div>
+    </footer>
+  );
 }
-function Social({ icon, label }: { icon: React.ReactNode; label: string }) { return <span className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30" aria-label={label} title={label}>{icon}</span>; }
+function Social({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <span
+      className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30"
+      aria-label={label}
+      title={label}
+    >
+      {icon}
+    </span>
+  );
+}
 
-export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: string; children: React.ReactNode }) { return <section className="page-intro"><div className="container-narrow">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1><div className="mt-5 max-w-3xl text-lg text-muted-foreground">{children}</div></div></section>; }
+export function PageIntro({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow?: string;
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="page-intro">
+      <div className="container-narrow">
+        {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+        <h1>{title}</h1>
+        <div className="mt-5 max-w-3xl text-lg text-muted-foreground">{children}</div>
+      </div>
+    </section>
+  );
+}
 
-export function MediaPlaceholder({ label, className = "", compact = false }: { label: string; className?: string; compact?: boolean }) { return <div className={`media-placeholder ${compact ? "min-h-44" : "min-h-64"} ${className}`} role="img" aria-label={`${label} — photographie authentique à ajouter`}><div className="media-mark" aria-hidden="true">⌁</div><p>{label}</p><span>Photographie authentique à ajouter</span></div>; }
+export function MediaPlaceholder({
+  label,
+  className = "",
+  compact = false,
+}: {
+  label: string;
+  className?: string;
+  compact?: boolean;
+}) {
+  return (
+    <div
+      className={`media-placeholder ${compact ? "min-h-44" : "min-h-64"} ${className}`}
+      role="img"
+      aria-label={`${label} — photographie authentique à ajouter`}
+    >
+      <div className="media-mark" aria-hidden="true">
+        ⌁
+      </div>
+      <p>{label}</p>
+      <span>Photographie authentique à ajouter</span>
+    </div>
+  );
+}
 
-export function SectionHeading({ eyebrow, title, text }: { eyebrow?: string; title: string; text?: string }) { return <div className="mb-8 max-w-3xl">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h2>{title}</h2>{text && <p className="mt-4 text-muted-foreground">{text}</p>}</div>; }
+export function SectionHeading({
+  eyebrow,
+  title,
+  text,
+}: {
+  eyebrow?: string;
+  title: string;
+  text?: string;
+}) {
+  return (
+    <div className="mb-8 max-w-3xl">
+      {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+      <h2>{title}</h2>
+      {text && <p className="mt-4 text-muted-foreground">{text}</p>}
+    </div>
+  );
+}
 
-export function ContactStrip() { return <section className="bg-accent"><div className="container-shell grid gap-6 py-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-center"><div><h2 className="text-2xl">Une question avant votre visite ?</h2><p className="mt-2 text-accent-foreground/80">L’établissement est joignable par téléphone ou par e-mail.</p></div><div className="flex flex-wrap gap-3"><Button asChild><a href={site.phoneHref}><Phone />{site.phone}</a></Button><Button asChild variant="outline"><a href={site.emailHref}><Mail />Écrire un e-mail</a></Button></div></div></section>; }
+export function ContactStrip() {
+  return (
+    <section className="bg-accent">
+      <div className="container-shell grid gap-6 py-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-center">
+        <div>
+          <h2 className="text-2xl">Une question avant votre visite ?</h2>
+          <p className="mt-2 text-accent-foreground/80">
+            L’établissement est joignable par téléphone ou par e-mail.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <Button asChild>
+            <a href={site.phoneHref}>
+              <Phone />
+              {site.phone}
+            </a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href={site.emailHref}>
+              <Mail />
+              Écrire un e-mail
+            </a>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-export function MapBlock() { return <div className="grid overflow-hidden rounded-lg border border-border bg-card lg:grid-cols-[1.4fr_1fr]"><iframe title="Carte de l’EHPAD Les Jardins d’Eleusis à Dumbéa" src={site.mapsEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-80 w-full border-0 lg:h-full"/><div className="p-7 lg:p-10"><MapPin className="h-8 w-8 text-secondary-foreground"/><h2 className="mt-4 text-2xl">Nous trouver à Dumbéa</h2><p className="mt-3 text-muted-foreground">{site.address}</p><Button asChild className="mt-6"><a href={site.mapsUrl} target="_blank" rel="noreferrer">Ouvrir l’itinéraire <ExternalLink /></a></Button></div></div>; }
+export function MapBlock() {
+  return (
+    <div className="grid overflow-hidden rounded-lg border border-border bg-card lg:grid-cols-[1.4fr_1fr]">
+      <iframe
+        title="Carte de l’EHPAD Les Jardins d’Eleusis à Dumbéa"
+        src={site.mapsEmbed}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="h-80 w-full border-0 lg:h-full"
+      />
+      <div className="p-7 lg:p-10">
+        <MapPin className="h-8 w-8 text-secondary-foreground" />
+        <h2 className="mt-4 text-2xl">Nous trouver à Dumbéa</h2>
+        <p className="mt-3 text-muted-foreground">{site.address}</p>
+        <Button asChild className="mt-6">
+          <a href={site.mapsUrl} target="_blank" rel="noreferrer">
+            Ouvrir l’itinéraire <ExternalLink />
+          </a>
+        </Button>
+      </div>
+    </div>
+  );
+}

@@ -43,8 +43,11 @@ export function VideoPlaceholder() {
         <source src={presentationVideoWebm.url} type="video/webm" />
         <source src={presentationVideo.url} type="video/mp4" />
       </video>
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-primary/70 mix-blend-multiply" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-foreground/35" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-primary/30 mix-blend-multiply" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-foreground/70 via-foreground/20 to-transparent"
+      />
       <div className="container-shell relative py-20 md:py-28">
         <div className="max-w-3xl text-primary-foreground">
           <p className="mb-5 text-sm font-bold uppercase tracking-[.18em] opacity-90">

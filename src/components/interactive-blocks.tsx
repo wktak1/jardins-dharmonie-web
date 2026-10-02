@@ -7,6 +7,8 @@ import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.ass
 import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
 import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
+import galerieExterieurJardin from "@/assets/galerie-exterieur-jardin.jpg.asset.json";
+import galerieExterieurBatiment from "@/assets/galerie-exterieur-batiment.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);

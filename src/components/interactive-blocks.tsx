@@ -6,6 +6,7 @@ import { galleryCategories } from "@/lib/site-content";
 import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.asset.json";
 import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
+import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -87,13 +88,20 @@ export function VideoPlaceholder() {
   );
 }
 
-const galleryItems = [
-  "Extérieurs",
-  "Espaces communs",
-  "Chambres",
-  "Activités",
-  "Repas",
-  "Événements",
+type GalleryItem = { category: string; photo?: { src: string; alt: string } };
+const galleryItems: GalleryItem[] = [
+  { category: "Extérieurs" },
+  { category: "Espaces communs" },
+  {
+    category: "Chambres",
+    photo: {
+      src: galerieChambre1.url,
+      alt: "Chambre des Jardins d’Eleusis avec lit médicalisé, fauteuil et armoire",
+    },
+  },
+  { category: "Activités" },
+  { category: "Repas" },
+  { category: "Événements" },
 ];
 export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");

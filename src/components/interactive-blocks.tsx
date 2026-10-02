@@ -107,7 +107,7 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");
   const [selected, setSelected] = useState<number | null>(null);
   const visible = galleryItems
-    .map((category, index) => ({ category, index }))
+    .map((item, index) => ({ ...item, index }))
     .filter((x) => filter === "Tout voir" || x.category === filter)
     .slice(0, preview ? 5 : undefined);
   useEffect(() => {
@@ -139,7 +139,11 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
         {visible.map(({ category, photo, index }, displayIndex) => (
           <button
             key={category}
-            className={`media-placeholder min-h-64 cursor-pointer overflow-hidden rounded-lg p-0 ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`}
+            className={
+              photo
+                ? `group cursor-pointer overflow-hidden rounded-lg border border-border bg-muted text-center ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
+                : `media-placeholder min-h-64 cursor-pointer rounded-lg ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
+            }
             onClick={() => setSelected(index)}
             aria-label={
               photo

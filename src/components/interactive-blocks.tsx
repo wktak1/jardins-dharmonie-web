@@ -190,9 +190,7 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
                 <>
                   <div className="media-mark mx-auto">⌁</div>
                   <h2 className="mt-4 text-2xl">{galleryItems[selected].category}</h2>
-                  <p className="mt-2 text-muted-foreground">
-                    Photographie authentique à ajouter
-                  </p>
+                  <p className="mt-2 text-muted-foreground">Photographie authentique à ajouter</p>
                 </>
               )}
               {galleryItems[selected].photo && (

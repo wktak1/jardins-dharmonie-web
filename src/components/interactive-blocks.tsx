@@ -110,7 +110,34 @@ const galleryItems: GalleryItem[] = [
       alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de massifs fleuris",
     },
   },
-  { category: "Espaces communs" },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunSalon.url,
+      alt: "Salon commun des Jardins d’Eleusis avec piano, tables et cartes du monde au mur",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunCoiffure.url,
+      alt: "Salon de coiffure des Jardins d’Eleusis avec poste de coiffure et bac à shampoing",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunSalleAManger.url,
+      alt: "Salle à manger des Jardins d’Eleusis avec table dressée donnant sur la fontaine du jardin",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunHall.url,
+      alt: "Hall d’accueil des Jardins d’Eleusis avec aquarium, panneaux d’information et sièges",
+    },
+  },
   {
     category: "Chambres",
     photo: {

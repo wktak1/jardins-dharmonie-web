@@ -103,7 +103,7 @@ const galleryItems: GalleryItem[] = [
     category: "Extérieurs",
     photo: {
       src: galerieExterieurBatiment.url,
-      alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de jardiniers fleuris",
+      alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de massifs fleuris",
     },
   },
   { category: "Espaces communs" },

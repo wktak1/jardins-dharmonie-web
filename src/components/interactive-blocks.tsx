@@ -136,16 +136,34 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
         ))}
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map(({ category, index }, displayIndex) => (
+        {visible.map(({ category, photo, index }, displayIndex) => (
           <button
             key={category}
-            className={`media-placeholder min-h-64 cursor-pointer rounded-lg ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`}
+            className={`media-placeholder min-h-64 cursor-pointer overflow-hidden rounded-lg p-0 ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`}
             onClick={() => setSelected(index)}
-            aria-label={`Ouvrir l’emplacement photo : ${category}`}
+            aria-label={
+              photo
+                ? `Agrandir la photographie : ${category}`
+                : `Ouvrir l’emplacement photo : ${category}`
+            }
           >
-            <div className="media-mark">⌁</div>
-            <p>{category}</p>
-            <span>Photographie authentique à ajouter</span>
+            {photo ? (
+              <>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-64 w-full object-cover"
+                />
+                <p className="py-3 font-bold">{category}</p>
+              </>
+            ) : (
+              <>
+                <div className="media-mark">⌁</div>
+                <p>{category}</p>
+                <span>Photographie authentique à ajouter</span>
+              </>
+            )}
           </button>
         ))}
       </div>
@@ -157,10 +175,25 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
           aria-label="Visionneuse"
         >
           <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
-            <div className="text-center">
-              <div className="media-mark mx-auto">⌁</div>
-              <h2 className="text-2xl">{galleryItems[selected]}</h2>
-              <p className="mt-2 text-muted-foreground">Photographie authentique à ajouter</p>
+            <div className="w-full px-6 text-center">
+              {galleryItems[selected].photo ? (
+                <img
+                  src={galleryItems[selected].photo!.src}
+                  alt={galleryItems[selected].photo!.alt}
+                  className="mx-auto max-h-[58vh] w-auto max-w-full rounded-lg object-contain"
+                />
+              ) : (
+                <>
+                  <div className="media-mark mx-auto">⌁</div>
+                  <h2 className="mt-4 text-2xl">{galleryItems[selected].category}</h2>
+                  <p className="mt-2 text-muted-foreground">
+                    Photographie authentique à ajouter
+                  </p>
+                </>
+              )}
+              {galleryItems[selected].photo && (
+                <h2 className="mt-4 text-2xl">{galleryItems[selected].category}</h2>
+              )}
             </div>
             <Button
               size="icon"

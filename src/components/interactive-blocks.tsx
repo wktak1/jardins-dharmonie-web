@@ -233,8 +233,9 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
               <ChevronRight />
             </Button>
           </div>
-        </div>
-      )}
+            </div>
+          );
+        })()}
     </>
   );
 }

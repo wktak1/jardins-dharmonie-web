@@ -6,6 +6,7 @@ import { galleryCategories } from "@/lib/site-content";
 import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.asset.json";
 import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
+import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -87,19 +88,26 @@ export function VideoPlaceholder() {
   );
 }
 
-const galleryItems = [
-  "Extérieurs",
-  "Espaces communs",
-  "Chambres",
-  "Activités",
-  "Repas",
-  "Événements",
+type GalleryItem = { category: string; photo?: { src: string; alt: string } };
+const galleryItems: GalleryItem[] = [
+  { category: "Extérieurs" },
+  { category: "Espaces communs" },
+  {
+    category: "Chambres",
+    photo: {
+      src: galerieChambre1.url,
+      alt: "Chambre des Jardins d’Eleusis avec lit médicalisé, fauteuil et armoire",
+    },
+  },
+  { category: "Activités" },
+  { category: "Repas" },
+  { category: "Événements" },
 ];
 export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");
   const [selected, setSelected] = useState<number | null>(null);
   const visible = galleryItems
-    .map((category, index) => ({ category, index }))
+    .map((item, index) => ({ ...item, index }))
     .filter((x) => filter === "Tout voir" || x.category === filter)
     .slice(0, preview ? 5 : undefined);
   useEffect(() => {
@@ -128,64 +136,106 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
         ))}
       </div>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map(({ category, index }, displayIndex) => (
+        {visible.map(({ category, photo, index }, displayIndex) => (
           <button
             key={category}
-            className={`media-placeholder min-h-64 cursor-pointer rounded-lg ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`}
+            className={
+              photo
+                ? `group cursor-pointer overflow-hidden rounded-lg border border-border bg-muted text-center ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
+                : `media-placeholder min-h-64 cursor-pointer rounded-lg ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
+            }
             onClick={() => setSelected(index)}
-            aria-label={`Ouvrir l’emplacement photo : ${category}`}
+            aria-label={
+              photo
+                ? `Agrandir la photographie : ${category}`
+                : `Ouvrir l’emplacement photo : ${category}`
+            }
           >
-            <div className="media-mark">⌁</div>
-            <p>{category}</p>
-            <span>Photographie authentique à ajouter</span>
+            {photo ? (
+              <>
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
+                <p className="py-3 font-bold text-foreground">{category}</p>
+              </>
+            ) : (
+              <>
+                <div className="media-mark">⌁</div>
+                <p>{category}</p>
+                <span>Photographie authentique à ajouter</span>
+              </>
+            )}
           </button>
         ))}
       </div>
-      {selected !== null && (
-        <div
-          className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Visionneuse"
-        >
-          <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
-            <div className="text-center">
-              <div className="media-mark mx-auto">⌁</div>
-              <h2 className="text-2xl">{galleryItems[selected]}</h2>
-              <p className="mt-2 text-muted-foreground">Photographie authentique à ajouter</p>
+      {selected !== null &&
+        (() => {
+          const item = galleryItems[selected];
+          if (!item) return null;
+          return (
+            <div
+              className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Visionneuse"
+            >
+              <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
+                <div className="w-full px-6 text-center">
+                  {item.photo ? (
+                    <>
+                      <img
+                        src={item.photo.src}
+                        alt={item.photo.alt}
+                        className="mx-auto max-h-[56vh] w-auto max-w-full rounded-lg object-contain"
+                      />
+                      <h2 className="mt-4 text-2xl">{item.category}</h2>
+                    </>
+                  ) : (
+                    <>
+                      <div className="media-mark mx-auto">⌁</div>
+                      <h2 className="mt-4 text-2xl">{item.category}</h2>
+                      <p className="mt-2 text-muted-foreground">
+                        Photographie authentique à ajouter
+                      </p>
+                    </>
+                  )}
+                </div>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute right-3 top-3"
+                  onClick={() => setSelected(null)}
+                  aria-label="Fermer"
+                >
+                  <X />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute left-3"
+                  onClick={() =>
+                    setSelected((selected - 1 + galleryItems.length) % galleryItems.length)
+                  }
+                  aria-label="Image précédente"
+                >
+                  <ChevronLeft />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute right-3"
+                  onClick={() => setSelected((selected + 1) % galleryItems.length)}
+                  aria-label="Image suivante"
+                >
+                  <ChevronRight />
+                </Button>
+              </div>
             </div>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute right-3 top-3"
-              onClick={() => setSelected(null)}
-              aria-label="Fermer"
-            >
-              <X />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute left-3"
-              onClick={() =>
-                setSelected((selected - 1 + galleryItems.length) % galleryItems.length)
-              }
-              aria-label="Image précédente"
-            >
-              <ChevronLeft />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute right-3"
-              onClick={() => setSelected((selected + 1) % galleryItems.length)}
-              aria-label="Image suivante"
-            >
-              <ChevronRight />
-            </Button>
-          </div>
-        </div>
-      )}
+          );
+        })()}
     </>
   );
 }

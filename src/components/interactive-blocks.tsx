@@ -203,36 +203,36 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
                     </>
                   )}
                 </div>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute right-3 top-3"
-              onClick={() => setSelected(null)}
-              aria-label="Fermer"
-            >
-              <X />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute left-3"
-              onClick={() =>
-                setSelected((selected - 1 + galleryItems.length) % galleryItems.length)
-              }
-              aria-label="Image précédente"
-            >
-              <ChevronLeft />
-            </Button>
-            <Button
-              size="icon"
-              variant="outline"
-              className="absolute right-3"
-              onClick={() => setSelected((selected + 1) % galleryItems.length)}
-              aria-label="Image suivante"
-            >
-              <ChevronRight />
-            </Button>
-          </div>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute right-3 top-3"
+                  onClick={() => setSelected(null)}
+                  aria-label="Fermer"
+                >
+                  <X />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute left-3"
+                  onClick={() =>
+                    setSelected((selected - 1 + galleryItems.length) % galleryItems.length)
+                  }
+                  aria-label="Image précédente"
+                >
+                  <ChevronLeft />
+                </Button>
+                <Button
+                  size="icon"
+                  variant="outline"
+                  className="absolute right-3"
+                  onClick={() => setSelected((selected + 1) % galleryItems.length)}
+                  aria-label="Image suivante"
+                >
+                  <ChevronRight />
+                </Button>
+              </div>
             </div>
           );
         })()}

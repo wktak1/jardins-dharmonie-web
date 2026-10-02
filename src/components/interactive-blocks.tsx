@@ -7,6 +7,8 @@ import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.ass
 import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
 import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
+import galerieExterieurJardin from "@/assets/galerie-exterieur-jardin.jpg.asset.json";
+import galerieExterieurBatiment from "@/assets/galerie-exterieur-batiment.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -90,7 +92,20 @@ export function VideoPlaceholder() {
 
 type GalleryItem = { category: string; photo?: { src: string; alt: string } };
 const galleryItems: GalleryItem[] = [
-  { category: "Extérieurs" },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurJardin.url,
+      alt: "Passerelle en bois au milieu des palmiers dans les jardins des Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurBatiment.url,
+      alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de massifs fleuris",
+    },
+  },
   { category: "Espaces communs" },
   {
     category: "Chambres",

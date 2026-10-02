@@ -9,6 +9,10 @@ import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg
 import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
 import galerieExterieurJardin from "@/assets/galerie-exterieur-jardin.jpg.asset.json";
 import galerieExterieurBatiment from "@/assets/galerie-exterieur-batiment.jpg.asset.json";
+import galerieCommunSalon from "@/assets/galerie-commun-salon.jpg.asset.json";
+import galerieCommunCoiffure from "@/assets/galerie-commun-coiffure.jpg.asset.json";
+import galerieCommunSalleAManger from "@/assets/galerie-commun-salle-a-manger.jpg.asset.json";
+import galerieCommunHall from "@/assets/galerie-commun-hall.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);

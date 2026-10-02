@@ -92,7 +92,20 @@ export function VideoPlaceholder() {
 
 type GalleryItem = { category: string; photo?: { src: string; alt: string } };
 const galleryItems: GalleryItem[] = [
-  { category: "Extérieurs" },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurJardin.url,
+      alt: "Passerelle en bois au milieu des palmiers dans les jardins des Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurBatiment.url,
+      alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de jardiniers fleuris",
+    },
+  },
   { category: "Espaces communs" },
   {
     category: "Chambres",

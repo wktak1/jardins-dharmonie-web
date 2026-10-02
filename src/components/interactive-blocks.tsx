@@ -157,9 +157,9 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
                   src={photo.src}
                   alt={photo.alt}
                   loading="lazy"
-                  className="h-64 w-full object-cover"
+                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
-                <p className="py-3 font-bold">{category}</p>
+                <p className="py-3 font-bold text-foreground">{category}</p>
               </>
             ) : (
               <>

@@ -171,32 +171,38 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
           </button>
         ))}
       </div>
-      {selected !== null && (
-        <div
-          className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Visionneuse"
-        >
-          <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
-            <div className="w-full px-6 text-center">
-              {galleryItems[selected].photo ? (
-                <img
-                  src={galleryItems[selected].photo!.src}
-                  alt={galleryItems[selected].photo!.alt}
-                  className="mx-auto max-h-[58vh] w-auto max-w-full rounded-lg object-contain"
-                />
-              ) : (
-                <>
-                  <div className="media-mark mx-auto">⌁</div>
-                  <h2 className="mt-4 text-2xl">{galleryItems[selected].category}</h2>
-                  <p className="mt-2 text-muted-foreground">Photographie authentique à ajouter</p>
-                </>
-              )}
-              {galleryItems[selected].photo && (
-                <h2 className="mt-4 text-2xl">{galleryItems[selected].category}</h2>
-              )}
-            </div>
+      {selected !== null &&
+        (() => {
+          const item = galleryItems[selected];
+          if (!item) return null;
+          return (
+            <div
+              className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4"
+              role="dialog"
+              aria-modal="true"
+              aria-label="Visionneuse"
+            >
+              <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
+                <div className="w-full px-6 text-center">
+                  {item.photo ? (
+                    <>
+                      <img
+                        src={item.photo.src}
+                        alt={item.photo.alt}
+                        className="mx-auto max-h-[56vh] w-auto max-w-full rounded-lg object-contain"
+                      />
+                      <h2 className="mt-4 text-2xl">{item.category}</h2>
+                    </>
+                  ) : (
+                    <>
+                      <div className="media-mark mx-auto">⌁</div>
+                      <h2 className="mt-4 text-2xl">{item.category}</h2>
+                      <p className="mt-2 text-muted-foreground">
+                        Photographie authentique à ajouter
+                      </p>
+                    </>
+                  )}
+                </div>
             <Button
               size="icon"
               variant="outline"

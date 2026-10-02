@@ -184,7 +184,7 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map(({ category, photo, index }, displayIndex) => (
           <button
-            key={category}
+            key={`${category}-${index}`}
             className={
               photo
                 ? `group cursor-pointer overflow-hidden rounded-lg border border-border bg-muted text-center ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`

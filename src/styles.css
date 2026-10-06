@@ -65,8 +65,8 @@
 
 :root {
   --radius: 0.5rem;
-  --hero-watermark-opacity: 0.06;
-  --hero-watermark-mobile-opacity: 0.04;
+  --hero-watermark-opacity: 0.11;
+  --hero-watermark-mobile-opacity: 0.07;
   --background: oklch(0.985 0.012 92);
   --foreground: oklch(0.27 0.02 65);
   --card: oklch(0.998 0.005 92);
@@ -183,7 +183,7 @@
   position: absolute;
   right: clamp(2.5rem, 9vw, 7rem);
   bottom: -3rem;
-  width: min(34%, 25rem);
+  width: min(36%, 27rem);
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
@@ -195,7 +195,7 @@
 
 @media (max-width: 639px) {
   .page-intro-watermark {
-    width: 13rem;
+    width: 14rem;
     right: 1.25rem;
     bottom: -2rem;
     opacity: var(--hero-watermark-mobile-opacity);

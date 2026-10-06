@@ -47,18 +47,36 @@ export const dailyLife = [
 export const galleryCategories = ["Tout voir", "Extérieurs", "Espaces communs", "Chambres", "Activités", "Repas", "Événements"] as const;
 
 export const faqs = [
-  "Comment déposer un dossier d’admission ?",
-  "Quels documents faut-il fournir ?",
-  "Quels types d’accueil proposez-vous ?",
-  "Proposez-vous un hébergement temporaire ?",
-  "Comment fonctionne l’accueil de jour ?",
-  "Peut-on visiter l’établissement avant une admission ?",
-  "Que peut apporter un résident dans sa chambre ?",
-  "Comment se déroulent les repas ?",
-  "Quelles activités sont proposées ?",
-  "Comment contacter un résident ?",
-  "Quels sont les horaires de visite ?",
-  "Comment sont calculés les tarifs ?",
+  {
+    question: "Puis-je bénéficier d’aides ? Comment en faire la demande ?",
+    answer:
+      "Selon votre situation et vos revenus, des aides peuvent vous être allouées. Le détail des aides existantes et des organismes à solliciter est en cours de validation avec l’établissement — Contenu à compléter. En attendant, l’accueil peut vous orienter dans vos démarches : contactez-nous au 29 85 00 ou par e-mail à accueil@eleusis.nc.",
+  },
+  {
+    question: "Quelles sont les prestations incluses dans le tarif ?",
+    answer:
+      "Le tarif d’hébergement couvre l’ensemble des prestations hôtelières : votre chambre (individuelle ou double selon l’unité), l’eau et l’électricité, la restauration — avec des repas préparés sur place —, la fourniture et l’entretien du linge, également réalisé sur place, ainsi que l’entretien de votre chambre et des locaux communs et les activités d’animation. Le tarif dépendance couvre, lui, l’aide et la surveillance nécessaires à l’accomplissement des actes de la vie quotidienne, l’animation et l’aide à la vie quotidienne et sociale, ainsi que, selon les besoins, la fourniture de protections. Il est fixé en fonction du niveau de dépendance de la personne. La liste définitive des prestations incluses sera précisée dans la grille tarifaire officielle de l’établissement — Tarifs à compléter.",
+  },
+  {
+    question: "Puis-je réserver une chambre ?",
+    answer:
+      "Les modalités de réservation d’une chambre (contrat de réservation, documents et conditions demandés) sont en cours de définition avec l’établissement — Contenu à compléter. Pour toute demande ou pour connaître les disponibilités, contactez l’accueil au 29 85 00 ou écrivez à accueil@eleusis.nc.",
+  },
+  {
+    question: "Quels sont les documents à fournir pour constituer un dossier d’entrée ?",
+    answer: "Pour constituer un dossier d’entrée, vous serez amené à fournir les documents suivants :",
+    items: [
+      "Une pièce d’identité",
+      "Les justificatifs de revenus",
+      "Le dernier avis d’imposition",
+      "La carte de mutuelle",
+      "L’attestation CAFAT",
+      "Un relevé d’identité bancaire (RIB)",
+      "L’ordonnance en cours",
+      "Les derniers résultats d’analyses",
+      "Une copie du jugement en cas de mesure de protection",
+    ],
+  },
 ] as const;
 
 export const documents = ["Dossier d’admission", "Livret d’accueil", "Flyer de l’accueil de jour", "Autres documents utiles"] as const;

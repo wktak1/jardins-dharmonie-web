@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
 import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
+import heroLogoAsset from "@/assets/jardins-eleusis-hero-logo.png.asset.json";
 import { navigation, site, socialLinks } from "@/lib/site-content";
 
 export function SiteHeader() {
@@ -56,7 +57,7 @@ export function socialIcon(name: string) { return name === "Facebook" ? <Faceboo
 function SocialLink({ name, url }: { name: string; url: string }) { return <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Suivre Les Jardins d’Eleusis sur ${name}`} title={name} className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30 transition duration-300 ease-out hover:scale-105 hover:border-primary-foreground/70 hover:bg-primary-foreground/10 motion-reduce:transition-none motion-reduce:hover:scale-100">{socialIcon(name)}</a>; }
 function Social({ icon, label }: { icon: React.ReactNode; label: string }) { return <span className="grid h-11 w-11 place-items-center rounded-full border border-primary-foreground/30" aria-label={label} title={label}>{icon}</span>; }
 
-export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: string; children: React.ReactNode }) { return <section className="page-intro"><div className="container-narrow">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1><div className="mt-5 max-w-3xl text-lg text-muted-foreground">{children}</div></div></section>; }
+export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: string; children: React.ReactNode }) { return <section className="page-intro relative isolate overflow-hidden"><img src={heroLogoAsset.url} alt="" aria-hidden="true" width={768} height={768} className="page-intro-watermark" /><div className="container-narrow relative z-10">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1><div className="mt-5 max-w-3xl text-lg text-muted-foreground">{children}</div></div></section>; }
 
 export function MediaPlaceholder({ label, className = "", compact = false }: { label: string; className?: string; compact?: boolean }) { return <div className={`media-placeholder ${compact ? "min-h-44" : "min-h-64"} ${className}`} role="img" aria-label={`${label} — photographie authentique à ajouter`}><div className="media-mark" aria-hidden="true">⌁</div><p>{label}</p><span>Photographie authentique à ajouter</span></div>; }
 

@@ -65,6 +65,8 @@
 
 :root {
   --radius: 0.5rem;
+  --hero-watermark-opacity: 0.06;
+  --hero-watermark-mobile-opacity: 0.04;
   --background: oklch(0.985 0.012 92);
   --foreground: oklch(0.27 0.02 65);
   --card: oklch(0.998 0.005 92);
@@ -176,5 +178,28 @@
 .unit-card li svg { margin-top: .25rem; width: 1rem; height: 1rem; flex-shrink: 0; color: var(--color-primary); }
 .media-placeholder p { font-weight: 700; color: var(--color-foreground); }
 .media-placeholder span { font-size: .82rem; }
+
+.page-intro-watermark {
+  position: absolute;
+  right: -3rem;
+  bottom: -4rem;
+  width: min(38%, 28rem);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  opacity: var(--hero-watermark-opacity);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 639px) {
+  .page-intro-watermark {
+    width: 15rem;
+    right: -3.5rem;
+    bottom: -3rem;
+    opacity: var(--hero-watermark-mobile-opacity);
+  }
+}
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

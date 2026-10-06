@@ -6,8 +6,10 @@ export const site = {
   phoneHref: "tel:+687298500",
   email: "accueil@eleusis.nc",
   emailHref: "mailto:accueil@eleusis.nc",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie",
-  mapsEmbed: "https://www.google.com/maps?q=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie&output=embed",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie",
+  mapsEmbed:
+    "https://www.google.com/maps?q=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie&output=embed",
 } as const;
 
 export const navigation = [
@@ -22,29 +24,79 @@ export const navigation = [
 ] as const;
 
 export const solutions = [
-  { title: "Hébergement permanent", text: "Une solution d’accueil au sein de l’établissement. Les conditions d’accès et modalités sont à compléter après validation." },
-  { title: "Hébergement temporaire", text: "Un accueil temporaire peut être proposé. Les durées, conditions d’accès et disponibilités sont à confirmer auprès de l’établissement." },
-  { title: "Accueil de jour", text: "Un accueil en journée est proposé. Son fonctionnement et ses conditions d’accès seront précisés après validation." },
+  {
+    title: "Hébergement permanent",
+    text: "Une solution d’accueil au sein de l’établissement. Les conditions d’accès et modalités sont à compléter après validation.",
+  },
+  {
+    title: "Hébergement temporaire",
+    text: "Un accueil temporaire peut être proposé. Les durées, conditions d’accès et disponibilités sont à confirmer auprès de l’établissement.",
+  },
+  {
+    title: "Accueil de jour",
+    text: "Un accueil en journée est proposé. Son fonctionnement et ses conditions d’accès seront précisés après validation.",
+  },
 ] as const;
 
 export const units = [
-  { name: "Les Niaoulis", year: "2013", places: "40 places", rooms: "Chambres individuelles et doubles", bathroom: "Salle de bain partagée", detail: "" },
-  { name: "Les Fougères", year: "2019", places: "26 places", rooms: "Chambres individuelles", bathroom: "Salle de bain privative", detail: "" },
-  { name: "Les Terrasses", year: "2019", places: "14 places", rooms: "Chambres individuelles", bathroom: "Salle de bain privative", detail: "Unité UHR" },
+  {
+    name: "Les Niaoulis",
+    year: "2013",
+    places: "40 places",
+    rooms: "Chambres individuelles et doubles",
+    bathroom: "Salle de bain partagée",
+    detail: "",
+  },
+  {
+    name: "Les Fougères",
+    year: "2019",
+    places: "26 places",
+    rooms: "Chambres individuelles",
+    bathroom: "Salle de bain privative",
+    detail: "",
+  },
+  {
+    name: "Les Terrasses",
+    year: "2019",
+    places: "14 places",
+    rooms: "Chambres individuelles",
+    bathroom: "Salle de bain privative",
+    detail: "Unité UHR",
+  },
 ] as const;
 
 export const dailyLife = [
   { title: "Les repas", text: "Les repas sont préparés sur place par une cuisinière dédiée." },
   { title: "Le linge", text: "Le service de lingerie est réalisé sur place." },
-  { title: "Les activités et animations", text: "Programme et informations à compléter avec l’établissement." },
-  { title: "Les espaces communs", text: "Présentation des espaces à compléter avec les textes et photographies authentiques." },
-  { title: "Les chambres", text: "Présentation détaillée à compléter avec les photographies authentiques des unités." },
+  {
+    title: "Les activités et animations",
+    text: "Programme et informations à compléter avec l’établissement.",
+  },
+  {
+    title: "Les espaces communs",
+    text: "Présentation des espaces à compléter avec les textes et photographies authentiques.",
+  },
+  {
+    title: "Les chambres",
+    text: "Présentation détaillée à compléter avec les photographies authentiques des unités.",
+  },
   { title: "Les jardins et espaces extérieurs", text: "Présentation du cadre de vie à compléter." },
   { title: "Les moments de convivialité", text: "Contenu à compléter avec l’établissement." },
-  { title: "L’accompagnement au quotidien", text: "Contenu à compléter après validation, sans présentation de prestations non confirmées." },
+  {
+    title: "L’accompagnement au quotidien",
+    text: "Contenu à compléter après validation, sans présentation de prestations non confirmées.",
+  },
 ] as const;
 
-export const galleryCategories = ["Tout voir", "Extérieurs", "Espaces communs", "Chambres", "Activités", "Repas", "Événements"] as const;
+export const galleryCategories = [
+  "Tout voir",
+  "Extérieurs",
+  "Espaces communs",
+  "Chambres",
+  "Activités",
+  "Repas",
+  "Événements",
+] as const;
 
 export const faqs = [
   {
@@ -64,7 +116,8 @@ export const faqs = [
   },
   {
     question: "Quels sont les documents à fournir pour constituer un dossier d’entrée ?",
-    answer: "Pour constituer un dossier d’entrée, vous serez amené à fournir les documents suivants :",
+    answer:
+      "Pour constituer un dossier d’entrée, vous serez amené à fournir les documents suivants :",
     items: [
       "Une pièce d’identité",
       "Les justificatifs de revenus",
@@ -79,10 +132,18 @@ export const faqs = [
   },
 ] as const;
 
-export const documents = ["Dossier d’admission", "Livret d’accueil", "Flyer de l’accueil de jour", "Autres documents utiles"] as const;
+export const documents = [
+  "Dossier d’admission",
+  "Livret d’accueil",
+  "Flyer de l’accueil de jour",
+  "Autres documents utiles",
+] as const;
 
 export const socialLinks = [
-  { name: "Facebook", url: "https://www.facebook.com/p/EHPAD-Les-Jardins-dEleusis-100078689444383/" },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/p/EHPAD-Les-Jardins-dEleusis-100078689444383/",
+  },
   { name: "Instagram", url: "https://www.instagram.com/ehpad_lesjardinsdeleusis/" },
   { name: "TikTok", url: "https://www.tiktok.com/@ehpadlesjardinsdeleusis" },
 ] as const;

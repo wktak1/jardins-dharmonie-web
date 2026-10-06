@@ -7,3 +7,4 @@
 - [x] Ajouter les métadonnées propres à chaque page et conserver robots.txt
 - [ ] Ajouter sitemap.xml — bloqué jusqu’à l’obtention de l’adresse publique définitive
 - [x] Vérifier le rendu ordinateur et mobile ainsi que les interactions
+- [ ] Ajouter et vérifier le filigrane du logo dans les ouvertures sans photo ni vidéo uniquement

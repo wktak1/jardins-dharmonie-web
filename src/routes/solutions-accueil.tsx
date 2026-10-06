@@ -9,6 +9,7 @@ import {
 import { SolutionsGrid } from "@/components/content-blocks";
 import { routeHead } from "@/components/route-meta";
 import { units } from "@/lib/site-content";
+import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
 export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(
@@ -43,7 +44,16 @@ function Page() {
             {units.map((u, i) => (
               <article className="grid gap-8 lg:grid-cols-2 lg:items-center" key={u.name}>
                 <div className={i % 2 ? "lg:order-2" : ""}>
-                  <MediaPlaceholder label={`Photo principale — ${u.name}`} />
+                  {u.name === "Les Fougères" ? (
+                    <img
+                      src={fougeresPhoto.url}
+                      alt="Patio arboré de l’unité Les Fougères avec ses coursives sur deux niveaux"
+                      loading="lazy"
+                      className="h-64 w-full rounded-lg object-cover sm:h-80"
+                    />
+                  ) : (
+                    <MediaPlaceholder label={`Photo principale — ${u.name}`} />
+                  )}
                   <div className="mt-3 grid grid-cols-3 gap-3">
                     <MediaPlaceholder label="Vue 1" compact />
                     <MediaPlaceholder label="Vue 2" compact />

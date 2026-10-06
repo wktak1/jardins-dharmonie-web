@@ -181,9 +181,9 @@
 
 .page-intro-watermark {
   position: absolute;
-  right: -3rem;
-  bottom: -4rem;
-  width: min(38%, 28rem);
+  right: clamp(2.5rem, 9vw, 7rem);
+  bottom: -3rem;
+  width: min(34%, 25rem);
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
@@ -195,9 +195,9 @@
 
 @media (max-width: 639px) {
   .page-intro-watermark {
-    width: 15rem;
-    right: -3.5rem;
-    bottom: -3rem;
+    width: 13rem;
+    right: 1.25rem;
+    bottom: -2rem;
     opacity: var(--hero-watermark-mobile-opacity);
   }
 }

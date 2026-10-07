@@ -14,16 +14,16 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
       {solutions.map((item, i) => {
         const open = expandable && openTitle === item.title;
         return (
-          <article className="bg-card p-7" key={item.title}>
+          <article className={expandable ? "flex flex-col bg-card p-7" : "bg-card p-7"} key={item.title}>
             <span className="feature-icon">{icons[i]}</span>
             <h3 className="mt-5 text-xl">{item.title}</h3>
             <p className="mt-3 text-muted-foreground">{item.text}</p>
             {expandable ? (
-              <>
+              <div className="mt-auto pt-5">
                 <button
                   aria-controls={`solution-details-${i}`}
                   aria-expanded={open}
-                  className="text-link mt-5 w-fit underline-offset-4 hover:underline"
+                  className="text-link w-fit underline-offset-4 hover:underline"
                   onClick={() => setOpenTitle(open ? null : item.title)}
                   type="button"
                 >
@@ -44,7 +44,7 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
                     </div>
                   </div>
                 </div>
-              </>
+              </div>
             ) : (
               <Link className="text-link mt-5" to="/solutions-accueil">
                 En savoir plus <ArrowRight />

@@ -18,6 +18,9 @@ import galerieCommunSalon from "@/assets/galerie-commun-salon.jpg.asset.json";
 import galerieCommunCoiffure from "@/assets/galerie-commun-coiffure.jpg.asset.json";
 import galerieCommunSalleAManger from "@/assets/galerie-commun-salle-a-manger.jpg.asset.json";
 import galerieCommunHall from "@/assets/galerie-commun-hall.jpg.asset.json";
+import galerieCommunTerrasseKiosque from "@/assets/galerie-commun-terrasse-kiosque.jpg.asset.json";
+import galerieCommunAlleeKiosques from "@/assets/galerie-commun-allee-kiosques.jpg.asset.json";
+import galerieCommunOmbrageKiosque from "@/assets/galerie-commun-ombrage-kiosque.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -176,6 +179,27 @@ const galleryItems: GalleryItem[] = [
     photo: {
       src: galerieCommunHall.url,
       alt: "Hall d’accueil des Jardins d’Eleusis avec aquarium, panneaux d’information et sièges",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunTerrasseKiosque.url,
+      alt: "Kiosque en bois avec table et chaises sous les arbres tropicaux aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunAlleeKiosques.url,
+      alt: "Allée ombragée entre les kiosques et le bassin aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunOmbrageKiosque.url,
+      alt: "Terrasse ombragée avec kiosque en bois et table de jardin aux Jardins d’Eleusis",
     },
   },
   {

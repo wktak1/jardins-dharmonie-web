@@ -18,6 +18,9 @@ import galerieCommunSalon from "@/assets/galerie-commun-salon.jpg.asset.json";
 import galerieCommunCoiffure from "@/assets/galerie-commun-coiffure.jpg.asset.json";
 import galerieCommunSalleAManger from "@/assets/galerie-commun-salle-a-manger.jpg.asset.json";
 import galerieCommunHall from "@/assets/galerie-commun-hall.jpg.asset.json";
+import galerieCommunTerrasseKiosque from "@/assets/galerie-commun-terrasse-kiosque.jpg.asset.json";
+import galerieCommunAlleeKiosques from "@/assets/galerie-commun-allee-kiosques.jpg.asset.json";
+import galerieCommunOmbrageKiosque from "@/assets/galerie-commun-ombrage-kiosque.jpg.asset.json";
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);

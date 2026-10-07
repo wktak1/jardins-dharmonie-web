@@ -93,9 +93,6 @@ export const galleryCategories = [
   "Extérieurs",
   "Espaces communs",
   "Chambres",
-  "Activités",
-  "Repas",
-  "Événements",
 ] as const;
 
 export const faqs = [

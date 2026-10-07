@@ -182,6 +182,27 @@ const galleryItems: GalleryItem[] = [
     },
   },
   {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunTerrasseKiosque.url,
+      alt: "Kiosque en bois avec table et chaises sous les arbres tropicaux aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunAlleeKiosques.url,
+      alt: "Allée ombragée entre les kiosques et le bassin aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Espaces communs",
+    photo: {
+      src: galerieCommunOmbrageKiosque.url,
+      alt: "Terrasse ombragée avec kiosque en bois et table de jardin aux Jardins d’Eleusis",
+    },
+  },
+  {
     category: "Chambres",
     photo: {
       src: galerieChambre1.url,

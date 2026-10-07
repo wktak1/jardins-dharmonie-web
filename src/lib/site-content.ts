@@ -146,4 +146,5 @@ export const socialLinks = [
   },
   { name: "Instagram", url: "https://www.instagram.com/ehpad_lesjardinsdeleusis/" },
   { name: "TikTok", url: "https://www.tiktok.com/@ehpadlesjardinsdeleusis" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/ehpad-les-jardins-d-eleusis-b5b4b3318/" },
 ] as const;

@@ -63,7 +63,6 @@ function Page() {
                 </li>
               ))}
             </ul>
-            <p className="mt-2 text-muted-foreground">LinkedIn : lien à compléter.</p>
           </div>
         </div>
       </section>

@@ -10,16 +10,16 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
   const [openTitle, setOpenTitle] = useState<string | null>(null);
 
   return (
-    <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3">
+    <div className={expandable ? "grid items-start gap-6 md:grid-cols-3" : "grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3"}>
       {solutions.map((item, i) => {
         const open = expandable && openTitle === item.title;
         return (
-          <article className={expandable ? "flex flex-col bg-card p-7" : "bg-card p-7"} key={item.title}>
+          <article className={expandable ? "unit-card p-7" : "bg-card p-7"} key={item.title}>
             <span className="feature-icon">{icons[i]}</span>
             <h3 className="mt-5 text-xl">{item.title}</h3>
             <p className="mt-3 text-muted-foreground">{item.text}</p>
             {expandable ? (
-              <div className="mt-auto pt-5">
+              <div className="mt-5">
                 <button
                   aria-controls={`solution-details-${i}`}
                   aria-expanded={open}

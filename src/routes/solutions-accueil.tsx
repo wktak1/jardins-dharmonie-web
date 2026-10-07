@@ -35,7 +35,7 @@ function Page() {
       </PageIntro>
       <section className="section-pad">
         <div className="container-shell">
-          <SolutionsGrid />
+          <SolutionsGrid expandable />
         </div>
       </section>
       <section className="section-pad bg-muted">

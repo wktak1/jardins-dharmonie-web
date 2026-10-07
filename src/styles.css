@@ -179,6 +179,24 @@
 .media-placeholder p { font-weight: 700; color: var(--color-foreground); }
 .media-placeholder span { font-size: .82rem; }
 
+/* Panneau « En savoir plus » des cartes de solutions : ouverture en douceur. */
+.solution-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms ease;
+}
+.solution-details > div {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.solution-details[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+.solution-details[data-open="true"] > div {
+  opacity: 1;
+}
+
 .page-intro-watermark {
   position: absolute;
   right: clamp(2.5rem, 9vw, 7rem);

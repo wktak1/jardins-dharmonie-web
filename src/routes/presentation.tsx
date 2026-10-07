@@ -47,10 +47,7 @@ function Page() {
   return (
     <>
       <PageIntro eyebrow="Les Jardins d’Eleusis" title="Présentation">
-        <p>
-          Les Jardins d’Eleusis est un établissement privé au cadre verdoyant et
-          tropical : un lieu privilégié, calme et reposant, à Dumbéa.
-        </p>
+        <p>Les Jardins d’Eleusis est un établissement privé à Dumbéa.</p>
       </PageIntro>
 
       <section className="section-pad">
@@ -62,7 +59,8 @@ function Page() {
             <strong className="font-semibold text-foreground">Les Niaoulis</strong>,{" "}
             <strong className="font-semibold text-foreground">Les Fougères</strong> et{" "}
             <strong className="font-semibold text-foreground">Les Terrasses</strong>, pour
-            une capacité de <strong className="font-semibold text-foreground">80 places</strong>.
+            une capacité de{" "}
+            <strong className="font-semibold text-foreground">80 places</strong>.
           </p>
           <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
             {facts.map((fact) => (
@@ -81,18 +79,21 @@ function Page() {
         <div className="container-shell grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
             <h2>Nous trouver</h2>
+            <p className="mt-4 text-muted-foreground">
+              Son cadre verdoyant et tropical en fait un lieu privilégié, calme et
+              reposant.
+            </p>
             <div className="mt-5 rounded-lg border-l-4 border-secondary bg-card p-7">
               <MapPin aria-hidden="true" className="h-7 w-7 text-secondary-foreground" />
               <p className="mt-3 text-lg font-semibold text-foreground">
                 364 Bis, route de Koé à Dumbéa
               </p>
-              <p className="mt-3 text-muted-foreground">
-                Son cadre verdoyant et tropical en fait un lieu privilégié, calme et
-                reposant.
-              </p>
             </div>
           </div>
-          <MediaPlaceholder label="Photographie du cadre de vie" />
+          <MediaPlaceholder
+            className="min-h-56 lg:min-h-72"
+            label="Photographie du cadre de vie"
+          />
         </div>
       </section>
 

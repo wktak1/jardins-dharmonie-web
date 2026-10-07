@@ -47,7 +47,10 @@ function Page() {
   return (
     <>
       <PageIntro eyebrow="Les Jardins d’Eleusis" title="Présentation">
-        <p>Les Jardins d’Eleusis est un établissement privé à Dumbéa.</p>
+        <p>
+          Quelques repères pour découvrir l’établissement, son cadre de vie et les
+          services proposés sur place.
+        </p>
       </PageIntro>
 
       <section className="section-pad">

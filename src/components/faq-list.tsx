@@ -39,16 +39,19 @@ function renderAnswer(answer: string): ReactNode[] {
   let cursor = 0;
   let key = 0;
   for (const match of answer.matchAll(LINK_RE)) {
+    const label = match[1];
+    const href = match[2];
+    if (!label || !href) continue;
     if (match.index > cursor) {
       nodes.push(...renderBold(answer.slice(cursor, match.index), `t-${key}`));
     }
     nodes.push(
       <a
         key={`l-${key++}`}
-        href={match[2]}
+        href={href}
         className="font-semibold text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
       >
-        {renderBold(match[1], `lt-${key}`)}
+        {renderBold(label, `lt-${key}`)}
       </a>,
     );
     cursor = match.index + match[0].length;

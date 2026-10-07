@@ -27,14 +27,29 @@ export const solutions = [
   {
     title: "Hébergement permanent",
     text: "Une solution d’accueil au sein de l’établissement. Les conditions d’accès et modalités sont à compléter après validation.",
+    details: [
+      "Conditions d’accès : Contenu à compléter.",
+      "Durée et conditions de séjour : Contenu à compléter.",
+      "Documents à fournir : Contenu à compléter.",
+    ],
   },
   {
     title: "Hébergement temporaire",
     text: "Un accueil temporaire peut être proposé. Les durées, conditions d’accès et disponibilités sont à confirmer auprès de l’établissement.",
+    details: [
+      "Durées proposées : Contenu à compléter.",
+      "Conditions d’accès et disponibilités : Contenu à compléter.",
+      "Modalités pratiques : Contenu à compléter.",
+    ],
   },
   {
     title: "Accueil de jour",
     text: "Un accueil en journée est proposé. Son fonctionnement et ses conditions d’accès seront précisés après validation.",
+    details: [
+      "Jours et horaires d’accueil : Contenu à compléter.",
+      "Conditions d’accès : Contenu à compléter.",
+      "Déroulement d’une journée : Contenu à compléter.",
+    ],
   },
 ] as const;
 

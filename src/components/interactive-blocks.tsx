@@ -146,139 +146,114 @@ const galleryItems: GalleryItem[] = [
     },
   },
 ];
+const mosaicHeights = ["h-80", "h-60", "h-72", "h-64", "h-96", "h-60", "h-72"];
 export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");
   const [selected, setSelected] = useState<number | null>(null);
   const visible = galleryItems
     .map((item, index) => ({ ...item, index }))
-    .filter((x) => filter === "Tout voir" || x.category === filter)
+    .filter((x) => x.photo && (filter === "Tout voir" || x.category === filter))
     .slice(0, preview ? 5 : undefined);
+  const count = visible.length;
+  const go = (d: number) =>
+    setSelected((s) => (s === null ? s : (s + d + count) % count));
   useEffect(() => {
     if (selected === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelected(null);
-      if (e.key === "ArrowRight") setSelected((selected + 1) % galleryItems.length);
-      if (e.key === "ArrowLeft")
-        setSelected((selected - 1 + galleryItems.length) % galleryItems.length);
+      if (e.key === "ArrowRight") go(1);
+      if (e.key === "ArrowLeft") go(-1);
     };
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [selected]);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [selected, count]);
+  const current = selected !== null ? visible[selected] : null;
   return (
     <>
-      <div className="mb-7 flex flex-wrap gap-2" aria-label="Filtrer la galerie">
-        {galleryCategories.map((cat) => (
-          <Button
-            key={cat}
-            size="sm"
-            variant={filter === cat ? "default" : "outline"}
-            onClick={() => setFilter(cat)}
-          >
-            {cat}
-          </Button>
-        ))}
+      <div className="mb-8 flex flex-wrap gap-2" role="group" aria-label="Filtrer la galerie">
+        {galleryCategories.map((cat) => {
+          const active = filter === cat;
+          return (
+            <button
+              key={cat}
+              type="button"
+              aria-pressed={active}
+              onClick={() => {
+                setFilter(cat);
+                setSelected(null);
+              }}
+              className={`rounded-full border px-4 py-1.5 text-sm font-medium tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                active
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground"
+              }`}
+            >
+              {cat}
+            </button>
+          );
+        })}
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map(({ category, photo, index }, displayIndex) => (
+      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {visible.map(({ category, photo, index }, i) => (
           <button
             key={`${category}-${index}`}
-            className={
-              photo
-                ? `group cursor-pointer overflow-hidden rounded-lg border border-border bg-muted text-center ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
-                : `media-placeholder min-h-64 cursor-pointer rounded-lg ${preview && displayIndex === 0 ? "sm:col-span-2" : ""}`
-            }
-            onClick={() => setSelected(index)}
-            aria-label={
-              photo
-                ? `Agrandir la photographie : ${category}`
-                : `Ouvrir l’emplacement photo : ${category}`
-            }
+            type="button"
+            onClick={() => setSelected(i)}
+            aria-label={`Agrandir la photographie : ${category}`}
+            className="group relative mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-xl bg-muted shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            {photo ? (
-              <>
-                <img
-                  src={photo.src}
-                  alt={photo.alt}
-                  loading="lazy"
-                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                />
-                <p className="py-3 font-bold text-foreground">{category}</p>
-              </>
-            ) : (
-              <>
-                <div className="media-mark">⌁</div>
-                <p>{category}</p>
-                <span>Photographie authentique à ajouter</span>
-              </>
-            )}
+            <img
+              src={photo!.src}
+              alt={photo!.alt}
+              loading="lazy"
+              className={`${mosaicHeights[i % mosaicHeights.length]} w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
+            />
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-foreground/40 to-transparent" />
+            <span className="absolute bottom-3 left-3 rounded-full bg-background/80 px-3 py-1 text-xs font-semibold tracking-wide text-foreground backdrop-blur-sm">
+              {category}
+            </span>
           </button>
         ))}
       </div>
-      {selected !== null &&
-        (() => {
-          const item = galleryItems[selected];
-          if (!item) return null;
-          return (
-            <div
-              className="fixed inset-0 z-50 grid place-items-center bg-foreground/90 p-4"
-              role="dialog"
-              aria-modal="true"
-              aria-label="Visionneuse"
-            >
-              <div className="relative flex h-[70vh] w-full max-w-5xl items-center justify-center rounded-lg bg-background">
-                <div className="w-full px-6 text-center">
-                  {item.photo ? (
-                    <>
-                      <img
-                        src={item.photo.src}
-                        alt={item.photo.alt}
-                        className="mx-auto max-h-[56vh] w-auto max-w-full rounded-lg object-contain"
-                      />
-                      <h2 className="mt-4 text-2xl">{item.category}</h2>
-                    </>
-                  ) : (
-                    <>
-                      <div className="media-mark mx-auto">⌁</div>
-                      <h2 className="mt-4 text-2xl">{item.category}</h2>
-                      <p className="mt-2 text-muted-foreground">
-                        Photographie authentique à ajouter
-                      </p>
-                    </>
-                  )}
-                </div>
-                <Button
-                  size="icon"
-                  variant="outline"
-                  className="absolute right-3 top-3"
-                  onClick={() => setSelected(null)}
-                  aria-label="Fermer"
-                >
-                  <X />
-                </Button>
-                <Button
-                  size="icon"
-                  variant="outline"
-                  className="absolute left-3"
-                  onClick={() =>
-                    setSelected((selected - 1 + galleryItems.length) % galleryItems.length)
-                  }
-                  aria-label="Image précédente"
-                >
-                  <ChevronLeft />
-                </Button>
-                <Button
-                  size="icon"
-                  variant="outline"
-                  className="absolute right-3"
-                  onClick={() => setSelected((selected + 1) % galleryItems.length)}
-                  aria-label="Image suivante"
-                >
-                  <ChevronRight />
-                </Button>
-              </div>
-            </div>
-          );
-        })()}
+      {current && current.photo && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-foreground/90 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Visionneuse"
+          onClick={() => setSelected(null)}
+        >
+          <figure className="flex max-w-6xl flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            <img
+              src={current.photo.src}
+              alt={current.photo.alt}
+              className="max-h-[78vh] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+            />
+            <figcaption className="mt-4 flex items-center gap-3 text-sm text-background/90">
+              <span className="rounded-full bg-background/15 px-3 py-1 font-semibold">{current.category}</span>
+              <span>{selected! + 1} / {count}</span>
+            </figcaption>
+          </figure>
+          <button type="button" onClick={() => setSelected(null)} aria-label="Fermer" className="absolute right-4 top-4 grid size-11 place-items-center rounded-full bg-background/15 text-background transition-colors hover:bg-background/30">
+            <X />
+          </button>
+          {count > 1 && (
+            <>
+              <button type="button" onClick={(e) => { e.stopPropagation(); go(-1); }} aria-label="Image précédente" className="absolute left-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-background/15 text-background transition-colors hover:bg-background/30 sm:left-6">
+                <ChevronLeft />
+              </button>
+              <button type="button" onClick={(e) => { e.stopPropagation(); go(1); }} aria-label="Image suivante" className="absolute right-3 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-background/15 text-background transition-colors hover:bg-background/30 sm:right-6">
+                <ChevronRight />
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </>
   );
 }

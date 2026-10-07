@@ -14,6 +14,7 @@ export const site = {
 
 export const navigation = [
   { label: "Accueil", to: "/" },
+  { label: "Présentation", to: "/presentation" },
   { label: "L’établissement", to: "/etablissement" },
   { label: "Nos solutions d’accueil", to: "/solutions-accueil" },
   { label: "La vie au quotidien", to: "/vie-quotidien" },

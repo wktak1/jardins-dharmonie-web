@@ -145,9 +145,6 @@ const galleryItems: GalleryItem[] = [
       alt: "Chambre des Jardins d’Eleusis avec lit médicalisé, fauteuil et armoire",
     },
   },
-  { category: "Activités" },
-  { category: "Repas" },
-  { category: "Événements" },
 ];
 export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");

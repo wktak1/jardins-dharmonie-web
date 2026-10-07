@@ -52,6 +52,13 @@ function Page() {
                       loading="lazy"
                       className="h-64 w-full rounded-lg object-cover sm:h-80"
                     />
+                  ) : u.name === "Les Niaoulis" ? (
+                    <img
+                      src={niaoulisPhoto.url}
+                      alt="Terrasse fleurie de l’unité Les Niaoulis avec ses garde-corps verts et ses jardinières"
+                      loading="lazy"
+                      className="h-64 w-full rounded-lg object-cover sm:h-80"
+                    />
                   ) : (
                     <MediaPlaceholder label={`Photo principale — ${u.name}`} />
                   )}

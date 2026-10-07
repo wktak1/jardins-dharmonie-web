@@ -17,6 +17,7 @@ import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as PlanDuSiteRouteImport } from './routes/plan-du-site'
 import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
+import { Route as PresentationRouteImport } from './routes/presentation'
 import { Route as SolutionsAccueilRouteImport } from './routes/solutions-accueil'
 import { Route as TarifsAdmissionRouteImport } from './routes/tarifs-admission'
 import { Route as VieQuotidienRouteImport } from './routes/vie-quotidien'
@@ -62,6 +63,11 @@ const PolitiqueConfidentialiteRoute =
     path: '/politique-confidentialite',
     getParentRoute: () => rootRouteImport,
   } as any)
+const PresentationRoute = PresentationRouteImport.update({
+  id: '/presentation',
+  path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SolutionsAccueilRoute = SolutionsAccueilRouteImport.update({
   id: '/solutions-accueil',
   path: '/solutions-accueil',
@@ -87,6 +93,7 @@ export interface FileRoutesByFullPath {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/presentation': typeof PresentationRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -100,6 +107,7 @@ export interface FileRoutesByTo {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/presentation': typeof PresentationRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -114,6 +122,7 @@ export interface FileRoutesById {
   '/mentions-legales': typeof MentionsLegalesRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
+  '/presentation': typeof PresentationRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -129,6 +138,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/plan-du-site'
     | '/politique-confidentialite'
+    | '/presentation'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -142,6 +152,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/plan-du-site'
     | '/politique-confidentialite'
+    | '/presentation'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -155,6 +166,7 @@ export interface FileRouteTypes {
     | '/mentions-legales'
     | '/plan-du-site'
     | '/politique-confidentialite'
+    | '/presentation'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -169,6 +181,7 @@ export interface RootRouteChildren {
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PlanDuSiteRoute: typeof PlanDuSiteRoute
   PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
+  PresentationRoute: typeof PresentationRoute
   SolutionsAccueilRoute: typeof SolutionsAccueilRoute
   TarifsAdmissionRoute: typeof TarifsAdmissionRoute
   VieQuotidienRoute: typeof VieQuotidienRoute
@@ -232,6 +245,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PolitiqueConfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/presentation': {
+      id: '/presentation'
+      path: '/presentation'
+      fullPath: '/presentation'
+      preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/solutions-accueil': {
       id: '/solutions-accueil'
       path: '/solutions-accueil'
@@ -265,6 +285,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionsLegalesRoute: MentionsLegalesRoute,
   PlanDuSiteRoute: PlanDuSiteRoute,
   PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
+  PresentationRoute: PresentationRoute,
   SolutionsAccueilRoute: SolutionsAccueilRoute,
   TarifsAdmissionRoute: TarifsAdmissionRoute,
   VieQuotidienRoute: VieQuotidienRoute,

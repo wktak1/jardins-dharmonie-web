@@ -9,6 +9,11 @@ import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg
 import galerieChambre1 from "@/assets/galerie-chambre-1.jpg.asset.json";
 import galerieExterieurJardin from "@/assets/galerie-exterieur-jardin.jpg.asset.json";
 import galerieExterieurBatiment from "@/assets/galerie-exterieur-batiment.jpg.asset.json";
+import galerieExterieurBassin from "@/assets/galerie-exterieur-bassin.jpg.asset.json";
+import galerieExterieurKiosqueAllee from "@/assets/galerie-exterieur-kiosque-allee.jpg.asset.json";
+import galerieExterieurAlleePalmiers from "@/assets/galerie-exterieur-allee-palmiers.jpg.asset.json";
+import galerieExterieurKiosqueFleuri from "@/assets/galerie-exterieur-kiosque-fleuri.jpg.asset.json";
+import galerieExterieurJardinTropical from "@/assets/galerie-exterieur-jardin-tropical.jpg.asset.json";
 import galerieCommunSalon from "@/assets/galerie-commun-salon.jpg.asset.json";
 import galerieCommunCoiffure from "@/assets/galerie-commun-coiffure.jpg.asset.json";
 import galerieCommunSalleAManger from "@/assets/galerie-commun-salle-a-manger.jpg.asset.json";
@@ -108,6 +113,41 @@ const galleryItems: GalleryItem[] = [
     photo: {
       src: galerieExterieurBatiment.url,
       alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de massifs fleuris",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurBassin.url,
+      alt: "Bassin aux poissons entouré de plantes tropicales au pied du bâtiment aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurKiosqueAllee.url,
+      alt: "Kiosque vert et allée bordée de palmiers dans le jardin aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurAlleePalmiers.url,
+      alt: "Allée enherbée bordée de grands palmiers aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurKiosqueFleuri.url,
+      alt: "Kiosque ombragé près d’un massif fleuri aux Jardins d’Eleusis",
+    },
+  },
+  {
+    category: "Extérieurs",
+    photo: {
+      src: galerieExterieurJardinTropical.url,
+      alt: "Jardin tropical arboré avec un abri en bois aux Jardins d’Eleusis",
     },
   },
   {

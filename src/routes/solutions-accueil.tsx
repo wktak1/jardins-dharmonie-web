@@ -10,6 +10,7 @@ import { SolutionsGrid } from "@/components/content-blocks";
 import { routeHead } from "@/components/route-meta";
 import { units } from "@/lib/site-content";
 import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
+import niaoulisPhoto from "@/assets/unite-niaoulis-1.jpg.asset.json";
 export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(

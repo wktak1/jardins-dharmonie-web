@@ -146,7 +146,6 @@ const galleryItems: GalleryItem[] = [
     },
   },
 ];
-const mosaicHeights = ["h-80", "h-60", "h-72", "h-64", "h-96", "h-60", "h-72"];
 export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
   const [filter, setFilter] = useState("Tout voir");
   const [selected, setSelected] = useState<number | null>(null);
@@ -198,23 +197,24 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
           );
         })}
       </div>
-      <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
         {visible.map(({ category, photo, index }, i) => (
           <button
             key={`${category}-${index}`}
             type="button"
             onClick={() => setSelected(i)}
             aria-label={`Agrandir la photographie : ${category}`}
-            className="group relative mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden rounded-xl bg-muted shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="group relative block aspect-[4/5] w-full cursor-zoom-in overflow-hidden rounded-lg bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
             <img
               src={photo!.src}
               alt={photo!.alt}
               loading="lazy"
-              className={`${mosaicHeights[i % mosaicHeights.length]} w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
+              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100`}
             />
-            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-foreground/40 to-transparent" />
-            <span className="absolute bottom-3 left-3 rounded-full bg-background/80 px-3 py-1 text-xs font-semibold tracking-wide text-foreground backdrop-blur-sm">
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/30 to-transparent transition-opacity duration-500 lg:opacity-0" />
+            <span className="pointer-events-none absolute inset-0 bg-foreground/0 transition-colors duration-500 lg:group-hover:bg-foreground/25" />
+            <span className="pointer-events-none absolute bottom-4 left-4 text-[0.7rem] font-medium uppercase tracking-[0.2em] text-background drop-shadow transition-all duration-500 lg:translate-y-2 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 lg:group-focus-visible:translate-y-0 lg:group-focus-visible:opacity-100">
               {category}
             </span>
           </button>
@@ -222,7 +222,7 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
       </div>
       {current && current.photo && (
         <div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-foreground/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-foreground/95 p-4 sm:p-10"
           role="dialog"
           aria-modal="true"
           aria-label="Visionneuse"
@@ -232,7 +232,7 @@ export function GalleryBrowser({ preview = false }: { preview?: boolean }) {
             <img
               src={current.photo.src}
               alt={current.photo.alt}
-              className="max-h-[78vh] w-auto max-w-full rounded-xl object-contain shadow-2xl"
+              className="max-h-[84vh] w-auto max-w-full rounded-md object-contain shadow-2xl"
             />
             <figcaption className="mt-4 flex items-center gap-3 text-sm text-background/90">
               <span className="rounded-full bg-background/15 px-3 py-1 font-semibold">{current.category}</span>

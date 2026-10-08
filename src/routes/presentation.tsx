@@ -28,19 +28,9 @@ function Page() {
         </p>
       </PageIntro>
 
-      <section className="section-pad">
-        <div className="container-shell grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-14 lg:gap-y-12">
-          <img
-            src={aerialAsset.url}
-            alt="Vue aérienne des bâtiments de l’EHPAD Les Jardins d’Eleusis, entourés d’une végétation tropicale"
-            width={1920}
-            height={1440}
-            loading="lazy"
-            decoding="async"
-            className={`${imageFrame} lg:col-span-5 lg:col-start-8 lg:row-start-1`}
-          />
-
-          <div className="space-y-5 lg:col-span-6 lg:col-start-1 lg:row-span-2 lg:row-start-1">
+      <section className="py-10 md:py-14 lg:py-16">
+        <div className="mx-auto grid w-full max-w-[1500px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-12 xl:px-12">
+          <div className="space-y-5 lg:col-span-5">
             <p className="text-lg leading-relaxed text-foreground/90 md:text-xl">
               Les Jardins d’Eleusis est un établissement privé. Il est composé de deux
               bâtiments avec trois secteurs :{" "}
@@ -73,15 +63,26 @@ function Page() {
             </p>
           </div>
 
-          <img
-            src={gardenAsset.url}
-            alt="Jardin intérieur de l’EHPAD : allée paysagère, fougères arborescentes et palmiers, avec les montagnes en arrière-plan"
-            width={1920}
-            height={1440}
-            loading="lazy"
-            decoding="async"
-            className={`${imageFrame} lg:col-span-5 lg:col-start-8 lg:row-start-2`}
-          />
+          <div className="grid gap-5 sm:grid-cols-5 lg:col-span-7">
+            <img
+              src={aerialAsset.url}
+              alt="Vue aérienne des bâtiments de l’EHPAD Les Jardins d’Eleusis, entourés d’une végétation tropicale"
+              width={1920}
+              height={1440}
+              loading="lazy"
+              decoding="async"
+              className={`${imageFrame} sm:col-span-3 sm:aspect-auto sm:h-full sm:min-h-[26rem] lg:min-h-[34rem]`}
+            />
+            <img
+              src={gardenAsset.url}
+              alt="Jardin intérieur de l’EHPAD : allée paysagère, fougères arborescentes et palmiers, avec les montagnes en arrière-plan"
+              width={1920}
+              height={1440}
+              loading="lazy"
+              decoding="async"
+              className={`${imageFrame} sm:col-span-2 sm:aspect-auto sm:h-full sm:min-h-[26rem] lg:min-h-[34rem]`}
+            />
+          </div>
         </div>
       </section>
 

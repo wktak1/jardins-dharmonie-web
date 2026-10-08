@@ -1,5 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { Button } from "@/components/ui/button";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   ContactStrip,
   MediaPlaceholder,
@@ -11,7 +10,7 @@ export const Route = createFileRoute("/etablissement")({
   head: () =>
     routeHead(
       "L’établissement",
-      "Découvrez l’histoire, la localisation et les espaces de l’EHPAD Les Jardins d’Eleusis à Dumbéa.",
+      "Découvrez l’histoire de l’EHPAD Les Jardins d’Eleusis à Dumbéa, de l’ouverture des Niaoulis en 2013 à celle des Fougères et des Terrasses en 2019.",
       "/etablissement",
     ),
   staticData: { sitemap: true },
@@ -49,29 +48,11 @@ function Page() {
           </div>
         </div>
       </section>
-      <section className="section-pad wood-plank">
-        <div className="container-shell grid gap-8 rounded-3xl bg-card/90 p-6 shadow-sm ring-1 ring-wood/30 sm:p-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <h2>Les espaces</h2>
-            <p className="mt-4 text-muted-foreground">
-              Présentation générale des espaces — Contenu à compléter.
-            </p>
-            <Button asChild className="mt-6">
-              <Link to="/galerie">Découvrir la galerie</Link>
-            </Button>
-          </div>
-          <MediaPlaceholder label="Vue générale des espaces" />
-        </div>
-      </section>
       <section className="section-pad">
-        <div className="container-shell grid gap-6 md:grid-cols-2">
+        <div className="container-shell">
           <div className="rounded-2xl border-l-4 border-wood bg-wood-soft p-7">
             <h2 className="text-2xl">Les valeurs des Jardins d’Eleusis</h2>
             <p className="mt-3 text-muted-foreground">Contenu à compléter après validation.</p>
-          </div>
-          <div className="rounded-2xl border border-wood/40 bg-card p-7">
-            <h2 className="text-2xl">Mot de la direction</h2>
-            <p className="mt-3 text-muted-foreground">Contenu à compléter.</p>
           </div>
         </div>
       </section>

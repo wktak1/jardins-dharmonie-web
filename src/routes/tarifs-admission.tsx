@@ -12,13 +12,12 @@ export const Route = createFileRoute("/tarifs-admission")({
 function Page() {
   return (
     <>
-      <PageIntro eyebrow="Tarifs et admission" title="Tarifs et admission" />
+      <PageIntro title="Tarifs et admission">{null}</PageIntro>
       <section className="section-pad">
         <div className="container-narrow max-w-3xl">
           <div>
-            <h2 className="text-3xl md:text-4xl">Concernant nos tarifs</h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              <strong className="text-foreground">Concernant nos tarifs</strong>, nous vous invitons à nous contacter au{" "}
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+              <strong className="font-semibold text-foreground">Concernant nos tarifs</strong>, nous vous invitons à nous contacter au{" "}
               <a className="text-link font-semibold" href="tel:+687298500">29.85.00</a> ou par e-mail à{" "}
               <a className="text-link font-semibold" href="mailto:accueil@eleusis.nc">accueil@eleusis.nc</a>{" "}
               afin d’obtenir un devis personnalisé, adapté à votre situation et au type d’hébergement souhaité.

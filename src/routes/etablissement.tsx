@@ -35,7 +35,7 @@ function Page() {
                 src={niaoulis2013.url}
                 alt="Façade du bâtiment des Niaoulis, couleur pêche, bordée d’une coursive surélevée et d’un jardin tropical fleuri."
                 loading="lazy"
-                className="h-64 w-full rounded-lg object-cover"
+                className="h-64 w-full rounded-lg object-cover object-[50%_38%]"
               />
               <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2013</p>
               <p className="eyebrow mt-5">2013</p>

@@ -31,7 +31,7 @@ function Page() {
       <section className="py-10 md:py-14 lg:py-16">
         <div className="mx-auto grid w-full max-w-[1500px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-12 xl:px-12">
           <div className="space-y-5 lg:col-span-5">
-            <p className="text-lg leading-relaxed text-foreground/90 md:text-xl">
+            <p className="text-lg leading-relaxed text-foreground/90">
               Les Jardins d’Eleusis est un établissement privé. Il est composé de deux
               bâtiments avec trois secteurs :{" "}
               <strong className="font-semibold">Les Niaoulis</strong>,{" "}

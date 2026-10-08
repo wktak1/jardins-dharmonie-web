@@ -30,9 +30,8 @@ function Page() {
 
       <section className="py-10 md:py-14 lg:py-16">
         <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-8 xl:px-12">
-        <div className="relative overflow-hidden border border-border bg-card shadow-[0_32px_64px_-12px_color-mix(in_oklab,var(--color-foreground)_10%,transparent)]">
-        <div aria-hidden="true" className="wood-slats absolute inset-y-0 right-0 hidden w-28 sm:block md:w-36 lg:w-56" />
-        <div className="relative grid gap-8 px-5 py-10 sm:px-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-14 lg:py-16">
+        <div className="bg-card shadow-[0_32px_64px_-12px_color-mix(in_oklab,var(--color-foreground)_10%,transparent)]">
+        <div className="grid gap-8 px-5 py-10 sm:px-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-14 lg:py-16">
           <div className="space-y-5 lg:col-span-5">
             <p className="text-lg leading-relaxed text-foreground/90">
               Les Jardins d’Eleusis est un établissement privé. Il est composé de deux
@@ -88,7 +87,6 @@ function Page() {
           </div>
         </div>
         </div>
-        <div aria-hidden="true" className="h-1 w-full bg-wood/30" />
         </div>
       </section>
 

@@ -37,7 +37,7 @@ function Page() {
                 loading="lazy"
                 className="h-64 w-full rounded-lg object-cover object-[50%_38%]"
               />
-              <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2013</p>
+              <div className="mt-2 min-h-4" aria-hidden="true" />
               <p className="eyebrow mt-5">2013</p>
               <h3 className="mt-2 text-2xl">Ouverture des Niaoulis</h3>
               <p className="mt-3 text-muted-foreground">

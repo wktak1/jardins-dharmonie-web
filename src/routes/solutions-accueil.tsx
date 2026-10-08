@@ -95,13 +95,6 @@ function Page() {
                       </li>
                     )}
                   </ul>
-                  <div className="mt-6 border-l-4 border-secondary pl-5">
-                    <p>Description : Contenu à compléter.</p>
-                    <p className="mt-2">Prestations spécifiques : Contenu à compléter.</p>
-                  </div>
-                  <Button asChild className="mt-7">
-                    <a href="mailto:accueil@eleusis.nc">Contacter l’établissement</a>
-                  </Button>
                 </div>
               </article>
             ))}

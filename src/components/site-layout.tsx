@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
 import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
 import heroLogoAsset from "@/assets/jardins-eleusis-hero-logo.png.asset.json";

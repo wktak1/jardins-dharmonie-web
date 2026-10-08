@@ -51,7 +51,7 @@ function Page() {
                 loading="lazy"
                 className="h-64 w-full rounded-lg object-cover"
               />
-              <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2019</p>
+              <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne</p>
               <p className="eyebrow mt-5">2019</p>
               <h3 className="mt-2 text-2xl">Ouverture des Fougères et des Terrasses</h3>
               <p className="mt-3 text-muted-foreground">

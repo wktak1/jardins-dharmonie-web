@@ -120,9 +120,9 @@ export const galleryCategories = [
 
 export const faqs = [
   {
-    question: "Puis-je bénéficier d’aides ? Comment en faire la demande ?",
+    question: "Puis-je bénéficier d’aides financières ?",
     answer:
-      "Selon votre situation et vos revenus, des aides peuvent vous être allouées. Le détail des aides existantes et des organismes à solliciter est en cours de validation avec l’établissement — Contenu à compléter. En attendant, l’accueil peut vous orienter dans vos démarches : contactez-nous au 29 85 00 ou par e-mail à accueil@eleusis.nc.",
+      "Selon votre situation, différentes aides peuvent être envisagées. Le **Pôle Gérontologique**, joignable au [**24.66.99**](tel:+687246699), peut vous renseigner sur les dispositifs existants et vous accompagner dans vos démarches.",
   },
   {
     question: "Quelles sont les prestations incluses dans le tarif ?",

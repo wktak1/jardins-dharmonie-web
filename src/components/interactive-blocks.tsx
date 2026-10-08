@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { admissionDossier, galleryCategories } from "@/lib/site-content";
@@ -24,21 +24,6 @@ import galerieCommunOmbrageKiosque from "@/assets/galerie-commun-ombrage-kiosque
 
 export function VideoPlaceholder() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const toggle = async () => {
-    const video = videoRef.current;
-    if (!video) return;
-    if (video.paused) {
-      try {
-        await video.play();
-      } catch {
-        setPlaying(false);
-      }
-    } else {
-      video.pause();
-      setPlaying(false);
-    }
-  };
   return (
     <section className="relative isolate flex min-h-[78vh] items-center overflow-hidden bg-primary md:min-h-[85vh]">
       <video
@@ -50,8 +35,6 @@ export function VideoPlaceholder() {
         playsInline
         preload="metadata"
         controls={false}
-        onPlaying={() => setPlaying(true)}
-        onPause={() => setPlaying(false)}
         aria-label="Vidéo de présentation des Jardins d’Eleusis"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
       >
@@ -88,15 +71,6 @@ export function VideoPlaceholder() {
             </Button>
           </div>
         </div>
-        <Button
-          onClick={toggle}
-          variant="secondary"
-          size="icon"
-          className="absolute bottom-6 right-6 shadow-lg"
-          aria-label={playing ? "Mettre la vidéo en pause" : "Lancer la vidéo"}
-        >
-          {playing ? <Pause /> : <Play />}
-        </Button>
       </div>
     </section>
   );

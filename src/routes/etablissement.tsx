@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ContactStrip,
-  MediaPlaceholder,
   PageIntro,
   SectionHeading,
 } from "@/components/site-layout";
 import aerial2013 from "@/assets/vue-aerienne-2013.jpg.asset.json";
+import aerialView from "@/assets/presentation-vue-aerienne.jpg.asset.json";
 import { routeHead } from "@/components/route-meta";
 export const Route = createFileRoute("/etablissement")({
   head: () =>
@@ -35,7 +35,7 @@ function Page() {
                 src={aerial2013.url}
                 alt="Photographie aérienne de l’établissement en 2013 : toits blancs et bleus entourés d’un jardin tropical arboré."
                 loading="lazy"
-                className="min-h-64 w-full rounded-lg object-cover"
+                className="h-64 w-full rounded-lg object-cover"
               />
               <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2013</p>
               <p className="eyebrow mt-5">2013</p>
@@ -45,7 +45,13 @@ function Page() {
               </p>
             </article>
             <article className="rounded-2xl border-t-4 border-wood bg-card p-5 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)] sm:p-7">
-              <MediaPlaceholder label="Photographie aérienne — 2019" />
+              <img
+                src={aerialView.url}
+                alt="Vue aérienne de l’établissement : bâtiments aux toits blancs et bleus, entourés de jardins, palmiers et allées."
+                loading="lazy"
+                className="h-64 w-full rounded-lg object-cover"
+              />
+              <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2019</p>
               <p className="eyebrow mt-5">2019</p>
               <h3 className="mt-2 text-2xl">Ouverture des Fougères et des Terrasses</h3>
               <p className="mt-3 text-muted-foreground">

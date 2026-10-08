@@ -68,7 +68,7 @@ function Page() {
                       className="h-64 w-full rounded-lg object-cover sm:h-80"
                     />
                   ) : (
-                    <MediaPlaceholder label={`Photo principale — ${u.name}`} />
+                    <MediaPlaceholder label="Photo principale — à ajouter" />
                   )}
                   <div className="mt-3 grid grid-cols-3 gap-3">
                     <MediaPlaceholder label="Vue 1" compact />

@@ -234,3 +234,16 @@
   -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
   mask-image: linear-gradient(to left, #000 30%, transparent);
 }
+
+/* Bois clair chaleureux (page L'établissement) : veinage doux, toujours lumineux. */
+.wood-grain {
+  background-color: var(--wood-soft);
+  background-image:
+    repeating-linear-gradient(92deg, color-mix(in oklab, var(--wood) 9%, transparent) 0 2px, transparent 2px 11px, color-mix(in oklab, var(--wood) 6%, transparent) 11px 12px, transparent 12px 29px),
+    linear-gradient(180deg, color-mix(in oklab, var(--wood) 14%, var(--wood-soft)), var(--wood-soft));
+}
+.wood-plank {
+  background-image: repeating-linear-gradient(180deg, transparent 0 calc(25% - 1px), color-mix(in oklab, var(--wood) 30%, transparent) calc(25% - 1px) 25%),
+    repeating-linear-gradient(90deg, color-mix(in oklab, var(--wood) 7%, transparent) 0 1px, transparent 1px 17px);
+  background-color: color-mix(in oklab, var(--wood) 22%, var(--wood-soft));
+}

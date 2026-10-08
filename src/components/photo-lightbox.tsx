@@ -69,7 +69,7 @@ export function PhotoGroup({
             role="dialog"
             aria-modal="true"
             aria-label="Photo agrandie"
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/90 p-4 animate-in fade-in duration-200 sm:p-10"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/95 p-4 animate-in fade-in duration-200 sm:p-10"
             onClick={close}
             onTouchStart={(e) => (touchX.current = e.touches[0]!.clientX)}
             onTouchEnd={(e) => {

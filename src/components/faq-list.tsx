@@ -73,7 +73,7 @@ export function FaqList({ limit }: { limit?: number }) {
           <AccordionContent className="pb-5 text-base text-muted-foreground">
             <p>{renderAnswer(faq.answer)}</p>
             {"items" in faq && faq.items ? (
-              <ul className="mt-3 list-disc space-y-1 pl-5">
+              <ul className="mt-3 list-disc space-y-2 pl-5">
                 {faq.items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

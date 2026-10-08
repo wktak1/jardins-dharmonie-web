@@ -5,6 +5,7 @@ import {
   PageIntro,
   SectionHeading,
 } from "@/components/site-layout";
+import aerial2013 from "@/assets/vue-aerienne-2013.jpg.asset.json";
 import { routeHead } from "@/components/route-meta";
 export const Route = createFileRoute("/etablissement")({
   head: () =>
@@ -30,7 +31,13 @@ function Page() {
           <SectionHeading title="L’évolution de l’établissement" />
           <div className="grid gap-8 md:grid-cols-2">
             <article className="rounded-2xl border-t-4 border-wood bg-card p-5 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)] sm:p-7">
-              <MediaPlaceholder label="Photographie aérienne — 2013" />
+              <img
+                src={aerial2013.url}
+                alt="Photographie aérienne de l’établissement en 2013 : toits blancs et bleus entourés d’un jardin tropical arboré."
+                loading="lazy"
+                className="min-h-64 w-full rounded-lg object-cover"
+              />
+              <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2013</p>
               <p className="eyebrow mt-5">2013</p>
               <h3 className="mt-2 text-2xl">Ouverture des Niaoulis</h3>
               <p className="mt-3 text-muted-foreground">

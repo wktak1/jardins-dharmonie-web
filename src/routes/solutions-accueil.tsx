@@ -40,7 +40,7 @@ function Page() {
       </section>
       <section className="section-pad bg-muted">
         <div className="container-shell">
-          <SectionHeading eyebrow="Nos unités" title="Trois cadres d’hébergement" />
+          <SectionHeading eyebrow="Nos unités" title="Trois cadres d’hébergement" className="max-w-none" />
           <div className="space-y-16">
             {units.map((u, i) => (
               <article className="grid gap-8 lg:grid-cols-2 lg:items-center" key={u.name}>

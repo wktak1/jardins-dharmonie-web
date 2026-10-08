@@ -19,7 +19,8 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
         const open = expandable && openTitle === item.title;
         const isDay = expandable && item.title === "Accueil de jour";
         const isPermanent = expandable && item.title === "Hébergement permanent";
-        const wide = (isDay || isPermanent) && open;
+        const isTemporary = expandable && item.title === "Hébergement temporaire";
+        const wide = (isDay || isPermanent || isTemporary) && open;
         return (
           <article className={expandable ? `unit-card p-7${wide ? " md:col-span-3" : ""}` : "bg-card p-7"} key={item.title}>
 
@@ -40,7 +41,7 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
                 </button>
                 <div className="solution-details" data-open={open} id={`solution-details-${i}`} inert={!open || undefined}>
                   <div>
-                    {isDay ? <DayCareDetails /> : isPermanent ? <PermanentCareDetails /> : <div className="border-t border-border pt-4">
+                    {isDay ? <DayCareDetails /> : isPermanent ? <PermanentCareDetails /> : isTemporary ? <TemporaryStayDetails /> : <div className="border-t border-border pt-4">
                       <ul className="space-y-2 text-[0.95rem] text-muted-foreground">
                         {item.details.map((line) => (
                           <li key={line}>{line}</li>
@@ -161,6 +162,46 @@ function PermanentCareDetails() {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+// Contenu « En savoir plus » de la carte « Hébergement temporaire », déplié sous la
+// carte elle-même, sur le même principe que les panneaux « Accueil de jour » et
+// « Hébergement permanent ».
+const temporaryStayIntro =
+  "Nous proposons un séjour d’une durée déterminée, de plusieurs jours à quelques mois, pour un besoin ponctuel ou répété.";
+
+const temporaryStayReasons = [
+  "De s’absenter en toute sérénité",
+  "De bénéficier d’un séjour de répit",
+  "De gérer en toute sécurité une sortie d’hospitalisation lorsque le niveau d’autonomie ne permet pas un retour immédiat à domicile",
+  "De faire face à une rupture des services à domicile",
+];
+
+function TemporaryStayDetails() {
+  return (
+    <div className="border-t border-border pt-6">
+      <p className="max-w-3xl text-muted-foreground">{temporaryStayIntro}</p>
+      <p className="mt-7 font-semibold text-foreground">Cet accueil temporaire permet aux proches :</p>
+      <ul className="mt-4 grid gap-x-12 gap-y-4 sm:grid-cols-2">
+        {temporaryStayReasons.map((reason) => (
+          <li className="flex gap-3" key={reason}>
+            <Check className="mt-1 size-5 shrink-0 text-primary" />
+            <span>{reason}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-7 max-w-3xl space-y-4 text-muted-foreground">
+        <p>
+          L’accueil temporaire peut également être l’occasion d’un premier essai de vie en
+          collectivité, avant une entrée définitive.
+        </p>
+        <p>
+          La personne âgée hébergée en accueil temporaire bénéficie des mêmes services,
+          prestations et prises en soin que les autres résidents de l’établissement.
+        </p>
+      </div>
     </div>
   );
 }

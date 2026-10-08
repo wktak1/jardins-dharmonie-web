@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ContactStrip, MapBlock, MediaPlaceholder, SectionHeading } from "@/components/site-layout";
 import { SolutionsGrid, UnitsGrid } from "@/components/content-blocks";
 import { GalleryBrowser, VideoPlaceholder } from "@/components/interactive-blocks";
-import { admissionDossier, dailyLife } from "@/lib/site-content";
+import { admissionDossier } from "@/lib/site-content";
 import { routeHead } from "@/components/route-meta";
 import lingeAsset from "@/assets/linge-serviettes.jpg.asset.json";
 import repasAsset from "@/assets/repas-triptyque.jpg.asset.json";

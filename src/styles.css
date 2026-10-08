@@ -229,7 +229,7 @@
 /* Lames de bois clair verticales (page Présentation). */
 .wood-slats {
   background: repeating-linear-gradient(90deg, color-mix(in oklab, var(--wood) 55%, transparent) 0 5px, transparent 5px 26px);
-  opacity: .22;
+  opacity: .4;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(to left, #000 30%, transparent);
   mask-image: linear-gradient(to left, #000 30%, transparent);

@@ -16,7 +16,7 @@ export const Route = createFileRoute("/presentation")({
 });
 
 const imageFrame =
-  "aspect-[4/3] w-full rounded-xl object-cover shadow-sm ring-1 ring-black/5";
+  "aspect-[4/3] w-full rounded-sm object-cover shadow-md";
 
 function Page() {
   return (
@@ -29,7 +29,10 @@ function Page() {
       </PageIntro>
 
       <section className="py-10 md:py-14 lg:py-16">
-        <div className="mx-auto grid w-full max-w-[1500px] gap-8 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-12 xl:px-12">
+        <div className="mx-auto w-full max-w-[1500px] px-4 sm:px-8 xl:px-12">
+        <div className="relative overflow-hidden border border-border bg-card shadow-[0_32px_64px_-12px_color-mix(in_oklab,var(--color-foreground)_10%,transparent)]">
+        <div aria-hidden="true" className="wood-slats absolute inset-y-0 right-0 w-24 sm:w-40 lg:w-56" />
+        <div className="relative grid gap-8 px-5 py-10 sm:px-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-14 lg:py-16">
           <div className="space-y-5 lg:col-span-5">
             <p className="text-lg leading-relaxed text-foreground/90">
               Les Jardins d’Eleusis est un établissement privé. Il est composé de deux
@@ -39,7 +42,7 @@ function Page() {
               <strong className="font-semibold">Les Terrasses</strong>, pour une
               capacité de <strong className="font-semibold">80 places</strong>.
             </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
+            <p className="border-l-4 border-wood bg-wood-soft px-6 py-5 text-lg leading-relaxed text-muted-foreground">
               L’EHPAD est situé au{" "}
               <strong className="font-semibold text-foreground">
                 364 Bis, route de Koé à Dumbéa
@@ -83,6 +86,9 @@ function Page() {
               className={`${imageFrame} sm:col-span-2 sm:aspect-auto sm:h-full sm:min-h-[26rem] lg:min-h-[34rem]`}
             />
           </div>
+        </div>
+        </div>
+        <div aria-hidden="true" className="h-1 w-full bg-wood/30" />
         </div>
       </section>
 

@@ -26,7 +26,7 @@ function Page() {
           L’établissement s’est développé en deux étapes confirmées : 2013 puis 2019.
         </p>
       </PageIntro>
-      <section className="section-pad wood-grain border-b border-wood/30">
+      <section className="section-pad">
         <div className="container-shell">
           <SectionHeading title="L’évolution de l’établissement" />
           <div className="grid gap-8 md:grid-cols-2">
@@ -61,9 +61,9 @@ function Page() {
           </div>
         </div>
       </section>
-      <section className="section-pad">
+      <section className="pb-[clamp(4rem,8vw,7rem)]">
         <div className="container-shell">
-          <div className="rounded-2xl border-l-4 border-wood bg-wood-soft p-7">
+          <div className="rounded-2xl border-t-4 border-wood bg-card p-7 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
             <h2 className="text-2xl">Les valeurs des Jardins d’Eleusis</h2>
             <p className="mt-3 text-muted-foreground">Contenu à compléter après validation.</p>
           </div>

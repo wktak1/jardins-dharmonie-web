@@ -37,7 +37,7 @@ export function PhotoGroup({
   }, [index, close, step, photos.length]);
 
   const thumb = (i: number) => {
-    const p = photos[i];
+    const p = photos[i]!;
     return (
       <button
         type="button"
@@ -55,7 +55,7 @@ export function PhotoGroup({
     );
   };
 
-  const current = index !== null ? photos[index] : null;
+  const current = index !== null ? (photos[index] ?? null) : null;
   const multi = photos.length > 1;
   const navBtn =
     "absolute top-1/2 -translate-y-1/2 rounded-full bg-background/15 p-3 text-background backdrop-blur transition hover:bg-background/30";
@@ -71,10 +71,10 @@ export function PhotoGroup({
             aria-label="Photo agrandie"
             className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/90 p-4 animate-in fade-in duration-200 sm:p-10"
             onClick={close}
-            onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+            onTouchStart={(e) => (touchX.current = e.touches[0]!.clientX)}
             onTouchEnd={(e) => {
               if (touchX.current === null || !multi) return;
-              const dx = e.changedTouches[0].clientX - touchX.current;
+              const dx = e.changedTouches[0]!.clientX - touchX.current;
               if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
               touchX.current = null;
             }}

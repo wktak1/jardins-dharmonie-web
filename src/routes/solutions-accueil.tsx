@@ -31,10 +31,7 @@ function Page() {
         eyebrow="Nos solutions d’accueil"
         title="Trouver une solution adaptée à votre proche"
       >
-        <p>
-          Découvrez les formes d’accueil proposées. Les modalités précises sont à confirmer
-          directement auprès de l’établissement.
-        </p>
+        <p>Découvrez ici nos formes d’accueil proposées.</p>
       </PageIntro>
       <section className="section-pad">
         <div className="container-shell">

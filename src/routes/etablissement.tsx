@@ -35,7 +35,7 @@ function Page() {
                 src={aerial2013.url}
                 alt="Photographie aérienne de l’établissement en 2013 : toits blancs et bleus entourés d’un jardin tropical arboré."
                 loading="lazy"
-                className="min-h-64 w-full rounded-lg object-cover"
+                className="h-64 w-full rounded-lg object-cover"
               />
               <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2013</p>
               <p className="eyebrow mt-5">2013</p>
@@ -49,7 +49,7 @@ function Page() {
                 src={aerialView.url}
                 alt="Vue aérienne de l’établissement : bâtiments aux toits blancs et bleus, entourés de jardins, palmiers et allées."
                 loading="lazy"
-                className="min-h-64 w-full rounded-lg object-cover"
+                className="h-64 w-full rounded-lg object-cover"
               />
               <p className="mt-2 text-xs text-muted-foreground">Photographie aérienne — 2019</p>
               <p className="eyebrow mt-5">2019</p>

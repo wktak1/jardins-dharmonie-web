@@ -11,6 +11,9 @@ import { units } from "@/lib/site-content";
 import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
 import niaoulisPhoto from "@/assets/unite-niaoulis-1.jpg.asset.json";
 import terrassesPhoto from "@/assets/unite-terrasses-1.jpg.asset.json";
+import fougeresVue1 from "@/assets/unite-fougeres-vue-1.jpg.asset.json";
+import fougeresVue2 from "@/assets/unite-fougeres-vue-2.jpg.asset.json";
+import fougeresVue3 from "@/assets/unite-fougeres-vue-3.jpg.asset.json";
 export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(
@@ -70,9 +73,34 @@ function Page() {
                     <MediaPlaceholder label="Photo principale — à ajouter" />
                   )}
                   <div className="mt-3 grid grid-cols-3 gap-3">
-                    <MediaPlaceholder label="Vue 1" compact />
-                    <MediaPlaceholder label="Vue 2" compact />
-                    <MediaPlaceholder label="Vue 3" compact />
+                    {u.name === "Les Fougères" ? (
+                      <>
+                        <img
+                          src={fougeresVue1.url}
+                          alt="Bâtiment de l’unité Les Fougères vu depuis le jardin, avec sa coursive à l’étage et une fougère arborescente au premier plan"
+                          loading="lazy"
+                          className="h-44 w-full rounded-lg object-cover"
+                        />
+                        <img
+                          src={fougeresVue2.url}
+                          alt="Bassin d’agrément bordé de rochers et de plantes tropicales devant l’unité Les Fougères"
+                          loading="lazy"
+                          className="h-44 w-full rounded-lg object-cover"
+                        />
+                        <img
+                          src={fougeresVue3.url}
+                          alt="Patio intérieur de l’unité Les Fougères avec ses coursives, ses garde-corps blancs et ses massifs de végétation"
+                          loading="lazy"
+                          className="h-44 w-full rounded-lg object-cover"
+                        />
+                      </>
+                    ) : (
+                      <>
+                        <MediaPlaceholder label="Vue 1" compact />
+                        <MediaPlaceholder label="Vue 2" compact />
+                        <MediaPlaceholder label="Vue 3" compact />
+                      </>
+                    )}
                   </div>
                 </div>
                 <div>

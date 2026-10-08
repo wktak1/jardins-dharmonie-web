@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
 import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
 import heroLogoAsset from "@/assets/jardins-eleusis-hero-logo.png.asset.json";
@@ -61,7 +62,7 @@ export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; titl
 
 export function MediaPlaceholder({ label, className = "", compact = false }: { label: string; className?: string; compact?: boolean }) { return <div className={`media-placeholder ${compact ? "min-h-44" : "min-h-64"} ${className}`} role="img" aria-label={`${label} — photographie authentique à ajouter`}><div className="media-mark" aria-hidden="true">⌁</div><p>{label}</p><span>Photographie authentique à ajouter</span></div>; }
 
-export function SectionHeading({ eyebrow, title, text }: { eyebrow?: string; title: string; text?: string }) { return <div className="mb-8 max-w-3xl">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h2>{title}</h2>{text && <p className="mt-4 text-muted-foreground">{text}</p>}</div>; }
+export function SectionHeading({ eyebrow, title, text, className }: { eyebrow?: string; title: string; text?: string; className?: string }) { return <div className={cn("mb-8 max-w-3xl", className)}>{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h2>{title}</h2>{text && <p className="mt-4 text-muted-foreground">{text}</p>}</div>; }
 
 export function ContactStrip() { return <section className="bg-accent"><div className="container-shell grid gap-6 py-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-center"><div><h2 className="text-2xl">Une question avant votre visite ?</h2><p className="mt-2 text-accent-foreground/80">L’établissement est joignable par téléphone ou par e-mail.</p></div><div className="flex flex-wrap gap-3"><Button asChild><a href={site.phoneHref}><Phone />{site.phone}</a></Button><Button asChild variant="outline"><a href={site.emailHref}><Mail />Écrire un e-mail</a></Button></div></div></section>; }
 

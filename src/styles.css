@@ -201,6 +201,18 @@
   opacity: 1;
 }
 
+/* Solution dépliée seule à l'écran : entrée en douceur, sans saut de mise en page. */
+.solution-solo {
+  animation: solution-solo-in 320ms ease;
+}
+@keyframes solution-solo-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .solution-solo { animation: none; }
+}
+
 .page-intro-watermark {
   position: absolute;
   right: clamp(2.5rem, 9vw, 7rem);

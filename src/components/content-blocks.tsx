@@ -15,14 +15,21 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
 
   return (
     <div className={expandable ? "grid items-start gap-6 md:grid-cols-3" : "grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-3"}>
-      {solutions.map((item, i) => {
+      {/* Quand un « En savoir plus » est ouvert, seules cette solution et son contenu
+          détaillé restent visibles ; les deux autres réapparaissent à la fermeture. */}
+      {solutions
+        .filter((item) => !expandable || !openTitle || openTitle === item.title)
+        .map((item, i) => {
         const open = expandable && openTitle === item.title;
         const isDay = expandable && item.title === "Accueil de jour";
         const isPermanent = expandable && item.title === "Hébergement permanent";
         const isTemporary = expandable && item.title === "Hébergement temporaire";
         const wide = (isDay || isPermanent || isTemporary) && open;
         return (
-          <article className={expandable ? `unit-card p-7${wide ? " md:col-span-3" : ""}` : "bg-card p-7"} key={item.title}>
+          <article
+            className={expandable ? `unit-card p-7${wide ? " solution-solo md:col-span-3" : ""}` : "bg-card p-7"}
+            key={item.title}
+          >
 
             <span className="feature-icon">{icons[i]}</span>
             <h3 className="mt-5 text-xl">{item.title}</h3>

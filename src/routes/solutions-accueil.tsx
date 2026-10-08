@@ -11,6 +11,7 @@ import { routeHead } from "@/components/route-meta";
 import { units } from "@/lib/site-content";
 import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
 import niaoulisPhoto from "@/assets/unite-niaoulis-1.jpg.asset.json";
+import terrassesPhoto from "@/assets/unite-terrasses-1.jpg.asset.json";
 export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(
@@ -56,6 +57,13 @@ function Page() {
                     <img
                       src={niaoulisPhoto.url}
                       alt="Terrasse fleurie de l’unité Les Niaoulis avec ses garde-corps verts et ses jardinières"
+                      loading="lazy"
+                      className="h-64 w-full rounded-lg object-cover sm:h-80"
+                    />
+                  ) : u.name === "Les Terrasses" ? (
+                    <img
+                      src={terrassesPhoto.url}
+                      alt="Terrasse couverte de l’unité Les Terrasses avec ses colonnes vertes, sa rambarde et sa vue sur le jardin"
                       loading="lazy"
                       className="h-64 w-full rounded-lg object-cover sm:h-80"
                     />

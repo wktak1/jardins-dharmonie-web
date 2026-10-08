@@ -1,3 +1,10 @@
+import dossierAsset from "@/assets/dossier-admission.pdf.asset.json";
+
+export const admissionDossier = {
+  url: dossierAsset.url,
+  label: "Dossier d’admission",
+} as const;
+
 export const site = {
   name: "Les Jardins d’Eleusis",
   legalName: "EHPAD Les Jardins d’Eleusis",

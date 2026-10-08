@@ -65,7 +65,22 @@ function Page() {
         <div className="container-shell">
           <div className="rounded-2xl border-t-4 border-wood bg-card p-7 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
             <h2 className="text-2xl">Les valeurs des Jardins d’Eleusis</h2>
-            <p className="mt-3 text-muted-foreground">Contenu à compléter après validation.</p>
+            <p className="mt-4 text-muted-foreground">
+              Les Jardins d’Éleusis s’appuient sur{" "}
+              <strong className="font-semibold text-foreground">
+                la loyauté, la bienveillance et l’Humanitude
+              </strong>
+              . Elles guident l’accompagnement quotidien des résidents, dans le respect de chacun,
+              de son rythme et de son histoire.
+            </p>
+            <p className="mt-4 text-muted-foreground">
+              Implanté dans un{" "}
+              <strong className="font-semibold text-foreground">
+                environnement verdoyant et atypique
+              </strong>
+              , l’établissement se veut avant tout un véritable lieu de vie, chaleureux, apaisant et
+              ouvert sur son environnement.
+            </p>
           </div>
         </div>
       </section>

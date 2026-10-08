@@ -1,7 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContactStrip, PageIntro, SectionHeading } from "@/components/site-layout";
-import { Downloads } from "@/components/content-blocks";
+import { PageIntro } from "@/components/site-layout";
 import { routeHead } from "@/components/route-meta";
-const tariffRows=["Tarifs d’hébergement","Tarifs liés à la dépendance","Hébergement temporaire","Accueil de jour"];
-export const Route=createFileRoute("/tarifs-admission")({head:()=>routeHead("Tarifs et admission","Informations pratiques sur les tarifs et l’admission aux Jardins d’Eleusis à Dumbéa.","/tarifs-admission"),staticData:{sitemap:true},component:Page});
-function Page(){return <><PageIntro eyebrow="Tarifs et admission" title="Des informations claires pour préparer votre démarche"><p>Aucun montant n’est affiché avant réception de la grille tarifaire officielle. L’établissement reste votre interlocuteur pour toute précision.</p></PageIntro><section className="section-pad"><div className="container-narrow"><SectionHeading title="Comprendre les tarifs" text="La tarification peut comprendre plusieurs éléments. Leur présentation détaillée sera ajoutée après validation par l’établissement."/><div className="overflow-x-auto rounded-lg border border-border"><table className="w-full min-w-[600px] border-collapse text-left"><thead className="bg-primary text-primary-foreground"><tr><th className="p-4">Rubrique</th><th className="p-4">Information</th></tr></thead><tbody>{tariffRows.map(row=><tr className="border-t border-border" key={row}><th className="p-4 font-semibold">{row}</th><td className="p-4 text-muted-foreground">Tarifs à compléter à partir de la grille officielle de l’établissement.</td></tr>)}</tbody></table></div></div></section><section className="section-pad bg-muted"><div className="container-narrow"><SectionHeading title="Aides ou prises en charge possibles"/><p className="rounded-lg border-l-4 border-secondary bg-background p-6 text-muted-foreground">Contenu à compléter après validation.</p></div></section><section className="section-pad"><div className="container-narrow"><SectionHeading title="Étapes d’une demande d’admission"/><ol className="grid gap-4 md:grid-cols-3">{["Prendre connaissance des informations", "Télécharger le dossier d’admission", "Contacter l’établissement"].map((x,i)=><li className="border-t-4 border-primary bg-card p-6" key={x}><span className="eyebrow">Étape {i+1}</span><h3 className="mt-2 text-xl">{x}</h3><p className="mt-3 text-muted-foreground">Modalités détaillées : Contenu à compléter.</p></li>)}</ol></div></section><section className="section-pad bg-muted"><div className="container-narrow"><SectionHeading title="Documents à télécharger" text="Le dossier d’admission officiel est disponible ci-dessous ; les autres documents seront ajoutés après validation par l’établissement."/><Downloads/></div></section><section className="section-pad"><div className="container-narrow"><SectionHeading title="Personne à contacter"/><p className="text-muted-foreground">Nom et fonction : Contenu à compléter.</p><p className="mt-2">Téléphone : <a className="text-link" href="tel:+687298500">29 85 00</a></p><p>E-mail : <a className="text-link" href="mailto:accueil@eleusis.nc">accueil@eleusis.nc</a></p></div></section><ContactStrip/></>}
+import { admissionDossier } from "@/lib/site-content";
+
+export const Route = createFileRoute("/tarifs-admission")({
+  head: () => routeHead("Tarifs et admission", "Tarifs sur devis personnalisé et dossier d’admission à télécharger — Les Jardins d’Eleusis à Dumbéa.", "/tarifs-admission"),
+  staticData: { sitemap: true },
+  component: Page,
+});
+
+function Page() {
+  return (
+    <>
+      <PageIntro title="Tarifs et admission">{null}</PageIntro>
+      <section className="section-pad">
+        <div className="container-narrow max-w-3xl">
+          <div>
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground">
+              <strong className="font-semibold text-foreground">Concernant nos tarifs</strong>, nous vous invitons à nous contacter au{" "}
+              <a className="text-link font-semibold" href="tel:+687298500">29.85.00</a> ou par e-mail à{" "}
+              <a className="text-link font-semibold" href="mailto:accueil@eleusis.nc">accueil@eleusis.nc</a>{" "}
+              afin d’obtenir un devis personnalisé, adapté à votre situation et au type d’hébergement souhaité.
+            </p>
+          </div>
+          <div className="mt-14 border-t border-border pt-14 md:mt-16 md:pt-16">
+            <h2 className="text-3xl md:text-4xl">Dossier d’admission</h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Le dossier d’admission peut être consulté et téléchargé afin de préparer votre demande d’admission.
+            </p>
+            <a
+              className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              href={admissionDossier.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Télécharger le dossier d’admission
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

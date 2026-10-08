@@ -101,7 +101,7 @@ export const dailyLife = [
   },
   {
     title: "Les chambres",
-    text: "Présentation détaillée à compléter avec les photographies authentiques des unités.",
+    text: "Toutes les chambres de l’EHPAD sont climatisées, équipées de sanitaires et d’un lit médicalisé. Il vous est possible d’agencer à votre convenance votre lieu de vie. Vous pouvez apporter petits meubles, équipements personnels ou réfrigérateurs si vous le souhaitez, dans la limite de l’espace disponible, afin de garantir votre sécurité et faciliter votre circulation ainsi que celle du personnel.",
   },
   { title: "Les jardins et espaces extérieurs", text: "Présentation du cadre de vie à compléter." },
   { title: "Les moments de convivialité", text: "Contenu à compléter avec l’établissement." },

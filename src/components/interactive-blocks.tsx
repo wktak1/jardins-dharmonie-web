@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
-import { galleryCategories } from "@/lib/site-content";
+import { admissionDossier, galleryCategories } from "@/lib/site-content";
 import presentationVideo from "@/assets/jardins-eleusis-presentation-web.mp4.asset.json";
 import presentationVideoWebm from "@/assets/jardins-eleusis-presentation-web.webm.asset.json";
 import presentationPoster from "@/assets/jardins-eleusis-presentation-poster.jpg.asset.json";
@@ -82,9 +82,9 @@ export function VideoPlaceholder() {
               <Link to="/etablissement">Découvrir l’établissement</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link to="/tarifs-admission" hash="documents">
+              <a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)">
                 Dossier d’admission
-              </Link>
+              </a>
             </Button>
           </div>
         </div>

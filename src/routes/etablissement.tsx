@@ -22,8 +22,9 @@ function Page() {
     <>
       <PageIntro eyebrow="L’établissement" title="Une histoire qui s’inscrit à Dumbéa">
         <p>
-          Les Jardins d’Eleusis accueillent des personnes âgées au 364 bis route de Koé, à Dumbéa.
-          L’établissement s’est développé en deux étapes confirmées : 2013 puis 2019.
+          Les Jardins d’Éleusis sont un établissement à taille humaine, implanté à Dumbéa dans un
+          environnement verdoyant et apaisant, pensé pour le bien-être et l’accompagnement des
+          résidents.
         </p>
       </PageIntro>
       <section className="section-pad">

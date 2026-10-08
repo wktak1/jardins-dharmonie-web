@@ -129,3 +129,39 @@ function DayCareDetails() {
     </div>
   );
 }
+
+// Contenu « En savoir plus » de la carte « Hébergement permanent », déplié sous la
+// carte elle-même, sur le même principe que le panneau « Accueil de jour ».
+const permanentCareIntro =
+  "Les Jardins d’Eleusis accompagnent les résidents au quotidien en leur offrant une prise en soin personnalisée et évolutive.";
+
+const permanentCareServices = [
+  "Une résidence médicalisée",
+  "Une équipe de près de 50 professionnels",
+  "Un service de restauration raffinée",
+  "Un hébergement en chambre partagée ou individuelle, pré-équipée et personnalisable",
+  "Un service blanchisserie",
+  "Un programme d’animation",
+  "Des espaces de soins et de bien-être",
+  "Un parc de promenade arboré et verdoyant",
+  "Une ferme",
+  "Une épicerie à portée de main",
+  "Un accès Wi-Fi",
+];
+
+function PermanentCareDetails() {
+  return (
+    <div className="border-t border-border pt-6">
+      <p className="max-w-3xl text-muted-foreground">{permanentCareIntro}</p>
+      <ul className="mt-7 grid gap-x-12 gap-y-4 sm:grid-cols-2">
+        {permanentCareServices.map((service) => (
+          <li className="flex gap-3" key={service}>
+            <Check className="mt-1 size-5 shrink-0 text-primary" />
+            <span>{service}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+

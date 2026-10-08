@@ -61,7 +61,7 @@ function Page() {
           </div>
         </div>
       </section>
-      <section className="section-pad">
+      <section className="pb-[clamp(4rem,8vw,7rem)]">
         <div className="container-shell">
           <div className="rounded-2xl border-t-4 border-wood bg-card p-7 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
             <h2 className="text-2xl">Les valeurs des Jardins d’Eleusis</h2>

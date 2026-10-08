@@ -132,7 +132,7 @@ export const faqs = [
   {
     question: "Puis-je réserver une chambre ?",
     answer:
-      "Les modalités de réservation d’une chambre (contrat de réservation, documents et conditions demandés) sont en cours de définition avec l’établissement — Contenu à compléter. Pour toute demande ou pour connaître les disponibilités, contactez l’accueil au 29 85 00 ou écrivez à accueil@eleusis.nc.",
+      "Oui, il est possible de réserver une chambre. Pour connaître les modalités de réservation et les disponibilités, nous vous invitons à contacter l’accueil au [29.85.00](tel:+687298500) ou à nous écrire à l’adresse [accueil@eleusis.nc](mailto:accueil@eleusis.nc).",
   },
   {
     question: "Quels sont les documents à fournir pour constituer un dossier d’entrée ?",

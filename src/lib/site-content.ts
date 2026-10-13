@@ -102,6 +102,10 @@ export const dailyLife = [
     text: "Programme et informations à compléter avec l’établissement.",
   },
   {
+    title: "La ferme",
+    text: "Au sein de l’établissement, notre ferme offre aux résidents un espace de découverte, de détente et de partage au contact des animaux. Véritable lieu de vie, elle favorise les échanges, stimule les sens et contribue au bien-être des résidents.",
+  },
+  {
     title: "Les espaces communs",
     text: "Présentation des espaces à compléter avec les textes et photographies authentiques.",
   },

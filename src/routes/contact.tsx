@@ -28,13 +28,13 @@ function Page() {
             <a href={site.phoneHref} className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-7 text-center">
               <Phone className="text-primary" />
               <h2 className="mt-5 text-xl">Téléphone</h2>
-              <p className="mt-3 text-link text-2xl md:text-xl lg:text-2xl">{site.phone}</p>
+              <p className="mt-3 text-link text-2xl md:text-lg md:tracking-tight lg:text-2xl">{site.phone}</p>
             </a>
             <a href={site.emailHref} className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-7 text-center">
               <Mail className="text-primary" />
               <h2 className="mt-5 text-xl">E-mail</h2>
               {/* <wbr /> = clean break point after @ when the address must wrap on narrow tablets */}
-              <p className="mt-3 text-link text-2xl md:text-xl lg:text-2xl">
+              <p className="mt-3 text-link text-2xl md:text-lg md:tracking-tight lg:text-2xl">
                 {site.email.split("@")[0]}@<wbr />{site.email.split("@")[1]}
               </p>
             </a>

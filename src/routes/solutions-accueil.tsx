@@ -10,14 +10,14 @@ import { PhotoGroup, type LightboxPhoto } from "@/components/photo-lightbox";
 import { routeHead } from "@/components/route-meta";
 import { units } from "@/lib/site-content";
 import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
-import niaoulisAerienne from "@/assets/unite-niaoulis-aerienne.jpg.asset.json";
+import niaoulisPhoto from "@/assets/unite-niaoulis-1.jpg.asset.json";
 import terrassesPhoto from "@/assets/unite-terrasses-1.jpg.asset.json";
 import fougeresVue1 from "@/assets/unite-fougeres-vue-1.jpg.asset.json";
 import fougeresVue2 from "@/assets/unite-fougeres-vue-2.jpg.asset.json";
 import fougeresVue3 from "@/assets/unite-fougeres-vue-3.jpg.asset.json";
 const mainPhotos: Record<string, { src: string; alt: string }> = {
   "Les Fougères": { src: fougeresPhoto.url, alt: "Patio arboré de l’unité Les Fougères avec ses coursives sur deux niveaux" },
-  "Les Niaoulis": { src: niaoulisAerienne.url, alt: "Vue aérienne de l’unité Les Niaoulis et de ses bâtiments aux toits clairs, entourés d’arbres et de pelouses" },
+  "Les Niaoulis": { src: niaoulisPhoto.url, alt: "Terrasse fleurie de l’unité Les Niaoulis avec ses garde-corps verts et ses jardinières" },
   "Les Terrasses": { src: terrassesPhoto.url, alt: "Terrasse couverte de l’unité Les Terrasses avec ses colonnes vertes, sa rambarde et sa vue sur le jardin" },
 };
 const fougeresViews = [

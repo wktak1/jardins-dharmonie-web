@@ -95,7 +95,7 @@ export const units = [
 ] as const;
 
 export const dailyLife = [
-  { title: "Les repas", text: "Les repas sont préparés sur place par une cuisinière dédiée." },
+  { title: "Les repas", text: "Les repas sont préparés sur place par une cuisinière et une équipe entièrement dédiée." },
   { title: "Le linge", text: "Le linge de maison (draps, serviettes de toilette) est fourni par l’établissement. Le linge du nouveau résident sera identifié et marqué le jour de l’entrée par l’établissement. Il est préférable de choisir des vêtements adaptés au lavage collectif et industriel. L’entretien de votre linge personnel peut être assuré par votre famille." },
   {
     title: "Les activités et animations",

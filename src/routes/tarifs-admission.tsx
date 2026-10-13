@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageIntro } from "@/components/site-layout";
 import { routeHead } from "@/components/route-meta";
-import { admissionDossier } from "@/lib/site-content";
+import { admissionDossier, medicalDossier } from "@/lib/site-content";
 
 export const Route = createFileRoute("/tarifs-admission")({
   head: () => routeHead("Tarifs et admission", "Tarifs sur devis personnalisé et dossier d’admission à télécharger — Les Jardins d’Éleusis à Dumbéa.", "/tarifs-admission"),

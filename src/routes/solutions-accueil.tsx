@@ -29,7 +29,7 @@ export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(
       "Nos solutions d’accueil",
-      "Hébergement permanent, hébergement temporaire et accueil de jour à Dumbéa aux Jardins d’Eleusis.",
+      "Hébergement permanent, hébergement temporaire et accueil de jour à Dumbéa aux Jardins d’Éleusis.",
       "/solutions-accueil",
     ),
   staticData: { sitemap: true },

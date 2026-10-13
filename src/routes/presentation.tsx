@@ -21,7 +21,7 @@ const imageFrame =
 function Page() {
   return (
     <>
-      <PageIntro eyebrow="Les Jardins d’Eleusis" title="Présentation">
+      <PageIntro eyebrow="Les Jardins d’Éleusis" title="Présentation">
         <p>
           Quelques repères pour découvrir l’établissement, son cadre de vie et les
           services proposés sur place.
@@ -34,7 +34,7 @@ function Page() {
         <div className="grid gap-8 px-5 py-10 sm:px-10 md:py-14 lg:grid-cols-12 lg:items-center lg:gap-12 lg:px-14 lg:py-16">
           <div className="space-y-5 lg:col-span-5">
             <p className="text-lg leading-relaxed text-foreground/90">
-              Les Jardins d’Eleusis est un établissement privé. Il est composé de deux
+              Les Jardins d’Éleusis est un établissement privé. Il est composé de deux
               bâtiments avec trois secteurs :{" "}
               <strong className="font-semibold">Les Niaoulis</strong>,{" "}
               <strong className="font-semibold">Les Fougères</strong> et{" "}
@@ -68,7 +68,7 @@ function Page() {
           <div className="grid gap-5 sm:grid-cols-5 lg:col-span-7">
             <img
               src={aerialAsset.url}
-              alt="Vue aérienne des bâtiments de l’EHPAD Les Jardins d’Eleusis, entourés d’une végétation tropicale"
+              alt="Vue aérienne des bâtiments de l’EHPAD Les Jardins d’Éleusis, entourés d’une végétation tropicale"
               width={1920}
               height={1440}
               loading="lazy"

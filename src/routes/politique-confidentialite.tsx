@@ -5,7 +5,7 @@ export const Route = createFileRoute("/politique-confidentialite")({
   head: () =>
     routeHead(
       "Politique de confidentialité",
-      "Politique de confidentialité du site des Jardins d’Eleusis.",
+      "Politique de confidentialité du site des Jardins d’Éleusis.",
       "/politique-confidentialite",
     ),
   staticData: { sitemap: true },

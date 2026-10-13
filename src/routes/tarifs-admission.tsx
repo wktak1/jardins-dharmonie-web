@@ -38,7 +38,7 @@ function Page() {
                 Télécharger le dossier d’admission
               </a>
               <a
-                className="inline-flex w-full items-center justify-center rounded-md bg-wood px-6 py-3 font-semibold text-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
                 href={medicalDossier.url}
                 target="_blank"
                 rel="noopener noreferrer"

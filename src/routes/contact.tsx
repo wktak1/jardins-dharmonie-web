@@ -28,7 +28,9 @@ function Page() {
             <a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7">
               <Phone className="text-primary" />
               <h2 className="mt-5 text-xl">Téléphone</h2>
-              <p className="mt-2 text-link">{site.phone}</p>
+              <div className="mt-2 flex justify-center">
+                <p className="text-link text-xl">{site.phone}</p>
+              </div>
             </a>
             <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
               <Mail className="text-primary" />

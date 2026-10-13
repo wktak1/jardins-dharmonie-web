@@ -71,7 +71,7 @@ export const units = [
   {
     name: "Les Niaoulis",
     year: "2013",
-    places: "42 places",
+    places: "40 places",
     rooms: "Chambres individuelles et doubles",
     bathroom: "Salle de bain partagée",
     detail: "",

@@ -15,6 +15,7 @@ export const site = {
   name: "Les Jardins d’Éleusis",
   legalName: "EHPAD Les Jardins d’Éleusis",
   address: "364 bis route de Koé, Dumbéa, Nouvelle-Calédonie",
+  contactAddress: "364 bis route de Koé, 98835",
   phone: "29 85 00",
   phoneHref: "tel:+687298500",
   email: "accueil@eleusis.nc",

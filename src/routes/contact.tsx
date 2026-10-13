@@ -35,7 +35,9 @@ function Page() {
             <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
               <Mail className="text-primary" />
               <h2 className="mt-5 text-xl">E-mail</h2>
-              <p className="mt-2 break-all text-link">{site.email}</p>
+              <div className="mt-2 flex justify-center">
+                <p className="text-link break-all text-xl">{site.email}</p>
+              </div>
             </a>
             <div className="rounded-lg border border-border bg-card p-7">
               <MapPin className="text-primary" />

@@ -26,7 +26,7 @@ function Page() {
           <div className="mt-14 border-t border-border pt-14 md:mt-16 md:pt-16">
             <h2 className="text-3xl md:text-4xl">Dossier d’admission</h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              Le dossier d’admission peut être consulté et téléchargé afin de préparer votre demande d’admission.
+              Le dossier d’admission peut être consulté et téléchargé afin de préparer votre demande d’admission. Le dossier médical doit être complété par le médecin traitant du futur résident et joint au dossier d’admission.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
               <a

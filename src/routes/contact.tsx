@@ -33,8 +33,10 @@ function Page() {
             <a href={site.emailHref} className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-7 text-center">
               <Mail className="text-primary" />
               <h2 className="mt-5 text-xl">E-mail</h2>
-              {/* zero-width space after @ = clean break point when the address wraps on narrow tablets */}
-              <p className="mt-3 text-link text-2xl md:text-xl lg:text-2xl">{site.email.replace("@", "@\u200B")}</p>
+              {/* <wbr /> = clean break point after @ when the address must wrap on narrow tablets */}
+              <p className="mt-3 text-link text-2xl md:text-xl lg:text-2xl">
+                {site.email.split("@")[0]}@<wbr />{site.email.split("@")[1]}
+              </p>
             </a>
             <div className="rounded-lg border border-border bg-card p-7">
               <MapPin className="text-primary" />

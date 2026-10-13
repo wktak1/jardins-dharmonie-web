@@ -25,15 +25,15 @@ function Page() {
       <section className="section-pad">
         <div className="container-shell">
           <div className="grid gap-6 md:grid-cols-3">
-            <a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7">
+            <a href={site.phoneHref} className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-7 text-center">
               <Phone className="text-primary" />
               <h2 className="mt-5 text-xl">Téléphone</h2>
-              <p className="mt-2 text-link">{site.phone}</p>
+              <p className="mt-3 text-link text-xl md:text-2xl">{site.phone}</p>
             </a>
-            <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
+            <a href={site.emailHref} className="flex flex-col items-center justify-center rounded-lg border border-border bg-card p-7 text-center">
               <Mail className="text-primary" />
               <h2 className="mt-5 text-xl">E-mail</h2>
-              <p className="mt-2 break-all text-link">{site.email}</p>
+              <p className="mt-3 break-all text-link text-xl md:text-2xl">{site.email}</p>
             </a>
             <div className="rounded-lg border border-border bg-card p-7">
               <MapPin className="text-primary" />

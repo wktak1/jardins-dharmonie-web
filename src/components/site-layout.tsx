@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin } from "lucide-react";
+import { MusicToggle } from "@/components/music-toggle";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -24,6 +25,7 @@ export function SiteHeader() {
         <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">Les Jardins<br className="sm:hidden" /> d’Éleusis</span>
       </Link>
       <div className="flex items-center gap-2">
+        <MusicToggle />
         <Button asChild variant="secondary" className="hidden xl:inline-flex"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download />Dossier d’admission</a></Button>
         <Button asChild className="hidden sm:inline-flex"><Link to="/contact">Nous contacter</Link></Button>
         <Button variant="outline" size="icon" className="lg:hidden" onClick={() => setOpen(true)} aria-label="Ouvrir le menu"><Menu /></Button>
@@ -50,7 +52,8 @@ export function SiteFooter() {
       <div><h2 className="footer-title">Accès rapide</h2><div className="grid gap-2 text-sm"><a className="footer-link" href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)">Dossier d’admission</a><Link className="footer-link" to="/mentions-legales">Mentions légales</Link><Link className="footer-link" to="/politique-confidentialite">Politique de confidentialité</Link><Link className="footer-link" to="/plan-du-site">Plan du site</Link></div></div>
       <div><h2 className="footer-title">Réseaux sociaux</h2><div className="flex gap-2">{socialLinks.map(l => <SocialLink key={l.name} name={l.name} url={l.url} />)}</div></div>
     </div>
-    <div className="border-t border-primary-foreground/20"><div className="container-shell py-5 text-sm opacity-80">© Les Jardins d’Éleusis — Contenu institutionnel en cours de validation.</div></div>
+    <div className="border-t border-primary-foreground/20"><div className="container-shell py-5 text-sm opacity-80">© Les Jardins d’Éleusis — Contenu institutionnel en cours de validation.
+      <details className="mt-2 text-xs"><summary className="cursor-pointer underline-offset-4 hover:underline">Crédits musicaux</summary><p className="mt-2 max-w-3xl leading-relaxed">Antonio Vivaldi – Les Quatre Saisons, L’Automne, 1er mouvement (Allegro). Violon : John Harrison. Direction : Robert Turizziani. Wichita State University Chamber Players. Source : <a className="underline" href="https://commons.wikimedia.org/wiki/File:Vivaldi_-_Four_Seasons_3_Autumn_mvt_1_Allegro_-_John_Harrison_violin.oga" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>. Licence : <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.</p></details></div></div>
   </footer>;
 }
 export function TikTokIcon({ className = "" }: { className?: string }) { return <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className={`h-6 w-6 ${className}`}><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>; }

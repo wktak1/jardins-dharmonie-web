@@ -28,14 +28,24 @@ function Page() {
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
               Le dossier d’admission peut être consulté et téléchargé afin de préparer votre demande d’admission.
             </p>
-            <a
-              className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              href={admissionDossier.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Télécharger le dossier d’admission
-            </a>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a
+                className="inline-flex w-full items-center justify-center rounded-md bg-primary px-6 py-3 font-semibold text-primary-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
+                href={admissionDossier.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Télécharger le dossier d’admission
+              </a>
+              <a
+                className="inline-flex w-full items-center justify-center rounded-md bg-wood px-6 py-3 font-semibold text-foreground transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring sm:w-auto"
+                href={medicalDossier.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Télécharger le dossier médical
+              </a>
+            </div>
           </div>
         </div>
       </section>

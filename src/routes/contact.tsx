@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
   head: () =>
     routeHead(
       "Contact",
-      "Coordonnées, adresse et itinéraire de l’EHPAD Les Jardins d’Eleusis à Dumbéa.",
+      "Coordonnées, adresse et itinéraire de l’EHPAD Les Jardins d’Éleusis à Dumbéa.",
       "/contact",
     ),
   staticData: { sitemap: true },
@@ -19,7 +19,7 @@ function Page() {
       <PageIntro eyebrow="Contact" title="Échanger avec l’établissement">
         <p>
           Pour toute demande d’information ou pour préparer une visite, contactez directement Les
-          Jardins d’Eleusis par téléphone ou par e-mail.
+          Jardins d’Éleusis par téléphone ou par e-mail.
         </p>
       </PageIntro>
       <section className="section-pad">
@@ -54,7 +54,7 @@ function Page() {
                     href={l.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Suivre Les Jardins d’Eleusis sur ${l.name}`}
+                    aria-label={`Suivre Les Jardins d’Éleusis sur ${l.name}`}
                     className="inline-flex min-h-11 items-center gap-2 rounded-md px-3 text-link transition duration-300 ease-out hover:bg-background hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100 [&_svg]:h-5 [&_svg]:w-5"
                   >
                     {socialIcon(l.name)}

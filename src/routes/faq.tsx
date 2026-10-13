@@ -6,7 +6,7 @@ export const Route = createFileRoute("/faq")({
   head: () =>
     routeHead(
       "Questions fréquentes",
-      "Réponses aux questions fréquentes des familles sur Les Jardins d’Eleusis à Dumbéa.",
+      "Réponses aux questions fréquentes des familles sur Les Jardins d’Éleusis à Dumbéa.",
       "/faq",
     ),
   staticData: { sitemap: true },

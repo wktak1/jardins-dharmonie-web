@@ -35,7 +35,7 @@ export function VideoPlaceholder() {
         playsInline
         preload="metadata"
         controls={false}
-        aria-label="Vidéo de présentation des Jardins d’Eleusis"
+        aria-label="Vidéo de présentation des Jardins d’Éleusis"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
       >
         <source src={presentationVideoWebm.url} type="video/webm" />
@@ -52,7 +52,7 @@ export function VideoPlaceholder() {
             EHPAD à Dumbéa
           </p>
           <h1 className="text-primary-foreground text-4xl leading-tight md:text-6xl lg:text-7xl">
-            Les Jardins d’Eleusis,
+            Les Jardins d’Éleusis,
             <br />
             un lieu de vie à Dumbéa
           </h1>
@@ -82,105 +82,105 @@ const galleryItems: GalleryItem[] = [
     category: "Extérieurs",
     photo: {
       src: galerieExterieurJardin.url,
-      alt: "Passerelle en bois au milieu des palmiers dans les jardins des Jardins d’Eleusis",
+      alt: "Passerelle en bois au milieu des palmiers dans les jardins des Jardins d’Éleusis",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurBatiment.url,
-      alt: "Façade du bâtiment des Jardins d’Eleusis entourée de palmiers et de massifs fleuris",
+      alt: "Façade du bâtiment des Jardins d’Éleusis entourée de palmiers et de massifs fleuris",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurBassin.url,
-      alt: "Bassin aux poissons entouré de plantes tropicales au pied du bâtiment aux Jardins d’Eleusis",
+      alt: "Bassin aux poissons entouré de plantes tropicales au pied du bâtiment aux Jardins d’Éleusis",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurKiosqueAllee.url,
-      alt: "Kiosque vert et allée bordée de palmiers dans le jardin aux Jardins d’Eleusis",
+      alt: "Kiosque vert et allée bordée de palmiers dans le jardin aux Jardins d’Éleusis",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurAlleePalmiers.url,
-      alt: "Allée enherbée bordée de grands palmiers aux Jardins d’Eleusis",
+      alt: "Allée enherbée bordée de grands palmiers aux Jardins d’Éleusis",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurKiosqueFleuri.url,
-      alt: "Kiosque ombragé près d’un massif fleuri aux Jardins d’Eleusis",
+      alt: "Kiosque ombragé près d’un massif fleuri aux Jardins d’Éleusis",
     },
   },
   {
     category: "Extérieurs",
     photo: {
       src: galerieExterieurJardinTropical.url,
-      alt: "Jardin tropical arboré avec un abri en bois aux Jardins d’Eleusis",
+      alt: "Jardin tropical arboré avec un abri en bois aux Jardins d’Éleusis",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunSalon.url,
-      alt: "Salon commun des Jardins d’Eleusis avec piano, tables et cartes du monde au mur",
+      alt: "Salon commun des Jardins d’Éleusis avec piano, tables et cartes du monde au mur",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunCoiffure.url,
-      alt: "Salon de coiffure des Jardins d’Eleusis avec poste de coiffure et bac à shampoing",
+      alt: "Salon de coiffure des Jardins d’Éleusis avec poste de coiffure et bac à shampoing",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunSalleAManger.url,
-      alt: "Salle à manger des Jardins d’Eleusis avec table dressée donnant sur la fontaine du jardin",
+      alt: "Salle à manger des Jardins d’Éleusis avec table dressée donnant sur la fontaine du jardin",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunHall.url,
-      alt: "Hall d’accueil des Jardins d’Eleusis avec aquarium, panneaux d’information et sièges",
+      alt: "Hall d’accueil des Jardins d’Éleusis avec aquarium, panneaux d’information et sièges",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunTerrasseKiosque.url,
-      alt: "Kiosque en bois avec table et chaises sous les arbres tropicaux aux Jardins d’Eleusis",
+      alt: "Kiosque en bois avec table et chaises sous les arbres tropicaux aux Jardins d’Éleusis",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunAlleeKiosques.url,
-      alt: "Allée ombragée entre les kiosques et le bassin aux Jardins d’Eleusis",
+      alt: "Allée ombragée entre les kiosques et le bassin aux Jardins d’Éleusis",
     },
   },
   {
     category: "Espaces communs",
     photo: {
       src: galerieCommunOmbrageKiosque.url,
-      alt: "Terrasse ombragée avec kiosque en bois et table de jardin aux Jardins d’Eleusis",
+      alt: "Terrasse ombragée avec kiosque en bois et table de jardin aux Jardins d’Éleusis",
     },
   },
   {
     category: "Chambres",
     photo: {
       src: galerieChambre1.url,
-      alt: "Chambre des Jardins d’Eleusis avec lit médicalisé, fauteuil et armoire",
+      alt: "Chambre des Jardins d’Éleusis avec lit médicalisé, fauteuil et armoire",
     },
   },
 ];

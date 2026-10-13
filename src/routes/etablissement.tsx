@@ -11,7 +11,7 @@ export const Route = createFileRoute("/etablissement")({
   head: () =>
     routeHead(
       "L’établissement",
-      "Découvrez l’histoire de l’EHPAD Les Jardins d’Eleusis à Dumbéa, de l’ouverture des Niaoulis en 2013 à celle des Fougères et des Terrasses en 2019.",
+      "Découvrez l’histoire de l’EHPAD Les Jardins d’Éleusis à Dumbéa, de l’ouverture des Niaoulis en 2013 à celle des Fougères et des Terrasses en 2019.",
       "/etablissement",
     ),
   staticData: { sitemap: true },
@@ -65,7 +65,7 @@ function Page() {
       <section className="pb-[clamp(4rem,8vw,7rem)]">
         <div className="container-shell">
           <div className="rounded-2xl border-t-4 border-wood bg-card p-7 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
-            <h2 className="text-2xl">Les valeurs des Jardins d’Eleusis</h2>
+            <h2 className="text-2xl">Les valeurs des Jardins d’Éleusis</h2>
             <p className="mt-4 text-muted-foreground">
               <strong className="font-semibold text-foreground">
                 La loyauté, la bienveillance et l’Humanitude

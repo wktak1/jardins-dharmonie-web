@@ -141,7 +141,7 @@ function DayCareDetails() {
 // Contenu « En savoir plus » de la carte « Hébergement permanent », déplié sous la
 // carte elle-même, sur le même principe que le panneau « Accueil de jour ».
 const permanentCareIntro =
-  "Les Jardins d’Eleusis accompagnent les résidents au quotidien en leur offrant une prise en soin personnalisée et évolutive.";
+  "Les Jardins d’Éleusis accompagnent les résidents au quotidien en leur offrant une prise en soin personnalisée et évolutive.";
 
 const permanentCareServices = [
   "Une résidence médicalisée",

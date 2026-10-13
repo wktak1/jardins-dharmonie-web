@@ -1,8 +1,14 @@
 import dossierAsset from "@/assets/dossier-admission.pdf.asset.json";
+import medicalAsset from "@/assets/dossier-medical.pdf.asset.json";
 
 export const admissionDossier = {
   url: dossierAsset.url,
   label: "Dossier d’admission",
+} as const;
+
+export const medicalDossier = {
+  url: medicalAsset.url,
+  label: "Dossier médical",
 } as const;
 
 export const site = {

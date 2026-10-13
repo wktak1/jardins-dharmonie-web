@@ -42,7 +42,7 @@ function Page() {
               <p className="eyebrow mt-5">2013</p>
               <h3 className="mt-2 text-2xl">Ouverture des Niaoulis</h3>
               <p className="mt-3 text-muted-foreground">
-                L’unité Les Niaoulis ouvre avec 40 places.
+                L’unité Les Niaoulis ouvre avec 42 places.
               </p>
             </article>
             <article className="rounded-2xl border-t-4 border-wood bg-card p-5 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)] sm:p-7">

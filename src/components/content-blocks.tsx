@@ -139,6 +139,12 @@ function DayCareDetails() {
             text="Une personne spécifiquement affectée à l’accompagnement des personnes accueillies à la journée."
           />
         </div>
+        <div className="mt-5 flex flex-wrap items-center gap-4 rounded-lg border border-border/70 bg-wood-soft/50 p-5">
+          <span className="feature-icon shrink-0"><Clock className="size-5" /></span>
+          <p className="text-[0.95rem] leading-relaxed text-muted-foreground">
+            <span className="font-semibold text-foreground">Jours et horaires d’ouverture :</span> Du lundi au vendredi, de 8h30 à 16h00.
+          </p>
+        </div>
       </div>
       <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
       <div className="space-y-5 text-muted-foreground">

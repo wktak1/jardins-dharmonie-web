@@ -103,7 +103,7 @@ export const dailyLife: DailyLifeSection[] = [
     text: "Les repas sont élaborés sur place par notre équipe de cuisine, avec une attention particulière portée à la qualité des produits, à l’équilibre nutritionnel et au plaisir gustatif.",
     paras: ["Notre priorité est de proposer une alimentation personnalisée, équilibrée et savoureuse, adaptée aux besoins et envies de chaque résident."],
   },
-  { title: "Le linge", text: "Le linge de maison (draps, serviettes de toilette) est fourni par l’établissement. Le linge du nouveau résident sera identifié et marqué le jour de l’entrée par l’établissement. Il est préférable de choisir des vêtements adaptés au lavage collectif et industriel. L’entretien de votre linge personnel peut être assuré par votre famille." },
+  { title: "Le linge", text: "Le linge de maison (draps, serviettes de toilette) est fourni par l’établissement. Le linge du nouveau résident sera identifié et marqué le jour de l’entrée par l’établissement. Il est préférable de choisir des vêtements adaptés au lavage collectif et industriel." },
   {
     title: "Les activités et animations",
     text: "Programme et informations à compléter avec l’établissement.",

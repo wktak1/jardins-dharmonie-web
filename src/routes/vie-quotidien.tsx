@@ -10,7 +10,6 @@ import planningAsset from "@/assets/planning-animations.png.asset.json";
 import chambreAsset from "@/assets/chambre-eleusis.jpg.asset.json";
 import fermeAsset from "@/assets/ferme-eleusis.jpg.asset.json";
 import { Car } from "lucide-react";
-import { FeatureHighlight } from "@/components/content-blocks";
 const hiddenSections = ["Les jardins et espaces extérieurs", "Les moments de convivialité", "L’accompagnement au quotidien", "Les espaces communs"];
 const sectionOrder = ["Les chambres", "La Table d’Éleusis"];
 const rank = (title: string) => {

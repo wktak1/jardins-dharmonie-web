@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ContactStrip,
@@ -21,8 +22,8 @@ const mainPhotos: Record<string, { src: string; alt: string }> = {
   "Les Terrasses": { src: terrassesPhoto.url, alt: "Terrasse couverte de l’unité Les Terrasses avec ses colonnes vertes, sa rambarde et sa vue sur le jardin" },
 };
 // Libellé affiché à la place du détail de l'unité, sur cette page uniquement
-const unitDetailLine: Partial<Record<string, string>> = {
-  "Les Terrasses": "Unité d’Hébergement Renforcée",
+const unitDetailLine: Partial<Record<string, ReactNode>> = {
+  "Les Terrasses": <strong className="text-foreground">Unité d’Hébergement Renforcée</strong>,
 };
 const fougeresViews = [
   { src: fougeresVue1.url, alt: "Bâtiment de l’unité Les Fougères vu depuis le jardin, avec sa coursive à l’étage et une fougère arborescente au premier plan" },

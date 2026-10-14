@@ -28,14 +28,14 @@ function Page() {
             <a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7">
               <Phone className="text-primary" />
               <h2 className="mt-5 text-xl">Téléphone</h2>
-              <div className="mt-5 flex justify-center">
+              <div className="mt-10 flex justify-center">
                 <p className="text-link text-xl">{site.phone}</p>
               </div>
             </a>
             <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
               <Mail className="text-primary" />
               <h2 className="mt-5 text-xl">E-mail</h2>
-              <div className="mt-5 flex justify-center">
+              <div className="mt-10 flex justify-center">
                 <p className="text-link break-all text-xl">{site.email}</p>
               </div>
             </a>

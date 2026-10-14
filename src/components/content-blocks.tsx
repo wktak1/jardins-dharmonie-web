@@ -180,14 +180,14 @@ const permanentCareServices = [
   "Une résidence médicalisée",
   "Une équipe de près de 50 professionnels",
   "Un service de restauration raffinée",
-  "Un hébergement en chambre partagée ou individuelle, pré-équipée et personnalisable",
+  "Un accès Wi-Fi",
   "Un service blanchisserie",
   "Un programme d’animation",
   "Des espaces de soins et de bien-être",
   "Un parc de promenade arboré et verdoyant",
   "Une ferme",
   "Une épicerie à portée de main",
-  "Un accès Wi-Fi",
+  "Un hébergement en chambre partagée ou individuelle, pré-équipée et personnalisable",
 ];
 
 function PermanentCareDetails() {

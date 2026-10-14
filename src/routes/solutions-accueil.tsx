@@ -20,6 +20,10 @@ const mainPhotos: Record<string, { src: string; alt: string }> = {
   "Les Niaoulis": { src: niaoulisPhoto.url, alt: "Terrasse fleurie de l’unité Les Niaoulis avec ses garde-corps verts et ses jardinières" },
   "Les Terrasses": { src: terrassesPhoto.url, alt: "Terrasse couverte de l’unité Les Terrasses avec ses colonnes vertes, sa rambarde et sa vue sur le jardin" },
 };
+// Libellé affiché à la place du détail de l'unité, sur cette page uniquement
+const unitDetailLine: Partial<Record<string, string>> = {
+  "Les Terrasses": "Unité d’Hébergement Renforcée",
+};
 const fougeresViews = [
   { src: fougeresVue1.url, alt: "Bâtiment de l’unité Les Fougères vu depuis le jardin, avec sa coursive à l’étage et une fougère arborescente au premier plan" },
   { src: fougeresVue2.url, alt: "Bassin d’agrément bordé de rochers et de plantes tropicales devant l’unité Les Fougères" },
@@ -101,7 +105,11 @@ function Page() {
                     </li>
                     {u.detail && (
                       <li>
-                        <strong className="text-foreground">Unité :</strong> {u.detail}
+                        {unitDetailLine[u.name] ?? (
+                          <>
+                            <strong className="text-foreground">Unité :</strong> {u.detail}
+                          </>
+                        )}
                       </li>
                     )}
                   </ul>

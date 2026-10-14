@@ -52,9 +52,7 @@ export function VideoPlaceholder() {
             EHPAD à Dumbéa
           </p>
           <h1 className="text-primary-foreground text-4xl leading-tight md:text-6xl lg:text-7xl">
-            Les Jardins d’Éleusis,
-            <br />
-            un lieu de vie à Dumbéa
+            Bienvenue aux Jardins d’Éleusis
           </h1>
           <p className="mt-6 max-w-2xl text-lg opacity-95 md:text-xl">
             Découvrez notre établissement, ses espaces de vie et les différentes solutions d’accueil

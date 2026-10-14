@@ -142,7 +142,7 @@ function DayCareDetails() {
         <div className="mt-5 flex flex-wrap items-center gap-4 rounded-lg border border-border/70 bg-wood-soft/50 p-5">
           <span className="feature-icon shrink-0"><Clock className="size-5" /></span>
           <p className="text-[0.95rem] leading-relaxed text-muted-foreground">
-            <span className="font-semibold text-foreground">Jours et horaires d’ouverture :</span> Du lundi au vendredi, de 8h30 à 16h00.
+            <span className="font-semibold text-foreground">Jours et horaires d’ouverture :</span> Du&nbsp;lundi au vendredi, de 8h30 à 16h00.
           </p>
         </div>
       </div>

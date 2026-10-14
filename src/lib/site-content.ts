@@ -94,8 +94,15 @@ export const units = [
   },
 ] as const;
 
-export const dailyLife = [
-  { title: "Les repas", text: "Les repas sont préparés sur place par une cuisinière et une équipe entièrement dédiée." },
+// paras : paragraphes supplémentaires affichés sous le texte principal
+export type DailyLifeSection = { title: string; text: string; paras?: string[] };
+
+export const dailyLife: DailyLifeSection[] = [
+  {
+    title: "La Table d’Éleusis",
+    text: "Les repas sont élaborés sur place par notre équipe de cuisine, avec une attention particulière portée à la qualité des produits, à l’équilibre nutritionnel et au plaisir gustatif.",
+    paras: ["Notre priorité est de proposer une alimentation personnalisée, équilibrée et savoureuse, adaptée aux besoins et envies de chaque résident."],
+  },
   { title: "Le linge", text: "Le linge de maison (draps, serviettes de toilette) est fourni par l’établissement. Le linge du nouveau résident sera identifié et marqué le jour de l’entrée par l’établissement. Il est préférable de choisir des vêtements adaptés au lavage collectif et industriel. L’entretien de votre linge personnel peut être assuré par votre famille." },
   {
     title: "Les activités et animations",

@@ -106,7 +106,8 @@ export const dailyLife: DailyLifeSection[] = [
   { title: "Le linge", text: "Le linge de maison (draps, serviettes de toilette) est fourni par l’établissement. Le linge du nouveau résident sera identifié et marqué le jour de l’entrée par l’établissement. Il est préférable de choisir des vêtements adaptés au lavage collectif et industriel." },
   {
     title: "Les activités et animations",
-    text: "Programme et informations à compléter avec l’établissement.",
+    text: "L’animation est au cœur de la vie des Jardins d’Éleusis. Portée par deux animatrices dédiées, elle rythme le quotidien à travers des moments de partage et de convivialité.",
+    paras: ["Ateliers créatifs et musicaux, activités de mémoire et de motricité, jeux, rencontres et sorties viennent ponctuer la semaine, dans le respect des envies et du rythme de chacun."],
   },
   {
     title: "La ferme",

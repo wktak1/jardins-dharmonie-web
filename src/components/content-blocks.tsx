@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BedDouble, Building2, CalendarDays, Check, ChevronDown, Download, SunMedium } from "lucide-react";
+import { ArrowRight, BedDouble, Building2, CalendarDays, Check, ChevronDown, DoorOpen, Download, SunMedium, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MediaPlaceholder } from "@/components/site-layout";
 import journeeType from "@/assets/accueil-de-jour-journee-type.png.asset.json";
@@ -100,6 +100,19 @@ export function Downloads() { return <div id="documents" className="grid gap-3">
 const dayCareIntro =
   "L'accueil de jour est un service destiné aux personnes âgées en perte d'autonomie vivant à domicile. Il offre un cadre sécurisé et stimulant tout en apportant un moment de répit aux aidants.";
 
+// Mise en avant sobre d’un atout : icône discrète, intitulé fort, précision courte.
+export function FeatureHighlight({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
+  return (
+    <div className="flex items-start gap-4 rounded-lg border border-border/70 bg-wood-soft/50 p-5">
+      <span className="feature-icon shrink-0">{icon}</span>
+      <div>
+        <p className="font-semibold text-foreground">{title}</p>
+        <p className="mt-1 text-[0.95rem] leading-relaxed text-muted-foreground">{text}</p>
+      </div>
+    </div>
+  );
+}
+
 function DayCareDetails() {
   const goals = [
     "Maintenir et stimuler l'autonomie des résidents",
@@ -108,7 +121,26 @@ function DayCareDetails() {
     "Soulager les aidants en leur offrant du temps pour eux",
   ];
   return (
-    <div className="grid gap-8 border-t border-border pt-6 lg:grid-cols-2 lg:items-start lg:gap-12">
+    <>
+      <div className="border-t border-border pt-6">
+        <p className="max-w-3xl text-muted-foreground">
+          L’accueil de jour dispose d’un espace spécialement aménagé et d’une personne dédiée, permettant
+          de proposer un accompagnement attentif, personnalisé et adapté aux besoins de chacun.
+        </p>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <FeatureHighlight
+            icon={<DoorOpen className="size-5" />}
+            title="Espace dédié"
+            text="Un espace spécialement aménagé pour les personnes accueillies à la journée."
+          />
+          <FeatureHighlight
+            icon={<UserRound className="size-5" />}
+            title="Accompagnement dédié"
+            text="Une personne spécifiquement affectée à l’accompagnement des personnes accueillies à la journée."
+          />
+        </div>
+      </div>
+      <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
       <div className="space-y-5 text-muted-foreground">
         <ul className="space-y-3">
           {goals.map((g) => (
@@ -134,7 +166,8 @@ function DayCareDetails() {
         />
         <span className="mt-2 block text-center text-sm text-muted-foreground">Cliquer pour agrandir l'image</span>
       </a>
-    </div>
+      </div>
+    </>
   );
 }
 

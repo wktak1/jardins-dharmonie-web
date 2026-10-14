@@ -101,7 +101,13 @@ function Page() {
                     </li>
                     {u.detail && (
                       <li>
-                        <strong className="text-foreground">Unité :</strong> {u.detail}
+                        {u.name === "Les Terrasses" ? (
+                          "Unité d’Hébergement Renforcée"
+                        ) : (
+                          <>
+                            <strong className="text-foreground">Unité :</strong> {u.detail}
+                          </>
+                        )}
                       </li>
                     )}
                   </ul>

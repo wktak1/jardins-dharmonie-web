@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BedDouble, Building2, CalendarDays, Check, ChevronDown, DoorOpen, Download, SunMedium, UserRound } from "lucide-react";
+import { ArrowRight, BedDouble, Building2, CalendarDays, Check, ChevronDown, Clock, DoorOpen, Download, SunMedium, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MediaPlaceholder } from "@/components/site-layout";
 import journeeType from "@/assets/accueil-de-jour-journee-type.png.asset.json";
@@ -98,7 +98,7 @@ export function UnitsGrid() { return <div className="grid gap-6 lg:grid-cols-3">
 export function Downloads() { return <div id="documents" className="grid gap-3">{documents.map(doc => <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 rounded-md border border-border bg-card p-5" key={doc}><div className="min-w-0"><h3 className="text-lg">{doc}</h3><p className="text-sm text-muted-foreground">{doc === admissionDossier.label ? "Document officiel au format PDF" : "Document à ajouter"}</p></div>{doc === admissionDossier.label ? <Button variant="outline" asChild><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download /> <span className="hidden sm:inline">Ouvrir</span></a></Button> : <Button variant="outline" disabled aria-label={`${doc} indisponible pour le moment`}><Download /> <span className="hidden sm:inline">À venir</span></Button>}</div>)}</div>; }
 
 const dayCareIntro =
-  "L'accueil de jour est un service destiné aux personnes âgées en perte d'autonomie vivant à domicile. Il offre un cadre sécurisé et stimulant tout en apportant un moment de répit aux aidants.";
+  "L’accueil de jour est un service destiné aux personnes âgées vivant à domicile. Il offre un cadre sécurisé et stimulant tout en apportant un moment de répit aux aidants.";
 
 // Mise en avant sobre d’un atout : icône discrète, intitulé fort, précision courte.
 export function FeatureHighlight({ icon, title, text }: { icon: ReactNode; title: string; text: string }) {
@@ -139,6 +139,12 @@ function DayCareDetails() {
             text="Une personne spécifiquement affectée à l’accompagnement des personnes accueillies à la journée."
           />
         </div>
+        <div className="mt-5 flex flex-wrap items-center gap-4 rounded-lg border border-border/70 bg-wood-soft/50 p-5">
+          <span className="feature-icon shrink-0"><Clock className="size-5" /></span>
+          <p className="text-[0.95rem] leading-relaxed text-muted-foreground">
+            <span className="font-semibold text-foreground">Jours et horaires d’ouverture :</span> Du lundi au vendredi, de 8h30 à 16h00.
+          </p>
+        </div>
       </div>
       <div className="mt-8 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
       <div className="space-y-5 text-muted-foreground">
@@ -154,7 +160,7 @@ function DayCareDetails() {
           L'accueil de jour est conçu pour accueillir les seniors vivant à domicile, leur permettant de participer à des activités variées : ateliers mémoire, jeux collectifs, ateliers de motricité, activités artistiques et séances de relaxation.
         </p>
         <p>
-          Encadrées par une Aide médico-psychologique, ces journées visent à stimuler les capacités cognitives et motrices tout en apportant du plaisir et de la convivialité.
+          Encadrées par une auxiliaire de vie, ces journées visent à stimuler les capacités cognitives et motrices tout en apportant du plaisir et de la convivialité.
         </p>
       </div>
       <a className="block" href={journeeType.url} rel="noopener" target="_blank">

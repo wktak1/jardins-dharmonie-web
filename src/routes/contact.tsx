@@ -26,22 +26,28 @@ function Page() {
         <div className="container-shell">
           <div className="grid gap-6 md:grid-cols-3">
             <a href={site.phoneHref} className="rounded-lg border border-border bg-card p-7">
-              <Phone className="text-primary" />
-              <h2 className="mt-5 text-xl">Téléphone</h2>
+              <div className="flex justify-center">
+                <Phone className="text-primary" />
+              </div>
+              <h2 className="mt-5 text-center text-xl">Téléphone</h2>
               <div className="mt-10 flex justify-center">
                 <p className="text-link text-xl">{site.phone}</p>
               </div>
             </a>
             <a href={site.emailHref} className="rounded-lg border border-border bg-card p-7">
-              <Mail className="text-primary" />
-              <h2 className="mt-5 text-xl">E-mail</h2>
+              <div className="flex justify-center">
+                <Mail className="text-primary" />
+              </div>
+              <h2 className="mt-5 text-center text-xl">E-mail</h2>
               <div className="mt-10 flex justify-center">
                 <p className="text-link break-all text-xl">{site.email}</p>
               </div>
             </a>
             <div className="rounded-lg border border-border bg-card p-7">
-              <MapPin className="text-primary" />
-              <h2 className="mt-5 text-xl">Adresse et horaires</h2>
+              <div className="flex justify-center">
+                <MapPin className="text-primary" />
+              </div>
+              <h2 className="mt-5 text-center text-xl">Adresse et horaires</h2>
               <p className="mt-2 text-muted-foreground">{site.address}</p>
               <p className="mt-3 font-semibold">Horaires de visite : 10h à 19h</p>
             </div>

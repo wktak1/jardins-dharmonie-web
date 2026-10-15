@@ -19,10 +19,11 @@ export const site = {
   phoneHref: "tel:+687298500",
   email: "accueil@eleusis.nc",
   emailHref: "mailto:accueil@eleusis.nc",
+  // Repère et liens centrés sur les coordonnées relevées sur place (pas de géocodage de l’adresse).
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie",
+    "https://www.google.com/maps/search/?api=1&query=-22.14242,166.47907",
   mapsEmbed:
-    "https://www.google.com/maps?q=364%20bis%20route%20de%20Ko%C3%A9%2C%20Dumb%C3%A9a%2C%20Nouvelle-Cal%C3%A9donie&output=embed",
+    "https://www.google.com/maps?q=-22.14242,166.47907&z=17&output=embed",
 } as const;
 
 export const navigation = [

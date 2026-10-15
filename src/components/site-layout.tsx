@@ -1,13 +1,19 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin, Music2 } from "lucide-react";
+import { Menu, Phone, Mail, MapPin, Download, X, ExternalLink, Facebook, Instagram, Linkedin, Music } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
 import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
 import heroLogoAsset from "@/assets/jardins-eleusis-hero-logo.png.asset.json";
 import { admissionDossier, navigation, site, socialLinks } from "@/lib/site-content";
 import musicAsset from "@/assets/vivaldi-autumn.ogg.asset.json";
+
+// Note double barrée : même dessin que l’icône « Music » de lucide, avec une barre de suppression.
+export function MusicNoteOffIcon({ className = "" }: { className?: string }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className={className}><path d="M9 18V5l12-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="18" cy="16" r="3" /><path d="m2 2 20 20" /></svg>;
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
@@ -31,8 +37,8 @@ export function SiteHeader() {
     }
   }
   function musicButton() {
-    const label = musicPlaying ? "Désactiver la musique" : "Activer la musique";
-    return <Button type="button" variant="ghost" size="icon" aria-label={label} title={musicError ? "Lecture indisponible — réessayer" : label} aria-pressed={musicPlaying} onClick={toggleMusic} className={cn("shrink-0", musicPlaying ? "bg-accent text-primary" : "text-muted-foreground")}><Music2 aria-hidden="true" className="!size-5" /></Button>;
+    const label = musicPlaying ? "Couper la musique" : "Activer la musique";
+    return <TooltipProvider delayDuration={150}><Tooltip><TooltipTrigger asChild><Button type="button" variant="ghost" size="icon" aria-label={label} aria-pressed={musicPlaying} onClick={toggleMusic} className={cn("shrink-0", musicPlaying ? "bg-accent text-primary" : "text-muted-foreground")}>{musicPlaying ? <MusicNoteOffIcon className="!size-5" /> : <Music aria-hidden="true" className="!size-5" />}</Button></TooltipTrigger><TooltipContent side="bottom">{musicError ? "Lecture indisponible — réessayer" : label}</TooltipContent></Tooltip></TooltipProvider>;
   }
   useEffect(() => { if (open) document.body.style.overflow = "hidden"; else document.body.style.overflow = ""; return () => { document.body.style.overflow = ""; }; }, [open]);
   return <header className="sticky top-0 z-40 border-b border-border/80 bg-background/95 backdrop-blur">

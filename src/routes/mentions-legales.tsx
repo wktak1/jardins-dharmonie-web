@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router"; import { PageIntro } from "@/components/site-layout"; import { routeHead } from "@/components/route-meta";
 export const Route=createFileRoute("/mentions-legales")({head:()=>routeHead("Mentions légales","Mentions légales du site des Jardins d’Éleusis.","/mentions-legales"),staticData:{sitemap:true},component:Page});
 const p="text-muted-foreground leading-relaxed";
-const mail=<a href="mailto:accueil@eleusis.nc" className="text-primary underline-offset-4 hover:underline break-all">accueil@eleusis.nc</a>;
+const mail=<a href="mailto:accueil@eleusis.nc" className="text-primary underline-offset-4 hover:underline break-words">accueil@eleusis.nc</a>;
 function Page(){return <><PageIntro title="Mentions légales"><p>Informations réglementaires du site.</p></PageIntro><section className="section-pad"><div className="container-narrow space-y-12">
 <div><h2>Éditeur du site</h2><p className={`mt-3 ${p}`}>EHPAD Les Jardins d’Éleusis — 364 bis route de Koé, Dumbéa, Nouvelle-Calédonie — 29 85 00 — accueil@eleusis.nc</p></div>
 <div><h2>Responsable de publication</h2><div className="mt-5 space-y-4"><p className={p}>Le responsable de la publication du présent site internet est <strong className="text-foreground">Monsieur Thierry CLAVILIER</strong>, Gérant des Jardins d’Éleusis.</p><p className={p}>Pour toute question relative aux contenus publiés sur ce site, vous pouvez contacter l’établissement à l’adresse suivante : {mail}.</p></div></div>

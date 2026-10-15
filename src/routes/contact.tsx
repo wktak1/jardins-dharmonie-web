@@ -48,8 +48,8 @@ function Page() {
                 <MapPin className="text-primary" />
               </div>
               <h2 className="mt-5 text-center text-xl">Adresse et horaires</h2>
-              <p className="mt-2 text-muted-foreground">{site.address}</p>
-              <p className="mt-3 font-semibold">Horaires de visite : 10h à 19h</p>
+              <p className="mt-2 text-center text-muted-foreground">{site.address}</p>
+              <p className="mt-3 text-center font-semibold">Horaires de visite : 10h à 19h</p>
             </div>
           </div>
           <div className="mt-10">

@@ -23,9 +23,9 @@ function Page() {
     <>
       <PageIntro eyebrow="Présentation" title="Une histoire qui s’inscrit à Dumbéa">
         <p>
-          Les Jardins d’Éleusis sont un établissement à taille humaine, implanté à Dumbéa dans un
-          environnement verdoyant et apaisant, pensé pour le bien-être et l’accompagnement des
-          résidents.
+          L’EHPAD « Les Jardins d’Éleusis » est un établissement à taille humaine, implanté à Dumbéa
+          dans un environnement verdoyant et apaisant, pensé pour le bien-être et l’accompagnement
+          des résidents.
         </p>
       </PageIntro>
       <section className="section-pad">

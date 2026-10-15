@@ -56,8 +56,8 @@ function Page() {
             <MapBlock />
           </div>
           <div className="mt-10 border-l-4 border-secondary bg-muted p-6">
-            <h2 className="text-xl">Réseaux sociaux</h2>
-            <ul className="mt-3 flex flex-wrap gap-3">
+            <h2 className="text-center text-xl">Réseaux sociaux</h2>
+            <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
               {socialLinks.map((l) => (
                 <li key={l.name}>
                   <a

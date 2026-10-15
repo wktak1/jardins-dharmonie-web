@@ -78,7 +78,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return <footer className="bg-primary text-primary-foreground">
     <div className="container-shell grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-4">
-      <div><img src={logoAsset.url} alt="Logo des Jardins d’Éleusis" className="h-20 w-40 rounded-sm object-cover" /><p className="mt-4 text-sm opacity-85">Établissement d’hébergement pour personnes âgées dépendantes à Dumbéa.</p></div>
+      <div><img src={logoAsset.url} alt="Logo des Jardins d’Éleusis" className="h-20 w-40 rounded-sm object-cover" /><p className="mt-4 text-sm opacity-85">Établissement d’hébergement pour personnes âgées à Dumbéa.</p></div>
       <div><h2 className="footer-title">Coordonnées</h2><address className="not-italic space-y-3 text-sm opacity-90"><p>{site.address}</p><a className="footer-link" href={site.phoneHref}>{site.phone}</a><a className="footer-link" href={site.emailHref}>{site.email}</a></address></div>
       <div><h2 className="footer-title">Accès rapide</h2><div className="grid gap-2 text-sm"><a className="footer-link" href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)">Dossier d’admission</a><Link className="footer-link" to="/mentions-legales">Mentions légales</Link><Link className="footer-link" to="/politique-confidentialite">Politique de confidentialité</Link><Link className="footer-link" to="/plan-du-site">Plan du site</Link></div></div>
       <div><h2 className="footer-title">Réseaux sociaux</h2><div className="flex gap-2">{socialLinks.map(l => <SocialLink key={l.name} name={l.name} url={l.url} />)}</div></div>

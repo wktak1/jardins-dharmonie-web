@@ -176,6 +176,8 @@
 @utility contact-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--color-foreground); }
 @utility footer-link {
   display: block;
+  width: fit-content;
+  max-width: 100%;
   color: var(--color-primary-foreground);
   text-decoration-line: none;
   background-image: linear-gradient(currentColor, currentColor);
@@ -188,6 +190,7 @@
   @media (hover: none) { background-size: 100% 1px; }
   @media (prefers-reduced-motion: reduce) { transition: none; }
 }
+
 
 @utility footer-title { margin-bottom: 1rem; font-family: var(--font-sans); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--color-primary-foreground); }
 @utility text-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--color-primary); font-weight: 700; }

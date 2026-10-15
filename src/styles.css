@@ -164,8 +164,15 @@
 @utility section-pad { padding-block: clamp(4rem, 8vw, 7rem); }
 @utility eyebrow { color: var(--color-primary); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
 @utility page-intro { padding-block: clamp(4rem, 8vw, 7rem); background: var(--color-muted); border-bottom: 1px solid var(--color-border); }
-@utility nav-link { border-radius: .35rem; padding: .45rem .58rem; font-size: .82rem; font-weight: 600; color: var(--color-muted-foreground); }
+@utility nav-link { border-radius: .35rem; padding: .5rem .65rem; font-size: .95rem; font-weight: 600; white-space: nowrap; color: var(--color-muted-foreground); }
 @utility nav-link-active { background: var(--color-accent); color: var(--color-accent-foreground); }
+@utility nav-row { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+
+/* Les neuf onglets ne tiennent pas en 15,2 px sous 1280 px : on reste à 14 px, sans retour à la ligne. */
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .nav-link { font-size: .875rem; padding-inline: .45rem; }
+  .nav-row { gap: .3rem; }
+}
 @utility contact-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--color-foreground); }
 @utility footer-link { display: block; text-decoration: underline; text-decoration-color: color-mix(in oklab, currentColor 30%, transparent); text-underline-offset: .25rem; }
 @utility footer-title { margin-bottom: 1rem; font-family: var(--font-sans); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--color-primary-foreground); }

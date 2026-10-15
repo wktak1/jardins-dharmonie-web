@@ -63,13 +63,13 @@ export function SiteHeader() {
       </div>
     </div>
     <nav className="hidden border-t border-border lg:block" aria-label="Navigation principale">
-      <div className="container-shell flex items-center justify-between gap-2 py-2">
+      <div className="nav-row container-shell py-1.5">
         {navigation.map(item => <Link key={item.to} to={item.to} activeOptions={{ exact: item.to === "/" }} className="nav-link" activeProps={{ className: "nav-link nav-link-active" }}>{item.label}</Link>)}
       </div>
     </nav>
     {open && <div className="fixed inset-0 z-50 min-h-screen bg-background p-5 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
       <div className="flex items-center justify-between border-b border-border pb-4"><span className="font-display text-xl text-primary">Les Jardins d’Éleusis</span><Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fermer le menu"><X /></Button></div>
-      <nav className="mt-5 grid gap-1" aria-label="Navigation mobile">{navigation.map(item => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-lg font-medium hover:bg-secondary">{item.label}</Link>)}</nav>
+      <nav className="mt-5 grid gap-1.5 overflow-x-hidden" aria-label="Navigation mobile">{navigation.map(item => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3.5 text-lg font-medium leading-snug hover:bg-secondary">{item.label}</Link>)}</nav>
       <div className="mt-6 grid gap-3"><Button asChild><Link to="/contact" onClick={() => setOpen(false)}>Nous contacter</Link></Button><div className="flex items-center justify-center gap-2">{musicButton()}<Button asChild variant="secondary"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)" onClick={() => setOpen(false)}><Download />Dossier d’admission</a></Button></div></div>
     </div>}
   </header>;

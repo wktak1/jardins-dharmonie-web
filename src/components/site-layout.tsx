@@ -50,8 +50,8 @@ export function SiteHeader() {
         <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">Les Jardins<br className="sm:hidden" /> d’Éleusis</span>
       </Link>
       <div className="flex items-center gap-2">
-        <Button asChild variant="secondary" className="hidden xl:inline-flex"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download />Dossier d’admission</a></Button>
         {musicButton()}
+        <Button asChild variant="secondary" className="hidden xl:inline-flex"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download />Dossier d’admission</a></Button>
         <Button asChild className="hidden sm:inline-flex"><Link to="/contact">Nous contacter</Link></Button>
         <Button variant="outline" size="icon" className="lg:hidden" onClick={() => setOpen(true)} aria-label="Ouvrir le menu"><Menu /></Button>
       </div>
@@ -64,7 +64,7 @@ export function SiteHeader() {
     {open && <div className="fixed inset-0 z-50 min-h-screen bg-background p-5 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu principal">
       <div className="flex items-center justify-between border-b border-border pb-4"><span className="font-display text-xl text-primary">Les Jardins d’Éleusis</span><Button variant="ghost" size="icon" onClick={() => setOpen(false)} aria-label="Fermer le menu"><X /></Button></div>
       <nav className="mt-5 grid gap-1" aria-label="Navigation mobile">{navigation.map(item => <Link key={item.to} to={item.to} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-lg font-medium hover:bg-secondary">{item.label}</Link>)}</nav>
-      <div className="mt-6 grid gap-3"><Button asChild><Link to="/contact" onClick={() => setOpen(false)}>Nous contacter</Link></Button><div className="flex items-center justify-center gap-2"><Button asChild variant="secondary"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)" onClick={() => setOpen(false)}><Download />Dossier d’admission</a></Button>{musicButton()}</div></div>
+      <div className="mt-6 grid gap-3"><Button asChild><Link to="/contact" onClick={() => setOpen(false)}>Nous contacter</Link></Button><div className="flex items-center justify-center gap-2">{musicButton()}<Button asChild variant="secondary"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)" onClick={() => setOpen(false)}><Download />Dossier d’admission</a></Button></div></div>
     </div>}
   </header>;
 }

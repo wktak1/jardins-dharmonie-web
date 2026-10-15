@@ -7,7 +7,7 @@ import {
 import niaoulis2013 from "@/assets/unite-niaoulis-aerienne.jpg.asset.json";
 import aerialView from "@/assets/presentation-vue-aerienne.jpg.asset.json";
 import { routeHead } from "@/components/route-meta";
-export const Route = createFileRoute("/etablissement")({
+export const Route = createFileRoute("/presentation")({
   head: () =>
     routeHead(
       "L’établissement",

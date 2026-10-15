@@ -11,3 +11,4 @@
 
 Use the shared PageIntro for decorative media-free page openings; keep the home video hero separate so background decoration cannot affect media heroes.
 Keep the background audio element and playback state in the shared SiteHeader, not leaf routes, so client-side page navigation does not restart playback.
+Keep /etablissement as a permanent redirect to /presentation so existing published links remain valid after page consolidation.

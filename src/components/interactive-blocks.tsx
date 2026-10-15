@@ -60,7 +60,7 @@ export function VideoPlaceholder() {
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild variant="secondary" size="lg">
-              <Link to="/etablissement">Découvrir l’établissement</Link>
+              <Link to="/presentation">Découvrir l’établissement</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)">

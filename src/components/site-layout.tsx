@@ -50,8 +50,8 @@ export function SiteHeader() {
         <span className="min-w-0 font-display text-lg font-semibold leading-tight text-primary sm:text-xl">Les Jardins<br className="sm:hidden" /> d’Éleusis</span>
       </Link>
       <div className="flex items-center gap-2">
-        <Button asChild variant="secondary" className="hidden xl:inline-flex"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download />Dossier d’admission</a></Button>
         {musicButton()}
+        <Button asChild variant="secondary" className="hidden xl:inline-flex"><a href={admissionDossier.url} target="_blank" rel="noopener" aria-label="Ouvrir le dossier d’admission (PDF)"><Download />Dossier d’admission</a></Button>
         <Button asChild className="hidden sm:inline-flex"><Link to="/contact">Nous contacter</Link></Button>
         <Button variant="outline" size="icon" className="lg:hidden" onClick={() => setOpen(true)} aria-label="Ouvrir le menu"><Menu /></Button>
       </div>

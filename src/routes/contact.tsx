@@ -53,7 +53,7 @@ function Page() {
             </div>
           </div>
           <div className="mt-10">
-            <MapBlock />
+            <MapBlock centered />
           </div>
           <div className="mt-10 border-l-4 border-secondary bg-muted p-6">
             <h2 className="text-center text-xl">Réseaux sociaux</h2>

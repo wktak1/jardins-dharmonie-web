@@ -6,6 +6,7 @@ import {
 } from "@/components/site-layout";
 import niaoulis2013 from "@/assets/unite-niaoulis-aerienne.jpg.asset.json";
 import aerialView from "@/assets/presentation-vue-aerienne.jpg.asset.json";
+import jardinInterieur from "@/assets/presentation-jardin-interieur.jpg.asset.json";
 import { routeHead } from "@/components/route-meta";
 export const Route = createFileRoute("/presentation")({
   head: () =>
@@ -64,6 +65,14 @@ function Page() {
       </section>
       <section className="pb-[clamp(4rem,8vw,7rem)]">
         <div className="container-shell">
+          <figure className="mb-8 overflow-hidden rounded-2xl shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
+            <img
+              src={jardinInterieur.url}
+              alt="Jardin intérieur des Jardins d’Éleusis : cascade sur rochers, végétation tropicale et allée accessible bordée de rambardes, devant les bâtiments à coursives."
+              loading="lazy"
+              className="aspect-[4/3] w-full object-cover object-[50%_60%] sm:aspect-[21/9]"
+            />
+          </figure>
           <div className="rounded-2xl border-t-4 border-wood bg-card p-7 shadow-[0_18px_40px_-18px_color-mix(in_oklab,var(--color-wood)_55%,transparent)]">
             <h2 className="text-2xl">Les valeurs des Jardins d’Éleusis</h2>
             <p className="mt-4 text-muted-foreground">

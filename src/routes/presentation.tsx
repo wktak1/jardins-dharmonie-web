@@ -10,9 +10,9 @@ import { routeHead } from "@/components/route-meta";
 export const Route = createFileRoute("/presentation")({
   head: () =>
     routeHead(
-      "L’établissement",
+      "Présentation",
       "Découvrez l’histoire de l’EHPAD Les Jardins d’Éleusis à Dumbéa, de l’ouverture des Niaoulis en 2013 à celle des Fougères et des Terrasses en 2019.",
-      "/etablissement",
+      "/presentation",
     ),
   staticData: { sitemap: true },
   component: Page,
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/presentation")({
 function Page() {
   return (
     <>
-      <PageIntro eyebrow="L’établissement" title="Une histoire qui s’inscrit à Dumbéa">
+      <PageIntro eyebrow="Présentation" title="Une histoire qui s’inscrit à Dumbéa">
         <p>
           Les Jardins d’Éleusis sont un établissement à taille humaine, implanté à Dumbéa dans un
           environnement verdoyant et apaisant, pensé pour le bien-être et l’accompagnement des

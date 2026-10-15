@@ -8,3 +8,5 @@
 - [ ] Ajouter sitemap.xml — bloqué jusqu’à l’obtention de l’adresse publique définitive
 - [x] Vérifier le rendu ordinateur et mobile ainsi que les interactions
 - [x] Ajouter et vérifier le filigrane du logo dans les ouvertures sans photo ni vidéo uniquement
+- [ ] Réunir Présentation et L’établissement sous /presentation et vérifier les liens
+- [ ] Ajouter la photo jointe à la nouvelle Présentation — en attente du fichier joint

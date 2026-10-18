@@ -90,7 +90,7 @@ export const units = [
     places: "14 places",
     rooms: "Chambres individuelles",
     bathroom: "Salle de bain privative",
-    detail: "Unité UHR (Unité d'Hébergement Renforcée)",
+    detail: "Unité d’Hébergement Renforcée",
   },
 ] as const;
 

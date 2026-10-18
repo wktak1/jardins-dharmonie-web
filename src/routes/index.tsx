@@ -12,7 +12,7 @@ import planningAsset from "@/assets/planning-animations.png.asset.json";
 import chambreAsset from "@/assets/chambre-eleusis.jpg.asset.json";
 const dailyCards = [
   { id: "les-chambres", title: "Les chambres", img: chambreAsset.url, alt: "Chambre équipée d’un lit médicalisé, d’un fauteuil et d’une armoire", text: "Climatisées, équipées de sanitaires et d’un lit médicalisé, à agencer à votre convenance." },
-  { id: "les-repas", title: "Les repas", img: repasAsset.url, alt: "Assiettes de repas préparées en cuisine", text: "Les repas sont préparés sur place par une cuisinière dédiée." },
+  { id: "les-repas", title: "La table d’Éleusis", img: repasAsset.url, alt: "Assiettes de repas préparées en cuisine", text: "Les repas sont préparés sur place par une cuisinière dédiée." },
   { id: "le-linge", title: "Le linge", img: lingeAsset.url, alt: "Linge propre plié, prêt à être remis aux résidents", text: "Le linge de maison est fourni par l’établissement, et le linge personnel identifié dès l’entrée." },
   { id: "les-activites-et-animations", title: "Les activités et animations", img: planningAsset.url, alt: "Planning des animations de l’accueil de jour", text: "Découvrez le planning des animations proposées." },
 ];

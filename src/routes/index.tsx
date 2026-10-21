@@ -6,10 +6,10 @@ import { SolutionsGrid, UnitsGrid } from "@/components/content-blocks";
 import { GalleryBrowser, VideoPlaceholder } from "@/components/interactive-blocks";
 import { admissionDossier } from "@/lib/site-content";
 import { routeHead } from "@/components/route-meta";
-import lingeAsset from "@/assets/linge-serviettes.jpg.asset.json";
-import repasAsset from "@/assets/repas-triptyque.jpg.asset.json";
-import planningAsset from "@/assets/planning-animations.png.asset.json";
-import chambreAsset from "@/assets/chambre-eleusis.jpg.asset.json";
+const lingeAsset = { url: "/images/linge-serviettes.jpg" };
+const repasAsset = { url: "/images/repas-triptyque.jpg" };
+const planningAsset = { url: "/images/planning-animations.png" };
+const chambreAsset = { url: "/images/chambre-eleusis.jpg" };
 const dailyCards = [
   { id: "les-chambres", title: "Les chambres", img: chambreAsset.url, alt: "Chambre équipée d’un lit médicalisé, d’un fauteuil et d’une armoire", text: "Climatisées, équipées de sanitaires et d’un lit médicalisé, à agencer à votre convenance." },
   { id: "les-repas", title: "La Table d’Éleusis", img: repasAsset.url, alt: "Assiettes de repas préparées en cuisine", text: "Les repas sont préparés sur place par une cuisinière dédiée." },

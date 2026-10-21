@@ -4,9 +4,9 @@ import {
   PageIntro,
   SectionHeading,
 } from "@/components/site-layout";
-import niaoulis2013 from "@/assets/unite-niaoulis-aerienne.jpg.asset.json";
-import aerialView from "@/assets/presentation-vue-aerienne.jpg.asset.json";
-import jardinInterieur from "@/assets/presentation-jardin-interieur.jpg.asset.json";
+const niaoulis2013 = { url: "/images/unite-niaoulis-aerienne.jpg" };
+const aerialView = { url: "/images/presentation-vue-aerienne.jpg" };
+const jardinInterieur = { url: "/images/presentation-jardin-interieur.jpg" };
 import { routeHead } from "@/components/route-meta";
 export const Route = createFileRoute("/presentation")({
   head: () =>

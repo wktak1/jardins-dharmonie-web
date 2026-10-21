@@ -3,10 +3,10 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, BedDouble, Building2, CalendarDays, Check, ChevronDown, Clock, DoorOpen, Download, SunMedium, UserRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MediaPlaceholder } from "@/components/site-layout";
-import journeeType from "@/assets/accueil-de-jour-journee-type.png.asset.json";
-import fougeresPhoto from "@/assets/unite-fougeres-1.jpg.asset.json";
-import niaoulisPhoto from "@/assets/unite-niaoulis-1.jpg.asset.json";
-import terrassesPhoto from "@/assets/unite-terrasses-1.jpg.asset.json";
+const journeeType = { url: "/images/accueil-de-jour-journee-type.png" };
+const fougeresPhoto = { url: "/images/unite-fougeres-1.jpg" };
+const niaoulisPhoto = { url: "/images/unite-niaoulis-1.jpg" };
+const terrassesPhoto = { url: "/images/unite-terrasses-1.jpg" };
 import { admissionDossier, documents, solutions, units } from "@/lib/site-content";
 
 export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) {

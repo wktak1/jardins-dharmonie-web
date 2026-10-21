@@ -1,5 +1,5 @@
-import dossierAsset from "@/assets/dossier-admission.pdf.asset.json";
-import medicalAsset from "@/assets/dossier-medical.pdf.asset.json";
+const dossierAsset = { url: "/documents/dossier-admission.pdf" };
+const medicalAsset = { url: "/documents/dossier-medical.pdf" };
 
 export const admissionDossier = {
   url: dossierAsset.url,

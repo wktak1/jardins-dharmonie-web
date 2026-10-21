@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/jardins-eleusis-logo.jpg.asset.json";
-import logoHeaderAsset from "@/assets/jardins-eleusis-logo-v2.png.asset.json";
-import heroLogoAsset from "@/assets/jardins-eleusis-hero-logo.png.asset.json";
+const logoAsset = { url: "/images/jardins-eleusis-logo.jpg" };
+const logoHeaderAsset = { url: "/images/jardins-eleusis-logo-v2.png" };
+const heroLogoAsset = { url: "/images/jardins-eleusis-hero-logo.png" };
 import { admissionDossier, navigation, site, socialLinks } from "@/lib/site-content";
-import musicAsset from "@/assets/vivaldi-autumn.ogg.asset.json";
+const musicAsset = { url: "/audio/vivaldi-autumn.ogg" };
 
 // Note double barrée : même dessin que l’icône « Music » de lucide, avec une barre de suppression.
 export function MusicNoteOffIcon({ className = "" }: { className?: string }) {

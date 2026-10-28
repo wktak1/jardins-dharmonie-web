@@ -8,6 +8,7 @@ export const Route = createFileRoute("/etablissement")({
       "Retrouvez l’histoire et les valeurs des Jardins d’Éleusis sur la page Présentation.",
       "/presentation",
     ),
+  staticData: { sitemap: false },
   beforeLoad: () => {
     throw redirect({ to: "/presentation", statusCode: 301, replace: true });
   },

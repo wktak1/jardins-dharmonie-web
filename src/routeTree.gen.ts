@@ -15,9 +15,11 @@ import { Route as EtablissementRouteImport } from './routes/etablissement'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as GalerieRouteImport } from './routes/galerie'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
+import { Route as NosModesAccueilRouteImport } from './routes/nos-modes-accueil'
 import { Route as PlanDuSiteRouteImport } from './routes/plan-du-site'
 import { Route as PolitiqueConfidentialiteRouteImport } from './routes/politique-confidentialite'
 import { Route as PresentationRouteImport } from './routes/presentation'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SolutionsAccueilRouteImport } from './routes/solutions-accueil'
 import { Route as TarifsAdmissionRouteImport } from './routes/tarifs-admission'
 import { Route as VieQuotidienRouteImport } from './routes/vie-quotidien'
@@ -52,6 +54,11 @@ const MentionsLegalesRoute = MentionsLegalesRouteImport.update({
   path: '/mentions-legales',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NosModesAccueilRoute = NosModesAccueilRouteImport.update({
+  id: '/nos-modes-accueil',
+  path: '/nos-modes-accueil',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PlanDuSiteRoute = PlanDuSiteRouteImport.update({
   id: '/plan-du-site',
   path: '/plan-du-site',
@@ -66,6 +73,11 @@ const PolitiqueConfidentialiteRoute =
 const PresentationRoute = PresentationRouteImport.update({
   id: '/presentation',
   path: '/presentation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SolutionsAccueilRoute = SolutionsAccueilRouteImport.update({
@@ -91,9 +103,11 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/galerie': typeof GalerieRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-modes-accueil': typeof NosModesAccueilRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -105,9 +119,11 @@ export interface FileRoutesByTo {
   '/faq': typeof FaqRoute
   '/galerie': typeof GalerieRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-modes-accueil': typeof NosModesAccueilRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -120,9 +136,11 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/galerie': typeof GalerieRoute
   '/mentions-legales': typeof MentionsLegalesRoute
+  '/nos-modes-accueil': typeof NosModesAccueilRoute
   '/plan-du-site': typeof PlanDuSiteRoute
   '/politique-confidentialite': typeof PolitiqueConfidentialiteRoute
   '/presentation': typeof PresentationRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/solutions-accueil': typeof SolutionsAccueilRoute
   '/tarifs-admission': typeof TarifsAdmissionRoute
   '/vie-quotidien': typeof VieQuotidienRoute
@@ -136,9 +154,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/galerie'
     | '/mentions-legales'
+    | '/nos-modes-accueil'
     | '/plan-du-site'
     | '/politique-confidentialite'
     | '/presentation'
+    | '/sitemap.xml'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -150,9 +170,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/galerie'
     | '/mentions-legales'
+    | '/nos-modes-accueil'
     | '/plan-du-site'
     | '/politique-confidentialite'
     | '/presentation'
+    | '/sitemap.xml'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -164,9 +186,11 @@ export interface FileRouteTypes {
     | '/faq'
     | '/galerie'
     | '/mentions-legales'
+    | '/nos-modes-accueil'
     | '/plan-du-site'
     | '/politique-confidentialite'
     | '/presentation'
+    | '/sitemap.xml'
     | '/solutions-accueil'
     | '/tarifs-admission'
     | '/vie-quotidien'
@@ -179,9 +203,11 @@ export interface RootRouteChildren {
   FaqRoute: typeof FaqRoute
   GalerieRoute: typeof GalerieRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
+  NosModesAccueilRoute: typeof NosModesAccueilRoute
   PlanDuSiteRoute: typeof PlanDuSiteRoute
   PolitiqueConfidentialiteRoute: typeof PolitiqueConfidentialiteRoute
   PresentationRoute: typeof PresentationRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SolutionsAccueilRoute: typeof SolutionsAccueilRoute
   TarifsAdmissionRoute: typeof TarifsAdmissionRoute
   VieQuotidienRoute: typeof VieQuotidienRoute
@@ -231,6 +257,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MentionsLegalesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/nos-modes-accueil': {
+      id: '/nos-modes-accueil'
+      path: '/nos-modes-accueil'
+      fullPath: '/nos-modes-accueil'
+      preLoaderRoute: typeof NosModesAccueilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/plan-du-site': {
       id: '/plan-du-site'
       path: '/plan-du-site'
@@ -250,6 +283,13 @@ declare module '@tanstack/react-router' {
       path: '/presentation'
       fullPath: '/presentation'
       preLoaderRoute: typeof PresentationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/solutions-accueil': {
@@ -283,9 +323,11 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRoute: FaqRoute,
   GalerieRoute: GalerieRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
+  NosModesAccueilRoute: NosModesAccueilRoute,
   PlanDuSiteRoute: PlanDuSiteRoute,
   PolitiqueConfidentialiteRoute: PolitiqueConfidentialiteRoute,
   PresentationRoute: PresentationRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SolutionsAccueilRoute: SolutionsAccueilRoute,
   TarifsAdmissionRoute: TarifsAdmissionRoute,
   VieQuotidienRoute: VieQuotidienRoute,

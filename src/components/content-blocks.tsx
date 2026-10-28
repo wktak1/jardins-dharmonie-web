@@ -62,7 +62,7 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
                 </div>
               </div>
             ) : (
-              <Link className="text-link mt-5" to="/solutions-accueil">
+              <Link className="text-link mt-5" to="/nos-modes-accueil">
                 En savoir plus <ArrowRight />
               </Link>
             )}
@@ -73,7 +73,7 @@ export function SolutionsGrid({ expandable = false }: { expandable?: boolean }) 
   );
 }
 
-// Mêmes photographies que la page « Nos solutions d’accueil », reprises à l’identique
+// Mêmes photographies que la page « Nos modes d’accueil », reprises à l’identique
 // sur la page d’accueil pour assurer la cohérence visuelle entre les deux pages.
 const unitPhotos: Record<string, { url: string; alt: string; position: string }> = {
   "Les Niaoulis": {

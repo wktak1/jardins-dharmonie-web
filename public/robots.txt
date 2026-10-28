@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://jardins-d-eleusis.lovable.app/sitemap.xml

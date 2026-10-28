@@ -29,7 +29,7 @@ export const site = {
 export const navigation = [
   { label: "Accueil", to: "/" },
   { label: "Présentation", to: "/presentation" },
-  { label: "Nos solutions d’accueil", to: "/solutions-accueil" },
+  { label: "Nos modes d’accueil", to: "/nos-modes-accueil" },
   { label: "La vie au quotidien", to: "/vie-quotidien" },
   { label: "Tarifs et admission", to: "/tarifs-admission" },
   { label: "Galerie", to: "/galerie" },

@@ -33,7 +33,7 @@ const fougeresViews = [
 export const Route = createFileRoute("/solutions-accueil")({
   head: () =>
     routeHead(
-      "Nos solutions d’accueil",
+      "Nos modes d’accueil",
       "Hébergement permanent, hébergement temporaire et accueil de jour à Dumbéa aux Jardins d’Éleusis.",
       "/solutions-accueil",
     ),
@@ -44,7 +44,7 @@ function Page() {
   return (
     <>
       <PageIntro
-        eyebrow="Nos solutions d’accueil"
+        eyebrow="Nos modes d’accueil"
         title="Trouver une solution adaptée à votre proche"
       >
         <p>Découvrez ici nos formes d’accueil proposées.</p>

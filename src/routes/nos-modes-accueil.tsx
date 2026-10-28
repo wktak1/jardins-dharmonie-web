@@ -60,8 +60,7 @@ function Page() {
   return (
     <>
       <PageIntro title="Nos modes d’accueil">
-        <p>Trouver une solution adaptée à votre proche.</p>
-        <p className="mt-3">Découvrez ici nos formes d’accueil proposées.</p>
+        <p>Un lieu de vie, selon votre projet</p>
       </PageIntro>
       <section className="section-pad">
         <div className="container-shell">

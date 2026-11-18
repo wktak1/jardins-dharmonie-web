@@ -486,3 +486,4 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+Test de déploiement pour Square NC - 19/11/2026

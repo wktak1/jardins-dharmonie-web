@@ -19,7 +19,7 @@ function Page() {
       <PageIntro eyebrow="Contact" title="Échanger avec l’établissement">
         <p>
           Pour toute demande d’information ou pour préparer une visite, contactez directement
-          l’EHPAD « Les Jardins d’Éleusis » par téléphone ou par e-mail.
+          l’EHPAD Les Jardins d’Éleusis par téléphone ou par e-mail.
         </p>
       </PageIntro>
       <section className="section-pad">
